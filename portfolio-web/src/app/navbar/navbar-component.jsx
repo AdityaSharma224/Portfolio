@@ -5,9 +5,9 @@ import Stack from '@mui/material/Stack';
 
 const NavbarComponent = () =>{
 
-    const [isVisible, setIsVisible] = useState(true);
-    const classes = useStyles({isVisible});
+    const classes = useStyles();
 
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         let timeout;
@@ -25,8 +25,8 @@ const NavbarComponent = () =>{
         };
     }, []);
     return(
-        <Stack className={classes.wrapper} top={isVisible ? '0' : '-100px'}> 
-            <Stack className={classes.itemWrapper} gap={7}>
+        <Stack  className={classes.wrapper} top={isVisible ? '0' : '-100px'}> 
+            <Stack className={classes.itemWrapper}>
                 <Link activeClass='active' to="home" spy={true} smooth={true} duration={500} className={classes.item}>Home</Link>
                 <Link activeClass='active' to="about" spy={true} smooth={true} duration={500} className={classes.item}>About</Link>
                 <Link activeClass='active' to="skills" spy={true} smooth={true} duration={500} className={classes.item}>Skills</Link>
