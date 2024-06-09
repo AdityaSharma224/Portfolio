@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-import { createTheme } from '@mui/material';
+ import { createTheme } from '@mui/material';
 
 const theme = createTheme({
     breakpoints:{
@@ -23,7 +23,6 @@ const useStyles = makeStyles({
         marginTop:10,
         borderRadius:'30px', 
         transition: 'top 0.3s ease-in-out',
-        flexDirection:'row',
         justifyContent:'center',
         [theme.breakpoints.down('md')]:{
             width:'600px',
@@ -35,14 +34,10 @@ const useStyles = makeStyles({
         },
         [theme.breakpoints.down('xs')]:{
            display:'none',
-        }
+        },
     },
+    
     itemWrapper:{
-        width:'100%',
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'center',
-        gap:'5em',
         [theme.breakpoints.down('md')]:{
             gap:'3em',
         },
@@ -58,24 +53,26 @@ const useStyles = makeStyles({
         cursor:'pointer',
         position:'relative',
         overflow:'hidden',
-        borderRadius:'15px',
-        border:'1px solid #fff',
-        '&::before':{
-            top:0,
-            left:0,
-            width:0,
-            height:'100%',
-            borderLeft:'3px solid transparent',
-            borderRight:'3px solid #FF8E53',
-            transition:'width 0.5s ease-in-out',
-            },
-            '&:hover':{
-                border:'1px solid #fff',
-            },
-        [theme.breakpoints.down('sm')]:{
-           fontSize:'14px'
-        }
-    }
+        border:'2px solid #fff',
+        borderRadius:'20px',
+        transition: 'all 0.3s ease',
+        '&:hover ~ $cursor': {
+            transform: 'translate(-50%, -50%) scale(8)',
+          },
+          [theme.breakpoints.down('sm')]:{
+            fontSize:'14px'
+         },
+    },
+    cursor: {
+        position: 'fixed',
+        height:'40px',
+        width:'40px',
+        marginTop:'-10px',
+        backgroundColor: '#fff',
+        borderRadius: '50%',
+        mixBlendMode:'difference',
+        transition: 'transform 0.3s ease',
+      }
 });
 
 export default useStyles;
