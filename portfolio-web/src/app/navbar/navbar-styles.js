@@ -38,27 +38,33 @@ const useStyles = makeStyles({
     },
     
     itemWrapper:{
-        gap:'3em',
+        gap:'4em',
         [theme.breakpoints.down('md')]:{
-            gap:'2em',
+            gap:'1em',
         },
         [theme.breakpoints.down('sm')]:{
-           gap:'2em'
-        }
+           gap:'1em'
+        },
+        [theme.breakpoints.down('xs')]:{
+            display:'none',
+         },
     },
     item:{
         color:'#fff',
-        fontSize:'18px',
+        fontSize:'22px',
         padding:'8px 12px',
         fontWeight:500,
         cursor:'pointer',
         position:'relative',
         overflow:'hidden',
-        border:'2px solid #fff',
         borderRadius:'20px',
+        border:'2px solid #fff',
         transition: 'all 0.3s ease',
           [theme.breakpoints.down('sm')]:{
             fontSize:'14px'
+         },
+         [theme.breakpoints.down('xs')]:{
+            display:'none',
          },
     },
     cursor: {
@@ -69,6 +75,9 @@ const useStyles = makeStyles({
         borderRadius: '50%',
         mixBlendMode:'difference',
         transition: 'transform 0.3s ease',
+        [theme.breakpoints.down('xs')]:{
+            display:'none',
+         },
       }
 });
 
