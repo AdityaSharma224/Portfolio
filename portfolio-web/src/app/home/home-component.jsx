@@ -1,25 +1,30 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
 import Myimage from '../../assets/myimg.jpg';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import useStyles from './home-styles';
+import LinkedInImage from '../../assets/linkedin.svg';
+import GithubImage from '../../assets/github.svg';
+import LeetcodeImage from '../../assets/leetcode.svg';
 
 const HomeComponent = () =>{
     const classes = useStyles();
-
     return(
         <Stack className={classes.wrapper} id='home'>
             <Stack className={classes.innerWrapper} flexDirection={'row'}>
-                <Stack classname={classes.detailsWrapper} marginLeft={15}>
-                    <Typography variant='h2' color={'#fff'}>
-                        {'Hello'}
-                    </Typography>
-                    <Typography variant='h1' color={'#fff'} fontWeight={700}>{'I\'m Aditya'}</Typography>
-                    <Typography variant='h4' color={'#fff'}>{'Software Engineer'}</Typography>
+                <Stack className={classes.detailsWrapper} >
+                    <Stack className={classes.typoWrapper}>
+                        <Typography  sx={{ typography: { xs: 'h3', sm: 'h4', md: 'h2' } }} color={'#fff'}>{'Hello'}</Typography>
+                        <Typography sx={{ typography: { xs: 'h2', sm: 'h2', md: 'h1'}, fontWeight:{xs: 700, sm: 700, md: 700, lg:700, xl:700} }} color={'#fff'}>{'I\'m Aditya'}</Typography>
+                        <Typography sx={{ typography: { xs: 'h4', sm: 'h5', md: 'h4' } }} color={'#fff'}>{'Software Engineer'}</Typography>
+                    </Stack>
+                    <Stack className={classes.socialIcons} flexDirection={'row'}>
+                        <Stack component={'img'} src={LinkedInImage} className={classes.icon}></Stack>
+                        <Stack component={'img'} src={GithubImage} className={classes.icon}></Stack>
+                        <Stack component={'img'} src={LeetcodeImage} className={classes.icon}></Stack>
+                    </Stack>
                 </Stack>
-                <Stack sx={{borderTopLeftRadius:'40%', borderTopRightRadius:'40%', border:'20px solid #544238'}}>
-                    <img className={classes.myImage} style={{borderTopLeftRadius:'40%', borderTopRightRadius:'40%'}} src={Myimage} height={'500px'} width={'400px'}></img>
-                </Stack>
+                <img className={classes.image} src={Myimage} alt='aditya'></img>
             </Stack>
         </Stack>
 )};

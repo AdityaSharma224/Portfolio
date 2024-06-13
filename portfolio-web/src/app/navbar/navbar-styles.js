@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles';
 const theme = createTheme({
     breakpoints:{
         values:{
-            xs:480,
+            xs:500,
             sm:600,
             md:900,
             lg:1200,
@@ -33,7 +33,8 @@ const useStyles = makeStyles({
             height:'50px',
         },
         [theme.breakpoints.down('xs')]:{
-           display:'none',
+            width:'200px',
+            height:'50px',
         },
     },
     

@@ -5,10 +5,10 @@ import { makeStyles } from '@mui/styles';
 const theme = createTheme({
     breakpoints:{
         values:{
-            xs:480,
+            xs:500,
             sm:600,
-            md:900,
-            lg:1200,
+            md:1000,
+            lg:1300,
             xl:1400,
         }
     }
@@ -29,13 +29,69 @@ const useStyles = makeStyles({
        alignItems:'center',
        justifyContent:'center',
        gap:'18em',
+       [theme.breakpoints.down('lg')]:{
+        gap:'10em',
+       },
+       [theme.breakpoints.down('md')]:{
+        gap:'7em',
+       },
     },
     detailsWrapper:{
-        alignSelf:'center',
+        gap:30,
     },
-    item:{
-       
+    typoWrapper:{
+        [theme.breakpoints.down('xs')]:{
+            alignItems:'center',
+            gap:10
+           },
     },
+    socialIcons:{
+     alignItems:'center',
+     gap:75,
+     [theme.breakpoints.down('lg')]:{
+        gap:55,
+       },
+       [theme.breakpoints.down('md')]:{
+        gap:55,
+       },
+       [theme.breakpoints.down('sm')]:{
+        gap:55,
+       },
+       [theme.breakpoints.down('xs')]:{
+        gap:55,
+        alignSelf:'center'
+       },
+    },
+    icon:{
+        height:40,
+        width:40,
+        cursor:'pointer',
+    },
+    image:{
+        borderTopLeftRadius:'40%',
+        borderTopRightRadius:'40%',
+        border:'20px solid #544238',
+        height:'600px',
+        width:'500px',
+        [theme.breakpoints.down('lg')]:{
+            height:'400px',
+            width:'300px',
+        },
+        [theme.breakpoints.down('md')]:{
+            height:'350px',
+            width:'300px',
+        },
+        [theme.breakpoints.down('sm')]:{
+            display:'none',
+        },
+    },
+   
+    typo2:{
+
+    },
+    typo3:{
+
+    }
 });
 
 export default useStyles;
