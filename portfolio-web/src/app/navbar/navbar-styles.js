@@ -24,6 +24,7 @@ const useStyles = makeStyles({
         borderRadius:'30px', 
         transition: 'top 0.3s ease-in-out',
         justifyContent:'center',
+        zIndex:19,
         [theme.breakpoints.down('md')]:{
             width:'600px',
             height:'60px',
@@ -33,7 +34,7 @@ const useStyles = makeStyles({
             height:'50px',
         },
         [theme.breakpoints.down('xs')]:{
-            width:'200px',
+            width:'120px',
             height:'50px',
         },
     },
@@ -79,6 +80,29 @@ const useStyles = makeStyles({
         [theme.breakpoints.down('xs')]:{
             display:'none',
          },
+      },
+      menu:{
+        gap:19,
+        width:'100%',
+        alignItems:'center',
+        [theme.breakpoints.up('xs')]:{
+            display:'none',
+        },
+      },
+      img:{
+        marginLeft:12,
+        [theme.breakpoints.up('xs')]:{
+            display:'none',
+         },
+      },
+      expand:{
+        maxHeight: 0,
+        overflow: 'hidden',
+        transition: 'max-height 0.3s ease-in-out',
+      },
+      
+      expanded: {
+        maxHeight: '500px', /* Adjust as needed for your content */
       }
 });
 

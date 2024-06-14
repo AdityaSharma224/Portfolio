@@ -2,12 +2,20 @@ import React,  {useState, useEffect} from 'react';
 import { Link } from 'react-scroll';
 import useStyles from './navbar-styles';
 import Stack from '@mui/material/Stack';
+import MenuImg from '../../assets/menu.png';
+import { Typography } from '@mui/material';
 
 
 const NavbarComponent = () =>{
 
     const classes = useStyles();
     const [isVisible, setIsVisible] = useState(true);
+    const [isExpanded, setExpanded] = useState(false);
+
+    const toggleExpansion = () => {
+      setExpanded(!isExpanded);
+    };
+  
 
     useEffect(() => {
         let timeout;
@@ -32,7 +40,17 @@ const NavbarComponent = () =>{
                 <span><Link activeClass='active' to="skills" spy={true} smooth={true} duration={500} className={classes.item}>Skills</Link></span>
                 <span><Link activeClass='active' to="articles" spy={true} smooth={true} duration={500} className={classes.item}>Articles</Link></span>
                 <span><Link activeClass='active' to="projects" spy={true} smooth={true} duration={500} className={classes.item}>Projects</Link></span>
-            </Stack>       
+            </Stack>
+            <Stack className={classes.menu} flexDirection={'row'} onClick={toggleExpansion}>
+        <img src={MenuImg} height={'30px'} width={'30px'} className={classes.img}></img>
+        <Typography variant='h6' color={'#fff'} className={classes.img}>
+          {isExpanded ? 'v' : '>'}
+        </Typography>
+      </Stack>
+      <Stack  className={`${classes.expand} ${isExpanded ? 'expanded' : ''}`}>
+        {/* Your expandable component content here */}
+        <Stack height={'100px'} width={'300px'} sx={{backgroundColor:'#000'}}></Stack>
+      </Stack>
         </Stack>
 )};
 

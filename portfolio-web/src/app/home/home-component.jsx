@@ -2,6 +2,7 @@ import React from 'react';
 import Stack from '@mui/material/Stack';
 import Myimage from '../../assets/myimg.jpg';
 import Typography from '@mui/material/Typography';
+import { Link } from '@mui/material';
 import useStyles from './home-styles';
 import LinkedInImage from '../../assets/linkedin.svg';
 import GithubImage from '../../assets/github.svg';
@@ -19,9 +20,9 @@ const HomeComponent = () =>{
                         <Typography sx={{ typography: { xs: 'h4', sm: 'h5', md: 'h4' } }} color={'#fff'}>{'Software Engineer'}</Typography>
                     </Stack>
                     <Stack className={classes.socialIcons} flexDirection={'row'}>
-                        <Stack component={'img'} src={LinkedInImage} className={classes.icon}></Stack>
-                        <Stack component={'img'} src={GithubImage} className={classes.icon}></Stack>
-                        <Stack component={'img'} src={LeetcodeImage} className={classes.icon}></Stack>
+                       <Link href="https://www.linkedin.com/in/adityasharma13064" target="_blank"><Stack component={'img'} src={LinkedInImage} className={classes.icon}/></Link>
+                       <Link href="https://github.com/AdityaSharma224" target="_blank"><Stack component={'img'} src={GithubImage} className={classes.icon}/></Link>
+                       <Link href="https://leetcode.com/u/sharmaaditya224" target="_blank"><Stack component={'img'} src={LeetcodeImage} className={classes.icon}/></Link>
                     </Stack>
                 </Stack>
                 <img className={classes.image} src={Myimage} alt='aditya'></img>

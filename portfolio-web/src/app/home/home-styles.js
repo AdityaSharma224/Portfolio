@@ -62,11 +62,23 @@ const useStyles = makeStyles({
         alignSelf:'center'
        },
     },
-    icon:{
-        height:40,
-        width:40,
-        cursor:'pointer',
-    },
+    icon: {
+        height: 40,
+        width: 40,
+        cursor: 'pointer',
+        animation: '$pulsate 2s infinite ease-in-out',
+      },
+      // ... other styles
+      '@keyframes pulsate': {
+        '0%, 100%': {
+          transform: 'scale(0.7)',
+          opacity: 1, // Opacity should be between 0 (transparent) and 1 (opaque)
+        },
+        '50%': {
+          transform: 'scale(0.8)',
+          opacity: 0.7,
+        },
+      },
     image:{
         borderTopLeftRadius:'40%',
         borderTopRightRadius:'40%',
