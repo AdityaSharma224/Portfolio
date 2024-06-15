@@ -82,7 +82,7 @@ const useStyles = makeStyles({
     image:{
         borderTopLeftRadius:'40%',
         borderTopRightRadius:'40%',
-        border:'20px solid #544238',
+        border:'20px solid #FFECCF',
         height:'600px',
         width:'500px',
         [theme.breakpoints.down('lg')]:{

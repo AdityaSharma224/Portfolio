@@ -76,6 +76,7 @@ const useStyles = makeStyles({
            borderLeft: 'none',
            borderRadius:'20px',
            padding:'10px'
+           
         },
     },
     experienceItem:{
@@ -100,11 +101,18 @@ const useStyles = makeStyles({
     wrapperA:{
         justifyContent:'space-between',
         width:'100%',
+        [theme.breakpoints.down('xs')]:{
+           flexDirection:'row',
+           alignItems:'center',
+           justifyContent:'center',
+        },
     },
     experienceYear:{
-        alignSelf:'flex-start',
         width: '150px',
         color:'#fff',
+        [theme.breakpoints.down('xs')]:{
+            marginLeft:'10px',
+         },
     },
     experienceDetails:{
         height:'100%',

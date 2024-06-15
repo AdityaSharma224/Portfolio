@@ -12,19 +12,19 @@ const ExperienceComponent = () =>{
 
     const experiences = [
         {
-          icon: <Stack component={'img'} src={CASTIcon} height={'70px'} width={'220px'}/>,
+          icon: <Stack component={'img'} borderRadius={'20px'} src={CASTIcon} height={'70px'} width={'220px'}/>,
           year: '10/2023  -  Present',
           title: 'Software Development Engineer - 1',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
         },
         {
-          icon: <Stack component={'img'} src={CONTLOIcon} height={'50px'} width={'120px'}/>,
+          icon: <Stack component={'img'} borderRadius={'20px'} src={CONTLOIcon} height={'50px'} width={'120px'}/>,
           year: '07/2023  -  10/2023',
           title: 'Software Developer Engineer Intern',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
         },
         {
-            icon: <Stack component={'img'} src={GFGIcon} height={'60px'} width={'240px'}/>,
+            icon: <Stack component={'img'} borderRadius={'20px'} src={GFGIcon} height={'50px'} width={'200px'}/>,
             year: '10/2022  -  06/2023',
             title: 'Member of Technical Staff Intern',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
@@ -49,9 +49,9 @@ const ExperienceComponent = () =>{
                             <Stack className={classes.list}>
                                 {experiences.map((exp, index) => (
                                 <Stack className={classes.experienceItem} key={index}>
-                                    <Stack className={classes.wrapperA} sx={{flexDirection:{xs:'column',sm:'row',md:'row',lg:'row',xl:'row'}}}>
-                                        <span style={{marginTop:'-30px'}}>{exp.icon}</span>
-                                        <Typography fontWeight={700} sx={{typography:{xs:'body1',sm:'row',md:'row',lg:'row',xl:'row'}}} className={classes.experienceYear}>{exp.year}</Typography>
+                                    <Stack className={classes.wrapperA} gap={1} sx={{flexDirection:{xs:'row',sm:'row',md:'row',lg:'row',xl:'row'}}}>
+                                        <span style={{marginTop:'-20px'}}>{exp.icon}</span>
+                                        <Typography sx={{typography:{xs:'body1'}, fontWeight:{xs:700}}} className={classes.experienceYear}>{exp.year}</Typography>
                                     </Stack>
                                     <Stack className={classes.experienceDetails} flexDirection={'column'}>
                                         <Typography className={classes.title} sx={{typography:{xs:'h6',sm:'h6',md:'h6',lg:'h5',xl:'h5'}}}>{exp.title}</Typography>

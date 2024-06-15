@@ -24,6 +24,7 @@ const useStyles = makeStyles({
         borderRadius:'30px', 
         transition: 'top 0.3s ease-in-out',
         justifyContent:'center',
+        border:'2px solid #362922',
         zIndex:2,
         [theme.breakpoints.down('md')]:{
             width:'600px',
@@ -106,6 +107,7 @@ const useStyles = makeStyles({
         position:'fixed',
         marginTop:'20em',
         borderRadius:'20px',
+        border:'2px solid #362922',
         backgroundColor:'#544238',
         alignItems:'center',
         gap:'1.3em',
@@ -116,9 +118,10 @@ const useStyles = makeStyles({
       },
       menuItem:{
         width:'100%',
+        fontSize:'18px',
         textAlign:'center',
         color:'#fff',
-        fontWeight:600,
+        fontWeight:500,
         curosr:'pointer',
         [theme.breakpoints.up('xs')]:{
             display:'none',
