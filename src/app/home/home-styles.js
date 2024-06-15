@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles';
- import { createTheme } from '@mui/material';
- import BackgroundImg from '../../assets/background-home.png';
+import { createTheme } from '@mui/material';
+import BackgroundImg from '../../assets/background-home.png';
+
 
 const theme = createTheme({
     breakpoints:{
@@ -40,6 +41,7 @@ const useStyles = makeStyles({
         gap:30,
     },
     typoWrapper:{
+        fontFamily: '"Roboto Mono", monospace',
         [theme.breakpoints.down('xs')]:{
             alignItems:'center',
             gap:10
@@ -82,7 +84,7 @@ const useStyles = makeStyles({
     image:{
         borderTopLeftRadius:'40%',
         borderTopRightRadius:'40%',
-        border:'20px solid #FFECCF',
+        border:'12px solid #544238',
         height:'600px',
         width:'500px',
         [theme.breakpoints.down('lg')]:{
@@ -97,13 +99,6 @@ const useStyles = makeStyles({
             display:'none',
         },
     },
-   
-    typo2:{
-
-    },
-    typo3:{
-
-    }
 });
 
 export default useStyles;

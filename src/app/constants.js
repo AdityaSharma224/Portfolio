@@ -1,0 +1,3 @@
+export const CAST_DESCRIPTION = 'Frontend development of the CAST Imaging Analyzer using React.js, delivering a robust platform for code analysis. Engineered an intuitive interface for efficient navigation, and initiation of the scanning process, ensuring a user-friendly experience.';
+export const CONTLO_DESCRIPTION = 'Developed Long Term Memory for Large Language Models. (Improved the Generative AI response by 80% by getting the relevant response in every iteration).';
+export const GFG_DESCRIPTION = 'Worked closely with the Core Data Structure and Algorithm team of GeeksforGeeks,  Designed the most important Data Structure and Algorithm Official Tutorials eg. Dijkstras Algorithm, Set, Map, Max-Heap, and Min-Heap.';

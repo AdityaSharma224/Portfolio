@@ -41,12 +41,12 @@ const useStyles = makeStyles({
     },
     
     itemWrapper:{
-        gap:'4em',
+        gap:'2em',
         [theme.breakpoints.down('md')]:{
-            gap:'1em',
+            gap:'0.9em',
         },
         [theme.breakpoints.down('sm')]:{
-           gap:'1em'
+           gap:'0.1em'
         },
         [theme.breakpoints.down('xs')]:{
             display:'none',
@@ -54,17 +54,21 @@ const useStyles = makeStyles({
     },
     item:{
         color:'#fff',
-        fontSize:'22px',
+        fontSize:'20px',
         padding:'8px 12px',
         fontWeight:500,
         cursor:'pointer',
         position:'relative',
         overflow:'hidden',
+        fontFamily:'"Roboto Mono",monospace',
         borderRadius:'10px',
         transition: 'all 0.3s ease',
           [theme.breakpoints.down('sm')]:{
-            fontSize:'14px'
+            fontSize:'12px'
          },
+         [theme.breakpoints.down('md')]:{
+            fontSize:'18px'
+        },
          [theme.breakpoints.down('xs')]:{
             display:'none',
          },
@@ -120,6 +124,7 @@ const useStyles = makeStyles({
         width:'100%',
         fontSize:'18px',
         textAlign:'center',
+        fontFamily:'"Roboto Mono",monospace',
         color:'#fff',
         fontWeight:500,
         curosr:'pointer',

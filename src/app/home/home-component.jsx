@@ -15,9 +15,9 @@ const HomeComponent = () =>{
             <Stack className={classes.innerWrapper} flexDirection={'row'}>
                 <Stack className={classes.detailsWrapper} >
                     <Stack className={classes.typoWrapper}>
-                        <Typography  sx={{ typography: { xs: 'h3', sm: 'h4', md: 'h2' } }} color={'#fff'}>{'Hello'}</Typography>
-                        <Typography sx={{ typography: { xs: 'h2', sm: 'h2', md: 'h1'}, fontWeight:{xs: 700, sm: 700, md: 700, lg:700, xl:700} }} color={'#fff'}>{'I\'m Aditya'}</Typography>
-                        <Typography sx={{ typography: { xs: 'h4', sm: 'h5', md: 'h4' } }} color={'#fff'}>{'Software Engineer'}</Typography>
+                        <Typography className={classes.typoa} sx={{ typography: { xs: 'h3', sm: 'h4', md: 'h2' } }} color={'#fff'}>{'Hello'}</Typography>
+                        <Typography className={classes.typoa} sx={{ typography: { xs: 'h2', sm: 'h2', md: 'h1'}, fontWeight:{xs: 700, sm: 700, md: 700, lg:700, xl:700} }} color={'#fff'}>{'I\'m Aditya'}</Typography>
+                        <Typography className={classes.typoa} sx={{ typography: { xs: 'h5', sm: 'h5', md: 'h4' } }} color={'#fff'}>{'Software Engineer'}</Typography>
                     </Stack>
                     <Stack className={classes.socialIcons} flexDirection={'row'}>
                        <Link href="https://www.linkedin.com/in/adityasharma13064" target="_blank"><Stack component={'img'} src={LinkedInImage} className={classes.icon}/></Link>

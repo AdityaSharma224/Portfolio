@@ -1,13 +1,20 @@
 import React from "react";
 import Layout from "./app/layout/layout";
 import { Stack } from "@mui/material";
-import { ThemeProvider } from "@mui/styles";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 function App() {
+  const theme = createTheme({
+    typography: {
+      allVariants: {
+        fontFamily:'"Roboto Mono",monospace'
+      },
+    },
+  });
   return ( 
-    <div style={{margin:0,padding:0}}>
+    <ThemeProvider theme={theme}>
       <Layout/>
-    </div>
+    </ThemeProvider>
   );
 }
 

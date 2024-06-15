@@ -53,14 +53,19 @@ const useStyles = makeStyles({
         height:'100%',
         [theme.breakpoints.down('lg')]:{
             width:'600px',
+            marginTop:'2em',
+            gap:'2em',
         },
         [theme.breakpoints.down('md')]:{
             width:'600px',
-            marginTop:'4em',
-            gap:'4em',
+            marginTop:'2em',
+            gap:'2em',
         },
         [theme.breakpoints.down('sm')]:{
             width:'500px',
+            marginTop:'2em',
+            gap:'1em',
+
         },
         [theme.breakpoints.down('xs')]:{
             width:'400px',
@@ -108,8 +113,9 @@ const useStyles = makeStyles({
         },
     },
     experienceYear:{
-        width: '150px',
+        width: '180px',
         color:'#fff',
+        textAlign:'end',
         [theme.breakpoints.down('xs')]:{
             marginLeft:'10px',
          },
