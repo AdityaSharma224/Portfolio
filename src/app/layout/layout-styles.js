@@ -23,6 +23,7 @@ const useStyles = makeStyles({
         mixBlendMode:'difference',
         transition: 'transform 0.3s ease',
         pointerEvents:'none',
+        zIndex:10,
         [theme.breakpoints.down('xs')]:{
           display:'none',
        },

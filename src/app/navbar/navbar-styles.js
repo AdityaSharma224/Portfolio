@@ -15,7 +15,7 @@ const theme = createTheme({
 
 const useStyles = makeStyles({
     wrapper:{
-        height:'80px',
+        height:'60px',
         width:'800px',
         backgroundColor:'#544238',
         alignSelf:'center',
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
         borderRadius:'30px', 
         transition: 'top 0.3s ease-in-out',
         justifyContent:'center',
-        zIndex:19,
+        zIndex:2,
         [theme.breakpoints.down('md')]:{
             width:'600px',
             height:'60px',
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
             height:'50px',
         },
         [theme.breakpoints.down('xs')]:{
-            width:'120px',
+            width:'100px',
             height:'50px',
         },
     },
@@ -59,8 +59,7 @@ const useStyles = makeStyles({
         cursor:'pointer',
         position:'relative',
         overflow:'hidden',
-        borderRadius:'20px',
-        border:'2px solid #fff',
+        borderRadius:'10px',
         transition: 'all 0.3s ease',
           [theme.breakpoints.down('sm')]:{
             fontSize:'14px'
@@ -95,14 +94,35 @@ const useStyles = makeStyles({
             display:'none',
          },
       },
-      expand:{
-        maxHeight: 0,
-        overflow: 'hidden',
-        transition: 'max-height 0.3s ease-in-out',
+      arrow:{
+        [theme.breakpoints.up('xs')]:{
+            display:'none',
+         },
       },
-      
-      expanded: {
-        maxHeight: '500px', /* Adjust as needed for your content */
+      downMenu:{
+        height:'250px',
+        width:'150px',
+        alignSelf:'center',
+        position:'fixed',
+        marginTop:'20em',
+        borderRadius:'20px',
+        backgroundColor:'#544238',
+        alignItems:'center',
+        gap:'1.3em',
+        justifyContent:'center',
+        [theme.breakpoints.up('xs')]:{
+            display:'none',
+        },
+      },
+      menuItem:{
+        width:'100%',
+        textAlign:'center',
+        color:'#fff',
+        fontWeight:600,
+        curosr:'pointer',
+        [theme.breakpoints.up('xs')]:{
+            display:'none',
+         },
       }
 });
 
