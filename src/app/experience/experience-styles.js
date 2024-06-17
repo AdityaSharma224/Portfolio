@@ -125,7 +125,7 @@ const useStyles = makeStyles({
         [theme.breakpoints.down('xs')]:{
            flexDirection:'row',
            alignItems:'center',
-           justifyContent:'center',
+           justifyContent:'space-between',
         },
     },
     experienceYear:{

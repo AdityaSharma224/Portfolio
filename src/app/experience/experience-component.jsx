@@ -54,7 +54,7 @@ const ExperienceComponent = () =>{
                                 <Stack className={classes.experienceItem} key={index}>
                                     <Stack
                                         className={classes.wrapperA}
-                                        justifyContent={'space-between'}
+                                        width={'100%'}
                                         gap={1}
                                         sx={{
                                             flexDirection:{xs:'row',sm:'row',md:'row',lg:'row',xl:'row'}
