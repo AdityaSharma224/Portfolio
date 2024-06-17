@@ -13,7 +13,7 @@ const ExperienceComponent = () =>{
 
     const experiences = [
         {
-          icon: <Stack component={'img'} borderRadius={'20px'} src={CASTIcon} height={'70px'} width={'220px'}/>,
+          icon: <Stack component={'img'} borderRadius={'20px'} src={CASTIcon} className={classes.cLogo}/>,
           year: '10/2023  -  Present',
           title: 'Software Development Engineer - 1',
           description: CAST_DESCRIPTION,

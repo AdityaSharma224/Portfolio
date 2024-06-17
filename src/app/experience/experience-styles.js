@@ -5,6 +5,7 @@ import { makeStyles } from '@mui/styles';
 const theme = createTheme({
     breakpoints:{
         values:{
+            xxs:400,
             xs:500,
             sm:600,
             md:1000,
@@ -26,6 +27,9 @@ const useStyles = makeStyles({
         [theme.breakpoints.down('lg')]:{
             width:'100vw',
             height:'120vh',
+        },
+        [theme.breakpoints.down('xs')]:{
+            height:'145vh',
         },
     },
     myImage:{
@@ -72,6 +76,11 @@ const useStyles = makeStyles({
             marginTop:'2em',
             gap:'2em',
         },
+        [theme.breakpoints.down('xxs')]:{
+            width:'350px',
+            marginTop:'2em',
+            gap:'2em',
+        },
     },
     list:{
         borderLeft: '4px solid #fff',
@@ -81,8 +90,15 @@ const useStyles = makeStyles({
            borderLeft: 'none',
            borderRadius:'20px',
            padding:'10px'
-           
         },
+    },
+    cLogo:{
+        height:'70px',
+        width:'220px',
+        [theme.breakpoints.down('xxs')]:{
+           height:'50px',
+           width:'160px',
+         },
     },
     experienceItem:{
         alignItems: 'flex-start',
