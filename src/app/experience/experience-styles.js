@@ -29,7 +29,7 @@ const useStyles = makeStyles({
             height:'120vh',
         },
         [theme.breakpoints.down('xs')]:{
-            height:'145vh',
+            height:'130vh',
         },
     },
     myImage:{

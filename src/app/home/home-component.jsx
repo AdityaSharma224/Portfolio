@@ -7,12 +7,18 @@ import useStyles from './home-styles';
 import LinkedInImage from '../../assets/linkedin.svg';
 import GithubImage from '../../assets/github.svg';
 import LeetcodeImage from '../../assets/leetcode.svg';
+import Clouds from '../../assets/clouds.png';
+import DarkCloud from '../../assets/darkCloud.png';
 
 const HomeComponent = () =>{
     const classes = useStyles();
     return(
         <Stack className={classes.wrapper} id='home'>
+
             <Stack className={classes.innerWrapper} flexDirection={'row'}>
+                <Stack component={'img'} src={Clouds}  position={'absolute'} className={classes.leftCloud1}/>
+                <Stack component={'img'} src={Clouds}  position={'absolute'} className={classes.leftCloud2}/>
+                <Stack component={'img'} src={Clouds} position={'absolute'} className={classes.cloudsRight}/>
                 <Stack className={classes.detailsWrapper} >
                     <Stack className={classes.typoWrapper}>
                         <Typography className={classes.typoa} sx={{ typography: { xs: 'h3', sm: 'h4', md: 'h2' } }} color={'#fff'}>{'Hello'}</Typography>

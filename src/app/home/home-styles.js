@@ -99,6 +99,148 @@ const useStyles = makeStyles({
             display:'none',
         },
     },
+    leftCloud1: {
+        opacity:'0',
+        top:'-4em',
+        left:'0em',
+        height:'25em',
+        overflow:'hidden',
+        position:'absolute',
+        width:'25em',
+        animation: `$slideInFromLeft 5s ease-out 3s 1`,
+        animationFillMode: 'forwards',
+        [theme.breakpoints.down('md')]:{
+            height:'18em',
+            width:'18em',
+            top:'1em',
+            left:'2em',
+        },
+        [theme.breakpoints.down('sm')]:{
+            height:'14em',
+            width:'14em',
+        },
+        [theme.breakpoints.down('xs')]:{
+            height:'12em',
+            width:'12em',
+            top:'-3em',
+            left:'6em',
+        },
+      },
+      '@keyframes slideInFromLeft': {
+        '0%': {
+          transform: 'translateX(-100%)',
+          opacity:'0',
+          overflow:'hidden',
+
+
+        },
+        '100%': {
+          transform: 'translateX(0)',
+          opacity:'1',
+          overflow:'hidden',
+
+        },
+      },
+      leftCloud2: {
+        opacity:'0',
+        top:'-3em',
+        left:'12em',
+        position:'absolute',
+        height:'35em',
+        width:'35em',
+        overflow:'hidden',
+        animation: `$slideInFromLeft 5s ease-out 3s 1`,
+        animationFillMode: 'forwards',
+        [theme.breakpoints.down('lg')]:{
+            height:'25em',
+            width:'25em',
+            top:'3em',
+            left:'8em',
+        },
+        [theme.breakpoints.down('md')]:{
+            height:'25em',
+            width:'25em',
+        },
+        [theme.breakpoints.down('sm')]:{
+            height:'18em',
+            width:'18em',
+            top:'3em',
+            left:'8em',
+        },
+        [theme.breakpoints.down('xs')]:{
+            height:'14em',
+            width:'14em',
+            top:'2em',
+            left:'7em',
+        },
+      },
+      '@keyframes slideInFromLeft': {
+        '0%': {
+          transform: 'translateX(-100%)',
+          opacity:'0',
+          overflow:'hidden',
+
+
+        },
+        '100%': {
+          transform: 'translateX(0)',
+          opacity:'1',
+          overflow:'hidden',
+
+        },
+      },
+
+      cloudsRight: {
+        // Include the animation here
+        opacity:'0',
+        position:'absolute',
+        top:'1em',
+        right:'8em',
+        height:'22em',
+        overflow:'hidden',
+        width:'22em',
+        animation: `$slideInFromRight 5s ease-in 3s 1`,
+        animationFillMode: 'forwards',
+        [theme.breakpoints.up('xl')]:{
+            height:'25em',
+            width:'25em',
+            top:'-3em',
+            right:'4em',
+        },
+        [theme.breakpoints.down('lg')]:{
+            height:'25em',
+            width:'25em',
+        },
+        [theme.breakpoints.down('md')]:{
+            height:'25em',
+            width:'25em',
+        },
+        [theme.breakpoints.down('sm')]:{
+            height:'18em',
+            width:'18em',
+        },
+        [theme.breakpoints.down('xs')]:{
+            height:'15em',
+            width:'15em',
+            right:'6em',
+            top:'6em',
+        },
+      },
+      '@keyframes slideInFromRight': {
+        '0%': {
+          transform: 'translateX(0%)',
+          opacity:'0',
+          overflow:'hidden',
+
+
+        },
+        '100%': {
+          transform: 'translateX(-20%)',
+          opacity:'1',
+          overflow:'hidden',
+        },
+      },
+
 });
 
 export default useStyles;

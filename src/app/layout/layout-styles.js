@@ -17,7 +17,7 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles({
     cursor: {
         position: 'fixed',
-        padding:'4.8em',
+        padding:'6.8em',
         backgroundColor: '#fff',
         borderRadius: '50%',
         mixBlendMode:'difference',
@@ -27,6 +27,9 @@ const useStyles = makeStyles({
         [theme.breakpoints.down('xs')]:{
           display:'none',
        },
+      },
+      hideCursor:{
+        display:'none',
       }
 });
 

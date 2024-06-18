@@ -8,6 +8,9 @@ import NodeJs from '../../assets/node.png';
 import html5 from '../../assets/html.png';
 import Aster from '../../assets/pngegg.png';
 import CSS from '../../assets/css.png';
+import NEXTComet from '../../assets/nextComet.png';
+import CPPComet from '../../assets/cppComet.png'; 
+import Code from '../../assets/code.png'
 import { createTheme } from '@mui/material';
 
 const theme = createTheme({
@@ -98,6 +101,9 @@ const theme = createTheme({
     width: '90px',
     height: '90px',
     background: 'yellow',
+    backgroundImage: `url(${Code})`,
+    backgroundSize: 'cover',
+    backgroundRepeat:'no-repeat',
     borderRadius: '50%',
     boxShadow: '0 0 20px yellow, 0 0 60px rgb(255, 81, 0)',
     [theme.breakpoints.down('md')]:{
@@ -110,8 +116,22 @@ const SkillComponent = () =>{
     return(
         <Stack height={'100vh'} width={'100vw'} sx={{backgroundColor:'#fff'}} id='skills'>
                 <SolarSystem>
+                <Box sx={{
+          position: 'absolute',
+          top: { xxs: '3em', xs: '3em', sm: '10em' }, 
+          left: { xxs: '1em', xs: '2em', sm: '18em' },
+        }}>
+          <img src={NEXTComet} height={'180px'} width={'180px'} />
+        </Box>
+        <Box sx={{
+          position: 'absolute',
+          top: { xxs: '15em', xs: '4em', sm: '22em' }, 
+          right: { xxs: '1em', xs: '-1em', sm: '12em' },
+        }}>
+          <img src={CPPComet} height={'160px'} width={'160px'} />
+        </Box>
                     <Sun />
-                    <img src={Aster} height={'360px'} width={'360px'} style={{position:'absolute'}}/>
+                    <img src={Aster} height={'320px'} width={'320px'} style={{position:'absolute', userSelect:'none'}}/>
 
                     <OrbitWithIcon color="blue" size="220px" duration="rotating-anim 5s" icon={ReactImg} />
                     <OrbitWithIcon color="" size="350px" duration="rotating-anim 8.5s" icon={Python} />
@@ -119,7 +139,7 @@ const SkillComponent = () =>{
                     <OrbitWithIcon color="white" size="550px" duration="rotating-anim 14.5s" icon={NodeJs} />
                     <OrbitWithIcon color="" size="650px" duration="rotating-anim 16s" icon={html5} />
                     <OrbitWithIcon color="" size="750px" duration="rotating-anim 19s" icon={CSS} />
-                    <img src={Aster} height={'960px'} width={'960px'} style={{position:'absolute'}}/>
+                    <img src={Aster} height={'980px'} width={'980px'} style={{position:'absolute'}}/>
                 </SolarSystem>
 
         </Stack>
