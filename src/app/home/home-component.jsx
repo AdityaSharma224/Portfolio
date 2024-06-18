@@ -8,6 +8,7 @@ import LinkedInImage from '../../assets/linkedin.svg';
 import GithubImage from '../../assets/github.svg';
 import LeetcodeImage from '../../assets/leetcode.svg';
 import Clouds from '../../assets/clouds.png';
+import Tooltip from '@mui/material/Tooltip';
 import DarkCloud from '../../assets/darkCloud.png';
 
 const HomeComponent = () =>{
@@ -26,9 +27,15 @@ const HomeComponent = () =>{
                         <Typography className={classes.typoa} sx={{ typography: { xs: 'h5', sm: 'h5', md: 'h4' } }} color={'#fff'}>{'Software Engineer'}</Typography>
                     </Stack>
                     <Stack className={classes.socialIcons} flexDirection={'row'}>
-                       <Link href="https://www.linkedin.com/in/adityasharma13064" target="_blank"><Stack component={'img'} src={LinkedInImage} className={classes.icon}/></Link>
-                       <Link href="https://github.com/AdityaSharma224" target="_blank"><Stack component={'img'} src={GithubImage} className={classes.icon}/></Link>
-                       <Link href="https://leetcode.com/u/sharmaaditya224" target="_blank"><Stack component={'img'} src={LeetcodeImage} className={classes.icon}/></Link>
+                        <Tooltip title='LinkedIn' placement='right-start' arrow >
+                            <Link href="https://www.linkedin.com/in/adityasharma13064" target="_blank"><Stack component={'img'} src={LinkedInImage} className={classes.icon}/></Link>
+                        </Tooltip>
+                        <Tooltip title='Github' placement='right-start' arrow >
+                            <Link href="https://github.com/AdityaSharma224" target="_blank"><Stack component={'img'} src={GithubImage} className={classes.icon}/></Link>
+                       </Tooltip>
+                       <Tooltip title='LeetCode (Top 6% worldwide)' placement='right-start' arrow >
+                            <Link href="https://leetcode.com/u/sharmaaditya224" target="_blank"><Stack component={'img'} src={LeetcodeImage} className={classes.icon}/></Link>
+                       </Tooltip>
                     </Stack>
                 </Stack>
                 <img className={classes.image} src={Myimage} alt='aditya'></img>

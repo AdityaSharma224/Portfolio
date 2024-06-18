@@ -22,6 +22,19 @@ function App() {
         fontFamily:'"Roboto Mono",monospace'
       },
     },
+    components: {
+      MuiTooltip: {
+        styleOverrides: {
+          tooltip: {
+            fontSize: "16px",
+            color: "#000",
+            backgroundColor: "#D3D3D3",
+            padding:'10px 22px',
+            fontWeight:600,
+          },
+        },
+    },
+  },
   });
   return ( 
     <ThemeProvider theme={theme}>
