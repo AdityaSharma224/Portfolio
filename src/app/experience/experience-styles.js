@@ -147,8 +147,6 @@ const useStyles = makeStyles({
     description:{
         color:'#fff',
     },
-
-    
 });
 
 export default useStyles;
