@@ -22,9 +22,9 @@ const HomeComponent = () =>{
                 <Stack component={'img'} src={Clouds} position={'absolute'} className={classes.cloudsRight}/>
                 <Stack className={classes.detailsWrapper} >
                     <Stack className={classes.typoWrapper}>
-                        <Typography className={classes.typoa} sx={{ typography: { xs: 'h3', sm: 'h4', md: 'h2' } }} color={'#fff'}>{'Hello'}</Typography>
-                        <Typography className={classes.typoa} sx={{ typography: { xs: 'h2', sm: 'h2', md: 'h1'}, fontWeight:{xs: 700, sm: 700, md: 700, lg:700, xl:700} }} color={'#fff'}>{'I\'m Aditya'}</Typography>
-                        <Typography className={classes.typoa} sx={{ typography: { xs: 'h5', sm: 'h5', md: 'h4' } }} color={'#fff'}>{'Software Engineer'}</Typography>
+                        <Typography sx={{ typography: { xs: 'h3', sm: 'h4', md: 'h2' } }} color={'#fff'}>{'Hello'}</Typography>
+                        <Typography sx={{ typography: { xs: 'h2', sm: 'h2', md: 'h1'}, fontWeight:{xs: 700, sm: 700, md: 700, lg:700, xl:700} }} color={'#fff'}>{'I\'m Aditya'}</Typography>
+                        <Typography sx={{ typography: { xs: 'h5', sm: 'h5', md: 'h4' } }} color={'#fff'}>{'Software Engineer'}</Typography>
                     </Stack>
                     <Stack className={classes.socialIcons} flexDirection={'row'}>
                         <Tooltip title='LinkedIn' placement='right-start' arrow >
