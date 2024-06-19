@@ -2,7 +2,6 @@ import { makeStyles } from '@mui/styles';
 import { createTheme } from '@mui/material';
 import BackgroundImg from '../../assets/background-home.png';
 
-
 const theme = createTheme({
     breakpoints:{
         values:{
@@ -131,14 +130,11 @@ const useStyles = makeStyles({
           transform: 'translateX(-100%)',
           opacity:'0',
           overflow:'hidden',
-
-
         },
         '100%': {
           transform: 'translateX(0)',
           opacity:'1',
           overflow:'hidden',
-
         },
       },
       leftCloud2: {
@@ -179,8 +175,6 @@ const useStyles = makeStyles({
           transform: 'translateX(-100%)',
           opacity:'0',
           overflow:'hidden',
-
-
         },
         '100%': {
           transform: 'translateX(0)',
@@ -189,7 +183,6 @@ const useStyles = makeStyles({
 
         },
       },
-
       cloudsRight: {
         // Include the animation here
         opacity:'0',
@@ -231,8 +224,6 @@ const useStyles = makeStyles({
           transform: 'translateX(0%)',
           opacity:'0',
           overflow:'hidden',
-
-
         },
         '100%': {
           transform: 'translateX(-20%)',
