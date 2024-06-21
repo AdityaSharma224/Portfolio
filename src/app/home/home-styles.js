@@ -164,8 +164,8 @@ const useStyles = makeStyles({
             left:'8em',
         },
         [theme.breakpoints.down('xs')]:{
-            height:'18em',
-            width:'18em',
+            height:'16em',
+            width:'16em',
             top:'2em',
             left:'9em',
         },
