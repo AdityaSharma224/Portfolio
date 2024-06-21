@@ -44,12 +44,17 @@ const useStyles = makeStyles({
        [theme.breakpoints.down('md')]:{
         width:'800px',
         height:'600px',
-        marginTop:'3em',
+        marginTop:'2em',
        },
        [theme.breakpoints.down('sm')]:{
         width:'400px',
-        height:'750px',
-        marginTop:'2em',
+        height:'700px',
+        marginTop:'1em',
+       },
+       [theme.breakpoints.down('xs')]:{
+        width:'400px',
+        height:'600px',
+        marginTop:'-9em',
        },
     },
     titleWrapper:{
@@ -81,11 +86,19 @@ const useStyles = makeStyles({
     tableWrapper:{
       backgroundColor:'#fff',
       width:'100%',
-      height:'100%'
+      height:'100%',      
     },
     table:{
+      fontSize:'18px',
+      [theme.breakpoints.down('md')]:{
+       
+       },
+       [theme.breakpoints.down('xs')]:{
+        fontSize:'14px',
+        whiteSpace:'wrap'
+       },
+    },
 
-    }
 });
 
 export default useStyles;

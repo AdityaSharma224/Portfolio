@@ -46,9 +46,6 @@ const ArticleComponent = () => {
               sx={{ m: 1, minWidth: 120, color: "#fff" }}
               size="small"
             >
-              <InputLabel id="demo-select-small-label" color="primary">
-                Category
-              </InputLabel>
               <Select
                 labelId="demo-select-small-label"
                 id="demo-select-small"
@@ -73,6 +70,7 @@ const ArticleComponent = () => {
             <TableContainer
               component={Paper}
               style={{ height: filteredArticles.length * 88 + "px" }}
+              className={classes.container}
             >
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
@@ -84,10 +82,10 @@ const ArticleComponent = () => {
                 <TableBody>
                   {filteredArticles.map((article, index) => (
                     <TableRow key={article.id}>
-                      <TableCell>
+                      <TableCell sx={{width:'20px'}}>
                         {index + 1}
                       </TableCell>
-                      <TableCell>
+                      <TableCell sx={{width:'400px', height:'100%'}}>
                         <a
                           href={article.link}
                           style={{
@@ -96,6 +94,7 @@ const ArticleComponent = () => {
                           }}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className={classes.table}
                         >
                           {article.title}
                         </a>
