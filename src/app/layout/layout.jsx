@@ -50,7 +50,9 @@ const Layout = () =>{
             <div ref={skillsRef}>
                 <SkillComponent />
             </div>
+            <div ref={skillsRef}>
             <ArticleComponent />
+            </div>
             <ProjectsComponent />
             <div className={`${classes.cursor} ${isSkillsVisible ? classes.hideCursor : ''}`} ref={cursorRef}></div>
         </Stack>

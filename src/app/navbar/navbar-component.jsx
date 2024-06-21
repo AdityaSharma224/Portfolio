@@ -42,7 +42,7 @@ const NavbarComponent = () =>{
                 <span><Link activeClass='active' to="home" spy={true} smooth={true} duration={500} className={classes.item}>Home</Link></span>
                 <span><Link activeClass='active' to="experience" spy={true} smooth={true} duration={500} className={classes.item}>Experience</Link></span>
                 <span><Link activeClass='active' to="skills" spy={true} smooth={true} duration={500} className={classes.item}>Skills</Link></span>
-                <span><Link activeClass='active' to="articles" spy={true} smooth={true} duration={500} className={classes.item}>Articles</Link></span>
+                <span><Link activeClass='active' to="articles" spy={true} smooth={true} duration={500} className={classes.item}>Tech-articles</Link></span>
                 <span><Link activeClass='active' to="projects" spy={true} smooth={true} duration={500} className={classes.item}>Projects</Link></span>
             </Stack>
             <Stack className={classes.menu} flexDirection={'row'} onClick={toggleExpansion}>
@@ -55,7 +55,7 @@ const NavbarComponent = () =>{
                   <Link activeClass='active' to="home" spy={true} smooth={true} duration={500} className={classes.menuItem} onClick={closeMenu}>Home</Link>
                   <Link activeClass='active' to="experience" spy={true} smooth={true} duration={500} className={classes.menuItem} onClick={closeMenu}>Experience</Link>
                   <Link activeClass='active' to="skills" spy={true} smooth={true} duration={500} className={classes.menuItem} onClick={closeMenu}>Skills</Link>
-                  <Link activeClass='active' to="articles" spy={true} smooth={true} duration={500} className={classes.menuItem} onClick={closeMenu}>Articles</Link>
+                  <Link activeClass='active' to="articles" spy={true} smooth={true} duration={500} className={classes.menuItem} onClick={closeMenu}>Tech-articles</Link>
                   <Link activeClass='active' to="projects" spy={true} smooth={true} duration={500} className={classes.menuItem} onClick={closeMenu}>Projects</Link>
                 </Stack>
               )}

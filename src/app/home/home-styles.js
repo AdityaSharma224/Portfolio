@@ -216,7 +216,7 @@ const useStyles = makeStyles({
             height:'18em',
             width:'18em',
             right:'7em',
-            top:'9em',
+            top:'7em',
         },
       },
       '@keyframes slideInFromRight': {
