@@ -164,10 +164,10 @@ const useStyles = makeStyles({
             left:'8em',
         },
         [theme.breakpoints.down('xs')]:{
-            height:'14em',
-            width:'14em',
+            height:'18em',
+            width:'18em',
             top:'2em',
-            left:'7em',
+            left:'9em',
         },
       },
       '@keyframes slideInFromLeft': {
@@ -213,10 +213,10 @@ const useStyles = makeStyles({
             width:'18em',
         },
         [theme.breakpoints.down('xs')]:{
-            height:'15em',
-            width:'15em',
-            right:'6em',
-            top:'6em',
+            height:'18em',
+            width:'18em',
+            right:'7em',
+            top:'9em',
         },
       },
       '@keyframes slideInFromRight': {
