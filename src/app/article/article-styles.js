@@ -48,8 +48,8 @@ const useStyles = makeStyles({
        },
        [theme.breakpoints.down('sm')]:{
         width:'400px',
-        height:'800px',
-        marginTop:'3em',
+        height:'750px',
+        marginTop:'2em',
        },
     },
     titleWrapper:{
@@ -78,10 +78,13 @@ const useStyles = makeStyles({
         color:'#000'
       },
     },
-    table:{
+    tableWrapper:{
       backgroundColor:'#fff',
       width:'100%',
       height:'100%'
+    },
+    table:{
+
     }
 });
 
