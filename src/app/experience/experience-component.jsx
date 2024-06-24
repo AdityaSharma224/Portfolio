@@ -11,6 +11,11 @@ import {
   CONTLO_DESCRIPTION,
   GFG_DESCRIPTION,
 } from "../constants";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import { CardActionArea } from "@mui/material";
+import Button from "@mui/material/Button";
 
 const ExperienceComponent = () => {
   const classes = useStyles();
@@ -88,71 +93,30 @@ const ExperienceComponent = () => {
             >
               {"Experience"}
             </Typography>
-            <Stack sx={{ height: "100%", width: "100%" }}>
-              <Stack className={classes.list}>
-                {experiences.map((exp, index) => (
-                  <Stack className={classes.experienceItem} key={index}>
-                    <Stack
-                      className={classes.wrapperA}
-                      width={"100%"}
-                      gap={1}
-                      sx={{
-                        flexDirection: {
-                          xs: "row",
-                          sm: "row",
-                          md: "row",
-                          lg: "row",
-                          xl: "row",
-                        },
-                      }}
-                    >
-                      <span style={{ marginTop: "-20px" }}>{exp.icon}</span>
-                      <Typography
-                        sx={{
-                          typography: { xs: "body2" },
-                          fontWeight: { xs: 700 },
-                        }}
-                        className={classes.experienceYear}
-                      >
-                        {exp.year}
-                      </Typography>
-                    </Stack>
-                    <Stack
-                      className={classes.experienceDetails}
-                      flexDirection={"column"}
-                    >
-                      <Typography
-                        className={classes.title}
-                        sx={{
-                          typography: {
-                            xs: "body1",
-                            sm: "h6",
-                            md: "h6",
-                            lg: "h5",
-                            xl: "h5",
-                          },
-                        }}
-                      >
-                        {exp.title}
-                      </Typography>
-                      <Typography
-                        className={classes.description}
-                        sx={{
-                          typography: {
-                            xs: "subtitle2",
-                            sm: "body1",
-                            md: "body1",
-                            lg: "body1",
-                            xl: "body1",
-                          },
-                        }}
-                      >
-                        {exp.description}
-                      </Typography>
-                    </Stack>
-                  </Stack>
-                ))}
-              </Stack>
+            <Stack
+              sx={{ height: "100%", width: "100%", alignItems: "center" }}
+              flexDirection={"row"}
+              gap={2}
+              borderRadius={'20px'}
+            >
+              <Button>{"Prev"}</Button>
+              <Card sx={{ maxWidth: 600, minWidth:600,height: 600, borderRadius:'20px' }}>
+                <CardActionArea sx={{borderRadius:'20px'}}>
+                   <Stack padding={2} flexDirection={'row'} alignItems={'flex-end'} justifyContent={'space-between'} sx={{borderRadius:'20px'}}>
+                    <img src={CASTIcon} height={'80px'} width={'280px'}></img>
+                    <Typography variant="h6">{'tenure'}</Typography>
+                   </Stack>
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {'Software Development Engineer'}
+                    </Typography>
+                    <Typography variant="body2" color="text">
+                      {''}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+              <Button>{"Next"}</Button>
             </Stack>
           </Stack>
         </Stack>

@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
  import { createTheme } from '@mui/material';
- import BackgroundImg from '../../assets/background-about.png';
+ import BackgroundImg from '../../assets/background-home.png';
 
 const theme = createTheme({
     breakpoints:{
@@ -17,24 +17,22 @@ const theme = createTheme({
 
 const useStyles = makeStyles({
     wrapper:{
-        height:'132vh',
+        height:'100vh',
         width:'100vw',
-        backgroundImage:`url(${BackgroundImg})`,
-        backgroundRepeat:'no-repeat',
-        backgroundSize:'cover',
+        backgroundColor:'#000',
         alignItems:'center',
         justifyContent:'center',
         [theme.breakpoints.down('lg')]:{
             width:'100vw',
-            height:'120vh',
+            height:'100vh',
         },
         [theme.breakpoints.down('xs')]:{
-            height:'130vh',
+            height:'100vh',
         },
     },
     myImage:{
         width:'40%',
-        height:'100%',
+        height:'135%',
         [theme.breakpoints.down('md')]:{
             display:'none',
             height:'0%',
@@ -50,7 +48,7 @@ const useStyles = makeStyles({
         },
     },
     experienceWrapper:{
-        marginTop:'8em',
+        padding:'2em',
         gap:'6em',
         alignItems:'center',
         width:'800px',

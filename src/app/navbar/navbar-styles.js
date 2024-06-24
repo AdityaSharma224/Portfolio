@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     wrapper:{
         height:'60px',
         width:'800px',
-        backgroundColor:'#544238',
+        backgroundColor:'#3E261C',
         alignSelf:'center',
         position:'fixed',
         marginTop:10,
@@ -112,7 +112,7 @@ const useStyles = makeStyles({
         marginTop:'20em',
         borderRadius:'20px',
         border:'2px solid #362922',
-        backgroundColor:'#544238',
+        backgroundColor:'#3E261C',
         alignItems:'center',
         gap:'1.3em',
         justifyContent:'center',

@@ -36,7 +36,7 @@ const theme = createTheme({
     position: 'relative',
     width: '100%',
     height: '100%',
-    background: 'rgb(11, 7, 7)',
+    background: '#000',
     overflow: 'hidden',
   });
   

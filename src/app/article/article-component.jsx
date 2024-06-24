@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Stack from "@mui/material/Stack";
 import useStyles from "./article-styles";
 import { Typography } from "@mui/material";
@@ -15,19 +15,95 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
 import { articles } from "../constants";
 
 const ArticleComponent = () => {
   const classes = useStyles();
   const [category, setCategory] = React.useState("dataStructure");
+  const [sliderIndex, setSliderIndex] = React.useState(0);
+
+  const cardInfo = [
+    {
+      title: "Binary Trees",
+      description:
+        "Binary trees are a type of data structure for storing data such as hierarchical data.",
+      image: "/static/images/cards/binary-tree.jpg",
+      link: "#binaryTree",
+      category: "dataStructure",
+    },
+    {
+      title: "Linked Lists",
+      description:
+        "Linked lists are a linear collection of data elements where each element points to the next.",
+      image: "/static/images/cards/linked-list.jpg",
+      link: "#linkedList",
+      category: "dataStructure",
+    },
+    {
+      title: "awdawdawd",
+      description:
+        "Graphs are a set of nodes connected by edges, used to represent networks.",
+      image: "/static/images/cards/graph.jpg",
+      link: "#graph",
+      category: "dataStructure",
+    },
+    {
+      title: "Bawdawdaws",
+      description:
+        "Binary trees are a type of data structure for storing data such as hierarchical data.",
+      image: "/static/images/cards/binary-tree.jpg",
+      link: "#binaryTree",
+      category: "dataStructure",
+    },
+    {
+      title: "Liawdawdts",
+      description:
+        "Linked lists are a linear collection of data elements where each element points to the next.",
+      image: "/static/images/cards/linked-list.jpg",
+      link: "#linkedList",
+      category: "dataStructure",
+    },
+    {
+      title: "awdawdawd",
+      description:
+        "Graphs are a set of nodes connected by edges, used to represent networks.",
+      image: "/static/images/cards/graph.jpg",
+      link: "#graph",
+      category: "dataStructure",
+    },
+  ];
 
   const handleChange = (event) => {
     setCategory(event.target.value);
+    setSliderIndex(0); // Reset the slider index when category changes
   };
 
-  const filteredArticles = articles.filter(
-    (article) => article.category === category
+  const filteredCardInfo = cardInfo.filter(
+    (card) => card.category === category
   );
+  const displayedCards = filteredCardInfo.slice(
+    sliderIndex * 3,
+    (sliderIndex + 1) * 3
+  );
+
+  const goToPrevSlide = () => {
+    setSliderIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + Math.ceil(filteredCardInfo.length / 3)) %
+        Math.ceil(filteredCardInfo.length / 3)
+    );
+  };
+
+  const goToNextSlide = () => {
+    setSliderIndex(
+      (prevIndex) => (prevIndex + 1) % Math.ceil(filteredCardInfo.length / 3)
+    );
+  };
 
   return (
     <Stack id="articles" className={classes.wrapper}>
@@ -65,46 +141,40 @@ const ArticleComponent = () => {
             </FormControl>
           </Stack>
         </Stack>
-        <Stack className={classes.tableWrapper}>
-          <Stack className={classes.table}>
-            <TableContainer
-              component={Paper}
-              style={{ height: filteredArticles.length * 88 + "px" }}
-              className={classes.container}
+        <Stack className={classes.tableWrapper} flexDirection={"row"}>
+          <Button onClick={goToPrevSlide}>Prev</Button>
+          {displayedCards.map((card, index) => (
+            <Card
+              key={index}
+              sx={{
+                maxWidth: 345,
+                backgroundColor: "#fff",
+                borderRadius: "20px",
+                margin: "0 8px",
+                flexDirection: "column",
+              }}
             >
-              <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Serial No</TableCell>
-                    <TableCell>Article Title</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {filteredArticles.map((article, index) => (
-                    <TableRow key={article.id}>
-                      <TableCell sx={{width:'20px'}}>
-                        {index + 1}
-                      </TableCell>
-                      <TableCell sx={{width:'400px', height:'100%'}}>
-                        <a
-                          href={article.link}
-                          style={{
-                            textDecoration: "none",
-                            color: "#1976d2",
-                          }}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={classes.table}
-                        >
-                          {article.title}
-                        </a>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
-          </Stack>
+              <CardMedia
+                sx={{ height: 140 }}
+                image={card.image}
+                title={card.title}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {card.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {card.description}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" sx={{ textTransform: "none" }}>
+                  Go to article
+                </Button>
+              </CardActions>
+            </Card>
+          ))}
+          <Button onClick={goToNextSlide}>Next</Button>
         </Stack>
       </Stack>
     </Stack>

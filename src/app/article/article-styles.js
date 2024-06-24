@@ -16,44 +16,36 @@ const theme = createTheme({
 
 const useStyles = makeStyles({
     wrapper:{
-        height:'100vh',
+        height:'80vh',
         width:'100vw',
-        backgroundImage:`url(${BackgroundImg})`,
-        backgroundRepeat:'no-repeat',
-        backgroundSize:'cover',
         alignItems:'center',
         justifyContent:'center',
+        backgroundColor:'#000',
+        backgroundSize:'cover',
     },
     innerWrapper:{
        width:'1400px',
-       height:'800px',
-       marginTop:'4em',
        borderRadius:'30px',
        alignItems:'center',
        backgroundColor:'#544238',
        [theme.breakpoints.down('xl')]:{
         width:'1200px',
-        height:'700px',
         marginTop:'3em',
        },
        [theme.breakpoints.down('lg')]:{
         width:'1000px',
-        height:'600px',
         marginTop:'3em',
        },
        [theme.breakpoints.down('md')]:{
         width:'800px',
-        height:'600px',
         marginTop:'2em',
        },
        [theme.breakpoints.down('sm')]:{
         width:'400px',
-        height:'700px',
         marginTop:'1em',
        },
        [theme.breakpoints.down('xs')]:{
         width:'400px',
-        height:'600px',
         marginTop:'-9em',
        },
     },
@@ -84,20 +76,12 @@ const useStyles = makeStyles({
       },
     },
     tableWrapper:{
-      backgroundColor:'#fff',
-      width:'100%',
-      height:'100%',      
-    },
-    table:{
-      fontSize:'18px',
-      [theme.breakpoints.down('md')]:{
-       
-       },
-       [theme.breakpoints.down('xs')]:{
-        fontSize:'14px',
-        whiteSpace:'wrap'
-       },
-    },
+      alignItems:'center',
+      justifyContent:'center',
+      padding:'15px 0'
+
+    }
+    
 
 });
 
