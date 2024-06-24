@@ -145,6 +145,22 @@ const useStyles = makeStyles({
     description:{
         color:'#fff',
     },
+    icon: {
+     
+        cursor: 'pointer',
+        animation: '$pulsate 2s infinite ease-in-out',
+      },
+      // ... other styles
+      '@keyframes pulsate': {
+        '0%, 100%': {
+          transform: 'scale(0.7)',
+          opacity: 1, // Opacity should be between 0 (transparent) and 1 (opaque)
+        },
+        '50%': {
+          transform: 'scale(0.8)',
+          opacity: 0.7,
+        },
+      },
 });
 
 export default useStyles;

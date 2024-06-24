@@ -90,7 +90,8 @@ const ExperienceComponent = () => {
               <IconButton onClick={goToPrevCard}>
                 <KeyboardDoubleArrowLeftIcon
                   htmlColor="#fff"
-                  fontSize="large"
+                  className={classes.icon}
+                  sx={{height:60,width:60}}
                 />
               </IconButton>
               {experiences.map(
@@ -125,7 +126,7 @@ const ExperienceComponent = () => {
                           <Typography gutterBottom variant="h5" component="div">
                             {experience.title}
                           </Typography>
-                          <Typography variant="body2" color="text">
+                          <Typography variant="body1" color="text">
                             {experience.description}
                           </Typography>
                         </CardContent>
@@ -136,7 +137,8 @@ const ExperienceComponent = () => {
               <IconButton onClick={goToNextCard}>
                 <KeyboardDoubleArrowRightIcon
                   htmlColor="#fff"
-                  fontSize="large"
+                  className={classes.icon}
+                  sx={{height:60,width:60}}
                 />
               </IconButton>
             </Stack>
