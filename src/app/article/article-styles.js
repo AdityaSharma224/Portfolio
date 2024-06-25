@@ -27,7 +27,6 @@ const useStyles = makeStyles({
        width:'1400px',
        borderRadius:'30px',
        alignItems:'center',
-       backgroundColor:'#544238',
        [theme.breakpoints.down('xl')]:{
         width:'1200px',
         marginTop:'3em',
@@ -53,13 +52,17 @@ const useStyles = makeStyles({
       width:'100%',
       alignItems:'center',
       padding:'1.1em',
-      gap:'2em',
+      justifyContent:'flex-end',
+      [theme.breakpoints.down('xs')]:{
+        justifyContent:'center'
+       },
     },
     title:{
       width:'100%',
       gap:9,
     },
     select:{
+      alignSelf:'flex-end',
       '& .MuiInputBase-input':{
         border:'2px solid #fff',
         backgroundColor:'#fff',
@@ -74,13 +77,30 @@ const useStyles = makeStyles({
       '& .MuiSelect-icon':{
         color:'#000'
       },
+      [theme.breakpoints.down('xs')]:{
+        alignSelf:'center'
+       },
     },
     tableWrapper:{
       alignItems:'center',
       justifyContent:'center',
       padding:'15px 0'
-
-    }
+    },
+    icon: {
+      cursor: 'pointer',
+      animation: '$pulsate 2s infinite ease-in-out',
+    },
+    // ... other styles
+    '@keyframes pulsate': {
+      '0%, 100%': {
+        transform: 'scale(0.7)',
+        opacity: 1, // Opacity should be between 0 (transparent) and 1 (opaque)
+      },
+      '50%': {
+        transform: 'scale(0.8)',
+        opacity: 0.7,
+      },
+    },
     
 
 });

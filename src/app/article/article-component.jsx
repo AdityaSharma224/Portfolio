@@ -1,20 +1,13 @@
 import React, { useState } from "react";
 import Stack from "@mui/material/Stack";
 import useStyles from "./article-styles";
-import { Typography } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-} from "@mui/material";
+import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
+import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -58,14 +51,6 @@ const ArticleComponent = () => {
     <Stack id="articles" className={classes.wrapper}>
       <Stack className={classes.innerWrapper}>
         <Stack className={classes.titleWrapper} flexDirection={"row"}>
-          <Stack className={classes.title} flexDirection={"row"}>
-            <Typography
-              color={"#fff"}
-              sx={{ typography: { lg: "h5", md: "h5", sm: "h6", xs: "body1" } }}
-            >
-              {"Technical articles"}
-            </Typography>
-          </Stack>
           <Stack className={classes.selector}>
             <FormControl
               sx={{ m: 1, minWidth: 120, color: "#fff" }}
@@ -78,6 +63,7 @@ const ArticleComponent = () => {
                 autoWidth
                 onChange={handleChange}
                 className={classes.select}
+                sx={{ '.MuiOutlinedInput-notchedOutline': { borderStyle: 'none' } }}
               >
                 <MenuItem value={"dataStructure"}>Data structures</MenuItem>
                 <MenuItem value={"algorithm"}>Algorithm</MenuItem>
@@ -91,25 +77,38 @@ const ArticleComponent = () => {
           </Stack>
         </Stack>
         <Stack className={classes.tableWrapper} flexDirection={"row"}>
-          <Button onClick={goToPrevSlide}>Prev</Button>
+          <IconButton onClick={goToPrevSlide}>
+            <KeyboardDoubleArrowLeftIcon
+              htmlColor="#fff"
+              className={classes.icon}
+              sx={{
+                height: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
+                width: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
+              }}
+            />
+          </IconButton>{" "}
           {displayedCards.map((card, index) => (
             <Card
               key={index}
               sx={{
-                maxWidth: 345,
+                height: { xs: 400, sm: 400, md: 300, lg: 400, xl: 400 },
+                width: { xs: 350, sm: 400, md: 300, lg: 400, xl: 400 },
                 backgroundColor: "#fff",
                 borderRadius: "20px",
                 margin: "0 8px",
                 flexDirection: "column",
+                "&:nth-of-type(n+2)": {
+                  display: { xs: 'none', sx: 'none', sm: 'none', md: 'block', lg:'block' }, // Hide second and third card on 'sm' and below
+                },
               }}
             >
               <CardMedia
-                sx={{ height: 140 }}
+                sx={{ height: '45%', objectFit:'cover' }}
                 image={card.image}
                 title={card.title}
               />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+              <CardContent sx={{height:'40%'}}>
+                <Typography gutterBottom variant="body1" fontWeight={700} component="div">
                   {card.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
@@ -117,13 +116,22 @@ const ArticleComponent = () => {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" sx={{ textTransform: "none" }}>
+                <Button size="small" variant="text" sx={{ textTransform: "none" }} href={card.link} target="_blank">
                   Go to article
                 </Button>
               </CardActions>
             </Card>
           ))}
-          <Button onClick={goToNextSlide}>Next</Button>
+          <IconButton onClick={goToNextSlide}>
+            <KeyboardDoubleArrowRightIcon
+              htmlColor="#fff"
+              className={classes.icon}
+              sx={{
+                height: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
+                width: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
+              }}
+            />
+          </IconButton>{" "}
         </Stack>
       </Stack>
     </Stack>

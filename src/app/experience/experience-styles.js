@@ -48,105 +48,29 @@ const useStyles = makeStyles({
         },
     },
     experienceWrapper:{
-        padding:'2em',
-        gap:'6em',
         alignItems:'center',
         width:'800px',
         height:'100%',
         [theme.breakpoints.down('lg')]:{
             width:'600px',
-            marginTop:'2em',
-            gap:'2em',
         },
         [theme.breakpoints.down('md')]:{
             width:'600px',
-            marginTop:'2em',
-            gap:'2em',
         },
         [theme.breakpoints.down('sm')]:{
             width:'500px',
-            marginTop:'2em',
-            gap:'1em',
 
         },
         [theme.breakpoints.down('xs')]:{
             width:'400px',
-            marginTop:'2em',
-            gap:'2em',
         },
         [theme.breakpoints.down('xxs')]:{
             width:'350px',
-            marginTop:'2em',
-            gap:'2em',
         },
     },
-    list:{
-        borderLeft: '4px solid #fff',
-        paddingLeft: '20px',
-        [theme.breakpoints.down('xs')]:{
-           backgroundColor:'#544238',
-           borderLeft: 'none',
-           borderRadius:'20px',
-           padding:'10px'
-        },
-    },
-    cLogo:{
-        height:'70px',
-        width:'220px',
-        [theme.breakpoints.down('xxs')]:{
-           height:'50px',
-           width:'160px',
-         },
-    },
-    experienceItem:{
-        alignItems: 'flex-start',
-        position: 'relative',
-        gap:'0.7em',
-        '&::before': {
-            content: '""',
-            width: '25px',
-            height: '35px',
-            backgroundColor: '#fff',
-            borderRadius: '50%',
-            position: 'relative',
-            left: '-34px',
-            top: 0,
-            [theme.breakpoints.down('xs')]:{
-                backgroundColor:'#fff',
-                width:0,
-             },
-          },
-    },
-    wrapperA:{
-        justifyContent:'space-between',
-        width:'100%',
-        [theme.breakpoints.down('xs')]:{
-           flexDirection:'row',
-           alignItems:'center',
-           justifyContent:'space-between',
-        },
-    },
-    experienceYear:{
-        width: '180px',
-        color:'#fff',
-        textAlign:'end',
-        [theme.breakpoints.down('xs')]:{
-            marginLeft:'10px',
-         },
-    },
-    experienceDetails:{
-        height:'100%',
-        gap:20,
-        padding:'20px 0px',
-    },
-    title:{
-        color:'#fff',
-    },
-    description:{
-        color:'#fff',
-    },
+   
+   
     icon: {
-     
         cursor: 'pointer',
         animation: '$pulsate 2s infinite ease-in-out',
       },
@@ -164,9 +88,52 @@ const useStyles = makeStyles({
   cardWrapper:{
          maxWidth: 600,
          minWidth: 600,
-         height: 600,
+         height: 'fit-content',
          borderRadius: "20px",
-      }
+         [theme.breakpoints.down('lg')]:{
+            maxWidth:500,
+            minWidth:500,
+            height: 'fit-content',
+        },
+        [theme.breakpoints.down('md')]:{
+            maxWidth:500,
+            minWidth:500,
+            height: 'fit-content',
+        },
+        [theme.breakpoints.down('sm')]:{
+            maxWidth:350,
+            minWidth:350,
+            height: 'fit-content',
+        },
+        [theme.breakpoints.down('xs')]:{
+            maxWidth:320,
+            minWidth:320,
+            height: 'fit-content',
+        },
+      },
+      companyIcon:{
+        height:'80px',
+        width:'280px',
+        [theme.breakpoints.down('lg')]:{
+            height:'60px',
+            width:'180px',
+        },
+        [theme.breakpoints.down('md')]:{
+            
+        },
+        [theme.breakpoints.down('sm')]:{
+
+        },
+        [theme.breakpoints.down('xs')]:{
+            height:'50px',
+            width:'140px',
+        },
+        [theme.breakpoints.down('xxs')]:{
+           
+        },
+      },
+
 });
 
 export default useStyles;
+

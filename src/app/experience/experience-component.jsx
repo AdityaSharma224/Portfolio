@@ -6,15 +6,10 @@ import { IconButton, Typography } from "@mui/material";
 import GFGIcon from "../../assets/gfg.png";
 import CASTIcon from "../../assets/cast.png";
 import CONTLOIcon from "../../assets/contlo.png";
-import {
-  CAST_DESCRIPTION,
-  CONTLO_DESCRIPTION,
-  GFG_DESCRIPTION,
-} from "../constants";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 import { CardActionArea } from "@mui/material";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
@@ -28,36 +23,89 @@ const ExperienceComponent = () => {
       icon: CASTIcon,
       year: "10/2023 - Present",
       title: "Software Development Engineer - 1",
-      description: <List sx={{ listStyleType: 'disc', pl: 2, '& .MuiListItem-root': { display: 'list-item' } }}>
-      <ListItem>{'Developed a delicate desktop application to facilitate comprehensive source code analysis, understanding and architectural insights.'}</ListItem>
-      <ListItem>{'Frontend development of the CAST Imaging Analyzer, Utilizing the Wails framework with React.js for an intuitive user interface,catering to diverse operational environments.'}</ListItem>
-      <ListItem>{'Developed a dual-mode functionality-'}</ListItem>
-      <ListItem>{'Online Mode: Implemented a lightweight CAST analyzer that performs rapid scans of applications, identifies underlying technologies,
-and seamlessly integrates with CAST Imaging SaaS for automatic result uploads, enhancing efficiency and security.'}</ListItem>
-      <ListItem>{'Offline Mode: Established a robust local setup designed for comprehensive scans without internet dependency, optimizing for storage
-efficiency. Facilitated post-scan reviews, enabling precise manual uploads to CAST Imaging SaaS, ensuring data integrity and control.'}</ListItem>
-        <ListItem>{'Engineered an intuitive interface for efficient navigation, and initiation of the scanning process, ensuring a user-friendly experience'}</ListItem>
-    </List>,
+      description: (
+        <List
+          sx={{
+            listStyleType: "disc",
+            pl: 2,
+            "& .MuiListItem-root": { display: "list-item" },
+          }}
+        >
+          <ListItem>
+            {
+              "Frontend development of the CAST Imaging Analyzer, Utilizing the Wails framework with React.js for an intuitive user interface,catering to diverse operational environments."
+            }
+          </ListItem>
+          <ListItem>
+            {
+              "Online Mode: Implemented a lightweight CAST analyzer that performs rapid scans of applications, identifies underlying technologies, and seamlessly integrates with CAST Imaging SaaS for automatic result uploads, enhancing efficiency and security."
+            }
+          </ListItem>
+          <ListItem>
+            {
+              "Offline Mode: Established a robust local setup designed for comprehensive scans without internet dependency, optimizing for storage efficiency. Facilitated post-scan reviews, enabling precise manual uploads to CAST Imaging SaaS, ensuring data integrity and control."
+            }
+          </ListItem>
+        </List>
+      ),
     },
     {
       icon: CONTLOIcon,
       year: "07/2023 - 10/2023",
       title: "Software Development Engineer Intern",
-     description: <List sx={{ listStyleType: 'disc', pl: 2, '& .MuiListItem-root': { display: 'list-item' } }}>
-      <ListItem>{'Development of long-term memory capabilities for large language models, enhancing response relevance and accuracy by 65%.'}</ListItem>
-      <ListItem>{'Databases Integration (Redis, Pinecone) for vector storage.'}</ListItem>
-      <ListItem>{'Implemented innovative AI algorithms that improved overall system efficiency, resulting in a 30% reduction in response.'}</ListItem>
-    </List>,
+      description: (
+        <List
+          sx={{
+            listStyleType: "disc",
+            pl: 2,
+            "& .MuiListItem-root": { display: "list-item" },
+          }}
+        >
+          <ListItem>
+            {
+              "Development of long-term memory capabilities for large language models, enhancing response relevance and accuracy by 65%."
+            }
+          </ListItem>
+          <ListItem>
+            {"Databases Integration (Redis, Pinecone) for vector storage."}
+          </ListItem>
+          <ListItem>
+            {
+              "Implemented innovative AI algorithms that improved overall system efficiency, resulting in a 30% reduction in response."
+            }
+          </ListItem>
+        </List>
+      ),
     },
     {
       icon: GFGIcon,
       year: "10/2022 - 06/2023",
       title: "Member of Technical Staff Intern",
-      description: <List sx={{ listStyleType: 'disc', pl: 2, '& .MuiListItem-root': { display: 'list-item' } }}>
-      <ListItem>{'Worked closely with the Core Data Structure and Algorithm team at GeeksforGeeks.'}</ListItem>
-      <ListItem>{'Designed and developed the most viewed data structure and algorithm official tutorials e.g., Dijkstra's Algorithm, Set, Map, MaxHeap, and Min-Heap.'}</ListItem>
-      <ListItem>{'Improved Customer/Viewer Experience by delivering top quality content and Visuals.'}</ListItem>
-    </List>,
+      description: (
+        <List
+          sx={{
+            listStyleType: "disc",
+            pl: 2,
+            "& .MuiListItem-root": { display: "list-item" },
+          }}
+        >
+          <ListItem>
+            {
+              "Worked closely with the Core Data Structure and Algorithm team at GeeksforGeeks."
+            }
+          </ListItem>
+          <ListItem>
+            {
+              "Designed and developed the most viewed data structure and algorithm official tutorials e.g., Dijkstra's Algorithm, Set, Map, MaHeap, and Min-Heap."
+            }
+          </ListItem>
+          <ListItem>
+            {
+              "Improved Customer/Viewer Experience by delivering top quality content and Visuals."
+            }
+          </ListItem>
+        </List>
+      ),
     },
   ];
 
@@ -87,6 +135,7 @@ efficiency. Facilitated post-scan reviews, enabling precise manual uploads to CA
               variant="h1"
               color="#fff"
               fontWeight={700}
+              marginTop={3}
               sx={{
                 typography: {
                   xs: "h3",
@@ -96,6 +145,8 @@ efficiency. Facilitated post-scan reviews, enabling precise manual uploads to CA
                   xl: "h1",
                 },
                 fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
+                borderBottom:'4px solid #fff',
+                borderRadius:'15px',
               }}
             >
               Experience
@@ -103,23 +154,22 @@ efficiency. Facilitated post-scan reviews, enabling precise manual uploads to CA
             <Stack
               sx={{ height: "100%", width: "100%", alignItems: "center" }}
               flexDirection={"row"}
-              gap={2}
               borderRadius={"20px"}
             >
               <IconButton onClick={goToPrevCard}>
                 <KeyboardDoubleArrowLeftIcon
                   htmlColor="#fff"
                   className={classes.icon}
-                  sx={{height:60,width:60}}
+                  sx={{
+                    height: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
+                    width: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
+                  }}
                 />
               </IconButton>
               {experiences.map(
                 (experience, index) =>
                   index === currentIndex && (
-                    <Card
-                      key={index}
-                      className={classes.cardWrapper}
-                    >
+                    <Card key={index} className={classes.cardWrapper}>
                       <CardActionArea sx={{ borderRadius: "20px" }}>
                         <Stack
                           padding={2}
@@ -130,17 +180,73 @@ efficiency. Facilitated post-scan reviews, enabling precise manual uploads to CA
                         >
                           <img
                             src={experience.icon}
-                            height={"80px"}
-                            width={"280px"}
+                            className={classes.companyIcon}
                             alt={experience.title}
                           />
-                          <Typography variant="h6">{experience.year}</Typography>
+                          <Typography
+                            sx={{
+                              typography: {
+                                xs: "caption",
+                                sm: "body2",
+                                md: "h7",
+                                lg: "h7",
+                                xl: "h7",
+                              },
+                              fontWeight: {
+                                xs: 700,
+                                sm: 700,
+                                md: 700,
+                                lg: 700,
+                                xl: 700,
+                              },
+                            }}
+                          >
+                            {experience.year}
+                          </Typography>
                         </Stack>
                         <CardContent>
-                          <Typography gutterBottom variant="h5" component="div">
+                          <Typography
+                            gutterBottom
+                            sx={{
+                              typography: {
+                                xs: "body2",
+                                sm: "body1",
+                                md: "h6",
+                                lg: "h6",
+                                xl: "h5",
+                              },
+                              fontWeight: {
+                                xs: 700,
+                                sm: 700,
+                                md: 700,
+                                lg: 700,
+                                xl: 700,
+                              },
+                            }}
+                            component="div"
+                            className={classes.roleTitle}
+                          >
                             {experience.title}
                           </Typography>
-                          <Typography variant="body1" color="text">
+                          <Typography
+                            sx={{
+                              typography: {
+                                xs: "caption",
+                                sm: 'body3',
+                                md: "body3",
+                                lg: "body1",
+                                xl: "body1",
+                              },
+                              fontWeight: {
+                                xs: 700,
+                                sm: 700,
+                                md: 700,
+                                
+                              },
+                            }}
+                            color={"#000"}
+                            className={classes.description}
+                          >
                             {experience.description}
                           </Typography>
                         </CardContent>
@@ -152,7 +258,10 @@ efficiency. Facilitated post-scan reviews, enabling precise manual uploads to CA
                 <KeyboardDoubleArrowRightIcon
                   htmlColor="#fff"
                   className={classes.icon}
-                  sx={{height:60,width:60}}
+                  sx={{
+                    height: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
+                    width: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
+                  }}
                 />
               </IconButton>
             </Stack>
