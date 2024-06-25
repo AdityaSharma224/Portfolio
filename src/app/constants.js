@@ -8,6 +8,7 @@ export const cardInfo = [
     title: 'Insertion in Binary Search Tree (BST)',
     link: "https://www.geeksforgeeks.org/insertion-in-binary-search-tree/",
     category: "dataStructure",
+    image:'https://media.geeksforgeeks.org/wp-content/uploads/20221128124311/insertion.png',
     description: 'Learn how to insert elements into a BST, a fundamental operation for maintaining a balanced tree.'
   },
   {
@@ -15,6 +16,7 @@ export const cardInfo = [
     title: "What is Dijkstra’s Algorithm? | Introduction to Dijkstra’s Shortest Path Algorithm",
     link: "https://www.geeksforgeeks.org/introduction-to-dijkstras-shortest-path-algorithm/",
     category: "dataStructure",
+    image:'https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg',
     description: 'An introduction to Dijkstra’s Algorithm, which solves the shortest path problem for a graph with non-negative edge weights.'
   },
   {
@@ -22,6 +24,7 @@ export const cardInfo = [
     title: "Introduction to Max-Heap – Data Structure and Algorithm Tutorials",
     link: "https://www.geeksforgeeks.org/introduction-to-max-heap-data-structure/",
     category: "dataStructure",
+    image:'https://media.geeksforgeeks.org/wp-content/uploads/20230323091806/Introduction-to-Max-Heap-Data-Structure-copy.webp',
     description: 'Explore the concept of Max-Heap, a specialized tree-based data structure which is essentially a complete binary tree that satisfies the heap property.'
   },
   {
@@ -36,6 +39,7 @@ export const cardInfo = [
     title: "Introduction to Set – Data Structure and Algorithm Tutorials",
     link: "https://www.geeksforgeeks.org/introduction-to-set-data-structure-and-algorithm-tutorials/",
     category: "dataStructure",
+    image:'https://media.geeksforgeeks.org/wp-content/uploads/20230302151935/s.png',
     description: 'Understand the Set data structure, which stores unique elements in no particular order.'
   },
   {
@@ -43,6 +47,7 @@ export const cardInfo = [
     title: "Introduction to Map – Data Structure and Algorithm Tutorials",
     link: "https://www.geeksforgeeks.org/introduction-to-map-data-structure-and-algorithm-tutorials/",
     category: "dataStructure",
+    image:'https://media.geeksforgeeks.org/wp-content/uploads/20230306152011/mp1.png',
     description: 'Get to know the Map data structure, which maps keys to values, allowing for efficient retrieval of data based on keys.'
   },
   {
@@ -50,6 +55,7 @@ export const cardInfo = [
     title: "Types of Trees in Data Structures",
     link: "https://www.geeksforgeeks.org/types-of-trees-in-data-structures/",
     category: "dataStructure",
+    image:'https://media.geeksforgeeks.org/wp-content/uploads/20230111154258/typoes1.png',
     description: 'Learn about the different types of trees used in data structures, such as binary trees, AVL trees, and more.'
   },
   {
@@ -57,6 +63,7 @@ export const cardInfo = [
     title: "Top 50 Problems on Matrix/Grid Data Structure asked in SDE Interviews",
     link: "https://www.geeksforgeeks.org/top-50-matrix-grid-coding-problems-for-interviews/",
     category: "dataStructure",
+    image:'https://media.geeksforgeeks.org/wp-content/uploads/20230705172718/Top-Interview-Questions-on-Matrix.png',
     description: 'Practice with the top 50 matrix/grid problems commonly asked in software development engineering interviews.'
   }
 ];
