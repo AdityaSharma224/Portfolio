@@ -161,6 +161,12 @@ const useStyles = makeStyles({
           opacity: 0.7,
         },
       },
+  cardWrapper:{
+         maxWidth: 600,
+         minWidth: 600,
+         height: 600,
+         borderRadius: "20px",
+      }
 });
 
 export default useStyles;
