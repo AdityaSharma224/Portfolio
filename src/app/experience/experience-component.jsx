@@ -118,12 +118,7 @@ efficiency. Facilitated post-scan reviews, enabling precise manual uploads to CA
                   index === currentIndex && (
                     <Card
                       key={index}
-                      sx={{
-                        maxWidth: 600,
-                        minWidth: 600,
-                        height: 600,
-                        borderRadius: "20px",
-                      }}
+                      className={classes.cardWrapper}
                     >
                       <CardActionArea sx={{ borderRadius: "20px" }}>
                         <Stack
