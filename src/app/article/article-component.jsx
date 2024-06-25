@@ -20,63 +20,12 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
-import { articles } from "../constants";
+import { cardInfo } from "../constants";
 
 const ArticleComponent = () => {
   const classes = useStyles();
   const [category, setCategory] = React.useState("dataStructure");
   const [sliderIndex, setSliderIndex] = React.useState(0);
-
-  const cardInfo = [
-    {
-      title: "Binary Trees",
-      description:
-        "Binary trees are a type of data structure for storing data such as hierarchical data.",
-      image: "/static/images/cards/binary-tree.jpg",
-      link: "#binaryTree",
-      category: "dataStructure",
-    },
-    {
-      title: "Linked Lists",
-      description:
-        "Linked lists are a linear collection of data elements where each element points to the next.",
-      image: "/static/images/cards/linked-list.jpg",
-      link: "#linkedList",
-      category: "dataStructure",
-    },
-    {
-      title: "awdawdawd",
-      description:
-        "Graphs are a set of nodes connected by edges, used to represent networks.",
-      image: "/static/images/cards/graph.jpg",
-      link: "#graph",
-      category: "dataStructure",
-    },
-    {
-      title: "Bawdawdaws",
-      description:
-        "Binary trees are a type of data structure for storing data such as hierarchical data.",
-      image: "/static/images/cards/binary-tree.jpg",
-      link: "#binaryTree",
-      category: "dataStructure",
-    },
-    {
-      title: "Liawdawdts",
-      description:
-        "Linked lists are a linear collection of data elements where each element points to the next.",
-      image: "/static/images/cards/linked-list.jpg",
-      link: "#linkedList",
-      category: "dataStructure",
-    },
-    {
-      title: "awdawdawd",
-      description:
-        "Graphs are a set of nodes connected by edges, used to represent networks.",
-      image: "/static/images/cards/graph.jpg",
-      link: "#graph",
-      category: "dataStructure",
-    },
-  ];
 
   const handleChange = (event) => {
     setCategory(event.target.value);
