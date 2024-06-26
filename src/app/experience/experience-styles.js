@@ -148,6 +148,12 @@ const useStyles = makeStyles({
             animation: '$animate 4s ease-in-out infinite',
           },
         },
+        [theme.breakpoints.down('sm')]:{
+          marginTop:'4em',
+        },
+        [theme.breakpoints.down('xs')]:{
+          marginTop:'4em',
+        },
       },
       '@keyframes animate': {
         '0%, 100%': {

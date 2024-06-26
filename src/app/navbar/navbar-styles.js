@@ -24,14 +24,14 @@ const useStyles = makeStyles({
         borderRadius:'30px', 
         transition: 'top 0.3s ease-in-out',
         justifyContent:'center',
-        border:'2px solid #362922',
+        border:'5px solid #EEC09B',
         zIndex:2,
         [theme.breakpoints.down('md')]:{
-            width:'600px',
-            height:'60px',
+            width:'200px',
+            height:'50px',
         },
         [theme.breakpoints.down('sm')]:{
-            width:'500px',
+            width:'100px',
             height:'50px',
         },
         [theme.breakpoints.down('xs')]:{
@@ -46,7 +46,7 @@ const useStyles = makeStyles({
             gap:'0.9em',
         },
         [theme.breakpoints.down('sm')]:{
-           gap:'0.1em'
+           display:'none'
         },
         [theme.breakpoints.down('xs')]:{
             display:'none',
@@ -64,10 +64,10 @@ const useStyles = makeStyles({
         borderRadius:'10px',
         transition: 'all 0.3s ease',
           [theme.breakpoints.down('sm')]:{
-            fontSize:'12px'
+            display:'none',
          },
          [theme.breakpoints.down('md')]:{
-            fontSize:'18px'
+            display:'none',
         },
          [theme.breakpoints.down('xs')]:{
             display:'none',
@@ -95,12 +95,12 @@ const useStyles = makeStyles({
       },
       img:{
         marginLeft:12,
-        [theme.breakpoints.up('xs')]:{
+        [theme.breakpoints.up('md')]:{
             display:'none',
          },
       },
       arrow:{
-        [theme.breakpoints.up('xs')]:{
+        [theme.breakpoints.up('md')]:{
             display:'none',
          },
       },
@@ -116,7 +116,7 @@ const useStyles = makeStyles({
         alignItems:'center',
         gap:'1.3em',
         justifyContent:'center',
-        [theme.breakpoints.up('xs')]:{
+        [theme.breakpoints.up('md')]:{
             display:'none',
         },
       },
@@ -128,7 +128,7 @@ const useStyles = makeStyles({
         color:'#fff',
         fontWeight:500,
         curosr:'pointer',
-        [theme.breakpoints.up('xs')]:{
+        [theme.breakpoints.up('md')]:{
             display:'none',
          },
       }
