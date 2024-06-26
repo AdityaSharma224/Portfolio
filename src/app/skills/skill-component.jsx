@@ -154,9 +154,11 @@ const SkillComponent = () => {
           src={Aster}
           height={"320px"}
           width={"320px"}
-          style={{ position: "absolute", userSelect: "none" }}
+          style={{
+            position: "absolute",
+            userSelect: "none",
+          }}
         />
-
         <OrbitWithIcon
           color="blue"
           size="220px"

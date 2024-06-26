@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Stack from "@mui/material/Stack";
 import useStyles from "./experience-styles";
 import MyAboutImage from "../../assets/about-image.jpg";
 import { IconButton, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import { styled } from "@mui/system";
 import GFGIcon from "../../assets/gfg.png";
 import CASTIcon from "../../assets/cast.png";
 import CONTLOIcon from "../../assets/contlo.png";
@@ -14,6 +16,29 @@ import { CardActionArea } from "@mui/material";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 
+const AnimatedTypography = styled(Typography)({
+  color: "#dbd56e",
+  background: "linear-gradient(25deg, #eee, #333)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  fontWeight: 500,
+  overflow: "hidden",
+  alignItems: "center",
+  whiteSpace: "nowrap",
+  borderRight: "2px solid",
+  marginTop: "0.4em",
+
+  animation:
+    "type 1.5s steps(90) 1.5s 1 normal both, cursor 1s step-end infinite",
+  position: "relative",
+  "@keyframes type": {
+    from: { width: 0 },
+    to: { width: "75%" },
+  },
+  "@keyframes cursor": {
+    "100%": { borderColor: "transparent" },
+  },
+});
 const ExperienceComponent = () => {
   const classes = useStyles();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -131,26 +156,39 @@ const ExperienceComponent = () => {
         />
         <Stack className={classes.aboutWrapper}>
           <Stack className={classes.experienceWrapper}>
-            <Typography
-              variant="h1"
-              color="#fff"
-              fontWeight={700}
-              marginTop={3}
-              sx={{
-                typography: {
-                  xs: "h3",
-                  sm: "h3",
-                  md: "h3",
-                  lg: "h2",
-                  xl: "h1",
-                },
-                fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
-                borderBottom:'4px solid #fff',
-                borderRadius:'15px',
-              }}
-            >
-              Experience
-            </Typography>
+            <div className={classes.content}>
+              <Typography
+                variant="h2"
+                sx={{
+                  typography: {
+                    xs: "h3",
+                    sm: "h3",
+                    md: "h3",
+                    lg: "h2",
+                    xl: "h1",
+                  },
+                  fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
+                }}
+              >
+                Experience
+              </Typography>
+              <Typography
+                variant="h2"
+                sx={{
+                  typography: {
+                    xs: "h3",
+                    sm: "h3",
+                    md: "h3",
+                    lg: "h2",
+                    xl: "h1",
+                  },
+                  fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
+                }}
+              >
+                Experience
+              </Typography>
+            </div>
+
             <Stack
               sx={{ height: "100%", width: "100%", alignItems: "center" }}
               flexDirection={"row"}
@@ -232,7 +270,7 @@ const ExperienceComponent = () => {
                             sx={{
                               typography: {
                                 xs: "caption",
-                                sm: 'body3',
+                                sm: "body3",
                                 md: "body3",
                                 lg: "body1",
                                 xl: "body1",
@@ -241,7 +279,6 @@ const ExperienceComponent = () => {
                                 xs: 700,
                                 sm: 700,
                                 md: 700,
-                                
                               },
                             }}
                             color={"#000"}

@@ -86,8 +86,8 @@ const useStyles = makeStyles({
         },
       },
   cardWrapper:{
-         maxWidth: 600,
-         minWidth: 600,
+         maxWidth: 700,
+         minWidth: 700,
          height: 'fit-content',
          borderRadius: "20px",
          [theme.breakpoints.down('lg')]:{
@@ -130,6 +130,31 @@ const useStyles = makeStyles({
         },
         [theme.breakpoints.down('xxs')]:{
            
+        },
+      },
+      content: {
+        position: 'relative',
+        marginTop:'8em',
+        '& h2': {
+          color: '#fff',
+          position: 'absolute',
+          transform: 'translate(-50%, -50%)',
+          '&:nth-of-type(1)': {
+            color: 'transparent',
+            WebkitTextStroke: '2px #8338ec',
+          },
+          '&:nth-of-type(2)': {
+            color: '#c19bf5',
+            animation: '$animate 4s ease-in-out infinite',
+          },
+        },
+      },
+      '@keyframes animate': {
+        '0%, 100%': {
+          clipPath: 'polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%)',
+        },
+        '50%': {
+          clipPath: 'polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%)',
         },
       },
 

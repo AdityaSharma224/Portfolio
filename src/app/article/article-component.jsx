@@ -82,8 +82,8 @@ const ArticleComponent = () => {
               htmlColor="#fff"
               className={classes.icon}
               sx={{
-                height: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
-                width: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
+                height: { xs: 40, sm: 40, md: 40, lg: 60, xl: 60 },
+                width: { xs: 40, sm: 40, md: 40, lg: 60, xl: 60 },
               }}
             />
           </IconButton>{" "}
@@ -92,7 +92,7 @@ const ArticleComponent = () => {
               key={index}
               sx={{
                 height: { xs: 400, sm: 400, md: 300, lg: 400, xl: 400 },
-                width: { xs: 350, sm: 400, md: 300, lg: 400, xl: 400 },
+                width: { xs: 320, sm: 400, md: 300, lg: 400, xl: 400 },
                 backgroundColor: "#fff",
                 borderRadius: "20px",
                 margin: "0 8px",
@@ -127,8 +127,8 @@ const ArticleComponent = () => {
               htmlColor="#fff"
               className={classes.icon}
               sx={{
-                height: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
-                width: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
+                height: { xs: 40, sm: 40, md: 40, lg: 60, xl: 60 },
+                width: { xs: 40, sm: 40, md: 40, lg: 60, xl: 60 },
               }}
             />
           </IconButton>{" "}

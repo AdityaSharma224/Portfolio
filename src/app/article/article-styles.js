@@ -84,7 +84,7 @@ const useStyles = makeStyles({
     tableWrapper:{
       alignItems:'center',
       justifyContent:'center',
-      padding:'15px 0'
+      padding:'12px 0'
     },
     icon: {
       cursor: 'pointer',
