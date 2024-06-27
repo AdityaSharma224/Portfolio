@@ -1,6 +1,6 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
-import { Box, styled } from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 import Python from "../../assets/python.png"; // Example icon for Mercury
 import ReactImg from "../../assets/react.png"; // Example icon for Venus
 import JS from "../../assets/js.png";
@@ -12,6 +12,9 @@ import NEXTComet from "../../assets/nextComet.png";
 import CPPComet from "../../assets/cppComet.png";
 import Code from "../../assets/code.png";
 import { createTheme } from "@mui/material";
+import LeetcodeImg from "../../assets/leetcodeStats.png";
+import Position from "../../assets/position.png";
+import useStyles from "./skills-styles";
 
 const theme = createTheme({
   breakpoints: {
@@ -36,22 +39,22 @@ const SolarSystem = styled(Box)({
   background: "#000",
   overflow: "hidden",
   [theme.breakpoints.down("xl")]: {
-    width: '50%'
+    width: "50%",
   },
   [theme.breakpoints.down("lg")]: {
-    width: '50%'
+    width: "50%",
   },
   [theme.breakpoints.down("md")]: {
-    width: '100%'
+    width: "100%",
   },
   [theme.breakpoints.down("sm")]: {
-    width: '100%'
+    width: "100%",
   },
   [theme.breakpoints.down("xs")]: {
-    width: '100%'
+    width: "100%",
   },
   [theme.breakpoints.down("xss")]: {
-    width: '100%'
+    width: "100%",
   },
 });
 
@@ -131,13 +134,14 @@ const Sun = styled(Box)({
 });
 
 const SkillComponent = () => {
+  const classes = useStyles();
   return (
     <Stack
       sx={{
         backgroundColor: "#fff",
         height: {
-          xs: "80vh",
-          sm: "80vh",
+          xs: "100vh",
+          sm: "100vh",
           md: "100vh",
           lg: "100vh",
           xl: "100vh",
@@ -171,7 +175,72 @@ const SkillComponent = () => {
             xl: "50%",
           },
         }}
-      ></Stack>
+      >
+        <Stack
+          sx={{
+            backgroundColor: "#000",
+            width: "100%",
+            height: "100%",
+            border: "2px solid #000",
+            alignItems: "center",
+            padding: 4,
+            gap:5,
+            justifyContent: "space-between",
+            marginTop: 8,
+          }}
+        >
+          <div className={classes.content}>
+            <Typography
+              variant="h2"
+              sx={{
+                typography: {
+                  xs: "h3",
+                  sm: "h3",
+                  md: "h3",
+                  lg: "h2",
+                  xl: "h1",
+                },
+                fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
+              }}
+            >
+              Leetcode
+            </Typography>
+            <Typography
+              variant="h2"
+              sx={{
+                typography: {
+                  xs: "h3",
+                  sm: "h3",
+                  md: "h3",
+                  lg: "h2",
+                  xl: "h1",
+                },
+                fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
+              }}
+            >
+              Leetcode
+            </Typography>
+          </div>
+          <Stack gap={4}>
+            <Stack
+              component={"img"}
+              src={LeetcodeImg}
+              sx={{
+                height: {xs: 150, sm: 150, md: 200, lg: 300, xl: 300 },
+                width: {xs: 350, sm: 350, md: 500, lg: 700, xl: 700 },
+              }}
+            />
+            <Stack
+              component={"img"}
+              src={Position}
+              sx={{
+                height: {xs: 150, sm: 150, md: 200, lg: 300, xl: 300 },
+                width: {xs: 350, sm: 350, md: 500, lg: 700, xl: 700 },
+              }}
+            />
+          </Stack>
+        </Stack>
+      </Stack>
       <SolarSystem>
         <Box
           sx={{
@@ -195,11 +264,11 @@ const SkillComponent = () => {
           style={{
             position: "absolute",
             userSelect: "none",
-            [theme.breakpoints.down('sm')]:{
-              display:'none',
-              height:0,
-              width:0,
-            }
+            [theme.breakpoints.down("sm")]: {
+              display: "none",
+              height: 0,
+              width: 0,
+            },
           }}
         />
         <OrbitWithIcon
