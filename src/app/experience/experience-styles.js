@@ -32,12 +32,16 @@ const useStyles = makeStyles({
     },
     myImage:{
         width:'40%',
-        height:'135%',
+        height:'130%',
         [theme.breakpoints.down('md')]:{
             display:'none',
             height:'0%',
             width:'0%',
         },
+        [theme.breakpoints.up('xl')]:{
+          width:'40%',
+          height:'120%',
+      },
     },
     aboutWrapper:{
         width:'60%',
