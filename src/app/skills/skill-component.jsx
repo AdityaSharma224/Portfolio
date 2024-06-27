@@ -31,15 +31,33 @@ const SolarSystem = styled(Box)({
   justifyContent: "center",
   alignItems: "center",
   position: "relative",
-  width: "100%",
+  width: "50%",
   height: "100%",
   background: "#000",
   overflow: "hidden",
+  [theme.breakpoints.down("xl")]: {
+    width: '50%'
+  },
+  [theme.breakpoints.down("lg")]: {
+    width: '50%'
+  },
+  [theme.breakpoints.down("md")]: {
+    width: '100%'
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: '100%'
+  },
+  [theme.breakpoints.down("xs")]: {
+    width: '100%'
+  },
+  [theme.breakpoints.down("xss")]: {
+    width: '100%'
+  },
 });
 
 const OrbitWithIcon = styled(Box)(({ theme, color, size, duration, icon }) => ({
   position: "absolute",
-  border: "0.2px solid #D3D3D3",
+  border: "0.04px solid #D3D3D3",
   borderRadius: "50%",
   color: "white",
   width: size,
@@ -80,8 +98,8 @@ const OrbitWithIcon = styled(Box)(({ theme, color, size, duration, icon }) => ({
     },
   },
   [theme.breakpoints.down("sm")]: {
-    width: "calc(" + size + " * 0.6)",
-    height: "calc(" + size + " * 0.6)",
+    width: "calc(" + size + " * 0.4)",
+    height: "calc(" + size + " * 0.4)",
   },
   [theme.breakpoints.down("xs")]: {
     width: "calc(" + size + " * 1.5)",
@@ -94,8 +112,8 @@ const OrbitWithIcon = styled(Box)(({ theme, color, size, duration, icon }) => ({
 }));
 
 const Sun = styled(Box)({
-  width: "90px",
-  height: "90px",
+  width: "100px",
+  height: "100px",
   background: "yellow",
   backgroundImage: `url(${Code})`,
   backgroundSize: "cover",
@@ -105,6 +123,10 @@ const Sun = styled(Box)({
   [theme.breakpoints.down("md")]: {
     width: "70px",
     height: "70px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "50px",
+    height: "50px",
   },
 });
 
@@ -127,9 +149,29 @@ const SkillComponent = () => {
           lg: "100vw",
           xl: "100vw",
         },
+        flexDirection: {
+          xs: "column",
+          sm: "column",
+          md: "column",
+          lg: "row",
+          xl: "row",
+        },
       }}
       id="skills"
     >
+      <Stack
+        height={"100%"}
+        sx={{
+          backgroundColor: "#000",
+          width: {
+            xs: "100%",
+            sm: "100%",
+            md: "100%",
+            lg: "50%",
+            xl: "50%",
+          },
+        }}
+      ></Stack>
       <SolarSystem>
         <Box
           sx={{
@@ -137,18 +179,14 @@ const SkillComponent = () => {
             top: { xxs: "3em", xs: "3em", sm: "10em" },
             left: { xxs: "1em", xs: "2em", sm: "18em" },
           }}
-        >
-          <img src={NEXTComet} height={"180px"} width={"180px"} />
-        </Box>
+        ></Box>
         <Box
           sx={{
             position: "absolute",
             top: { xxs: "15em", xs: "4em", sm: "22em" },
             right: { xxs: "1em", xs: "-1em", sm: "12em" },
           }}
-        >
-          <img src={CPPComet} height={"160px"} width={"160px"} />
-        </Box>
+        ></Box>
         <Sun />
         <img
           src={Aster}
@@ -157,49 +195,48 @@ const SkillComponent = () => {
           style={{
             position: "absolute",
             userSelect: "none",
+            [theme.breakpoints.down('sm')]:{
+              display:'none',
+              height:0,
+              width:0,
+            }
           }}
         />
         <OrbitWithIcon
           color="blue"
-          size="220px"
-          duration="rotating-anim 5s"
+          size="200px"
+          duration="rotating-anim 3s"
           icon={ReactImg}
         />
         <OrbitWithIcon
           color=""
-          size="350px"
-          duration="rotating-anim 8.5s"
+          size="320px"
+          duration="rotating-anim 6.5s"
           icon={Python}
         />
         <OrbitWithIcon
           color=""
-          size="450px"
-          duration="rotating-anim 10s"
+          size="420px"
+          duration="rotating-anim 8s"
           icon={JS}
         />
         <OrbitWithIcon
           color="white"
-          size="550px"
-          duration="rotating-anim 14.5s"
+          size="520px"
+          duration="rotating-anim 8s"
           icon={NodeJs}
         />
         <OrbitWithIcon
           color=""
-          size="650px"
-          duration="rotating-anim 16s"
+          size="620px"
+          duration="rotating-anim 10s"
           icon={html5}
         />
         <OrbitWithIcon
           color=""
-          size="750px"
-          duration="rotating-anim 19s"
+          size="720px"
+          duration="rotating-anim 12s"
           icon={CSS}
-        />
-        <img
-          src={Aster}
-          height={"980px"}
-          width={"980px"}
-          style={{ position: "absolute" }}
         />
       </SolarSystem>
     </Stack>

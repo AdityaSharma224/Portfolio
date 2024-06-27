@@ -28,12 +28,11 @@ const TextContainer = styled(Box)({
   opacity: 0,
 });
 
-// Styled Typography with responsive breakpoints
 const TypographyStyled = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
   // Default styles
   [theme.breakpoints.up('xs')]: {
-    fontSize: '1.4rem', // for extra-small screens
+    fontSize: '1.6rem', // for extra-small screens
   },
   [theme.breakpoints.up('sm')]: {
     fontSize: '2rem', // for small screens
@@ -45,7 +44,7 @@ const TypographyStyled = styled(Typography)(({ theme }) => ({
     fontSize: '3rem', // for large screens
   },
   [theme.breakpoints.up('xl')]: {
-    fontSize: '4rem', // for extra-large screens
+    fontSize: '5rem', // for extra-large screens
   },
 }));
 
@@ -61,7 +60,7 @@ const Preloader = () => {
         opacity: 1,
         ease: 'Power3.easeOut',
       })
-      .from('.preloader .text-container h2', {
+      .from('.preloader .text-container h1', {
         duration: 1.5,
         delay: 1,
         y: 90,
@@ -69,7 +68,7 @@ const Preloader = () => {
         stagger: 0.4,
         ease: 'Power3.easeOut',
       })
-      .to('.preloader .text-container h2', {
+      .to('.preloader .text-container h1', {
         duration: 1.2,
         y: 100,
         skewY: -10,
@@ -92,11 +91,10 @@ const Preloader = () => {
   return (
     <PreloaderContainer className="preloader">
       <TextContainer className="text-container">
-        {/* Use TypographyStyled instead of Typography */}
-        <TypographyStyled variant="h2">Crafted</TypographyStyled>
-        <TypographyStyled variant="h2">By</TypographyStyled>
-        <TypographyStyled variant="h2">Aditya</TypographyStyled>
-        <TypographyStyled variant="h2" fontWeight={400}>🤗</TypographyStyled>
+        <TypographyStyled variant="h1">Crafted</TypographyStyled>
+        <TypographyStyled variant="h1">By</TypographyStyled>
+        <TypographyStyled variant="h1">Aditya</TypographyStyled>
+        <TypographyStyled variant="h1" fontWeight={400}>🤗</TypographyStyled>
       </TextContainer>
     </PreloaderContainer>
   );
