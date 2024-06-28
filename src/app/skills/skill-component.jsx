@@ -184,44 +184,10 @@ const SkillComponent = () => {
             border: "2px solid #000",
             alignItems: "center",
             padding: 4,
-            gap:5,
-            justifyContent: "space-between",
-            marginTop: 8,
+            justifyContent:'center',
           }}
         >
-          <div className={classes.content}>
-            <Typography
-              variant="h2"
-              sx={{
-                typography: {
-                  xs: "h3",
-                  sm: "h3",
-                  md: "h3",
-                  lg: "h2",
-                  xl: "h1",
-                },
-                fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
-              }}
-            >
-              Leetcode
-            </Typography>
-            <Typography
-              variant="h2"
-              sx={{
-                typography: {
-                  xs: "h3",
-                  sm: "h3",
-                  md: "h3",
-                  lg: "h2",
-                  xl: "h1",
-                },
-                fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
-              }}
-            >
-              Leetcode
-            </Typography>
-          </div>
-          <Stack gap={4}>
+          <Stack gap={6} alignSelf={'center'} height={'50%'} alignItems={'center'}justifyContent={'space-between'}>
             <Stack
               component={"img"}
               src={LeetcodeImg}

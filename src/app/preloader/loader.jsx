@@ -63,14 +63,14 @@ const Preloader = () => {
       .from('.preloader .text-container h1', {
         duration: 1.5,
         delay: 1,
-        y: 90,
-        skewY: 10,
+        y: 110,
+        skewY: 0,
         stagger: 0.4,
         ease: 'Power3.easeOut',
       })
       .to('.preloader .text-container h1', {
         duration: 1.2,
-        y: 100,
+        y: 110,
         skewY: -10,
         stagger: 0.2,
         ease: 'Power3.easeOut',
@@ -91,9 +91,9 @@ const Preloader = () => {
   return (
     <PreloaderContainer className="preloader">
       <TextContainer className="text-container">
-        <TypographyStyled variant="h1">Crafted</TypographyStyled>
-        <TypographyStyled variant="h1">By</TypographyStyled>
-        <TypographyStyled variant="h1">Aditya</TypographyStyled>
+        <TypographyStyled variant="h1">Loading...</TypographyStyled>
+        {/* <TypographyStyled variant="h1">By</TypographyStyled>
+        <TypographyStyled variant="h1">Aditya</TypographyStyled> */}
         <TypographyStyled variant="h1" fontWeight={400}>🤗</TypographyStyled>
       </TextContainer>
     </PreloaderContainer>

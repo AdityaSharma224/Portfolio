@@ -63,11 +63,12 @@ const ArticleComponent = () => {
                 autoWidth
                 onChange={handleChange}
                 className={classes.select}
-                sx={{ '.MuiOutlinedInput-notchedOutline': { borderStyle: 'none' } }}
+                sx={{
+                  ".MuiOutlinedInput-notchedOutline": { borderStyle: "none" },
+                }}
               >
                 <MenuItem value={"dataStructure"}>Data structures</MenuItem>
-                <MenuItem value={"algorithm"}>Algorithm</MenuItem>
-                <MenuItem value={"webDevelopment"}>Web Development</MenuItem>
+                <MenuItem value={"handbook"}>Handbook</MenuItem>
                 <MenuItem value={"computerNetworks"}>
                   Computer Networks
                 </MenuItem>
@@ -98,25 +99,42 @@ const ArticleComponent = () => {
                 margin: "0 8px",
                 flexDirection: "column",
                 "&:nth-of-type(n+2)": {
-                  display: { xs: 'none', sx: 'none', sm: 'none', md: 'block', lg:'block' }, // Hide second and third card on 'sm' and below
+                  display: {
+                    xs: "none",
+                    sx: "none",
+                    sm: "none",
+                    md: "block",
+                    lg: "block",
+                  }, // Hide second and third card on 'sm' and below
                 },
               }}
             >
               <CardMedia
-                sx={{ height: '45%', objectFit:'cover' }}
+                sx={{ height: "45%", objectFit: "cover" }}
                 image={card.image}
                 title={card.title}
               />
-              <CardContent sx={{height:'40%'}}>
-                <Typography gutterBottom variant="body1" fontWeight={700} component="div">
+              <CardContent sx={{ height: "40%" }}>
+                <Typography
+                  gutterBottom
+                  variant="body1"
+                  fontWeight={700}
+                  component="div"
+                >
                   {card.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" overflow={'hidden'}>
                   {card.description}
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" variant="text" sx={{ textTransform: "none" }} href={card.link} target="_blank">
+                <Button
+                  size="small"
+                  variant="text"
+                  sx={{ textTransform: "none" }}
+                  href={card.link}
+                  target="_blank"
+                >
                   Go to article
                 </Button>
               </CardActions>
