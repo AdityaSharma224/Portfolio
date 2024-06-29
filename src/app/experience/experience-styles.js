@@ -69,7 +69,8 @@ const useStyles = makeStyles({
             width:'400px',
         },
         [theme.breakpoints.down('xxs')]:{
-            width:'350px',
+            width:'280px',
+            marginRight:10
         },
     },
    
@@ -82,7 +83,7 @@ const useStyles = makeStyles({
       '@keyframes pulsate': {
         '0%, 100%': {
           transform: 'scale(0.7)',
-          opacity: 1, // Opacity should be between 0 (transparent) and 1 (opaque)
+          opacity: 1,
         },
         '50%': {
           transform: 'scale(0.8)',

@@ -106,7 +106,7 @@ const useStyles = makeStyles({
         overflow:'hidden',
         position:'absolute',
         width:'25em',
-        animation: `$slideInFromLeft 5s ease-out 3s 1`,
+        animation: `$slideInFromLeft 8s ease-out 8s 1`,
         animationFillMode: 'forwards',
         [theme.breakpoints.down('md')]:{
             height:'18em',
@@ -143,7 +143,7 @@ const useStyles = makeStyles({
         height:'33em',
         width:'33em',
         overflow:'hidden',
-        animation: `$slideInFromLeft 5s ease-out 3s 1`,
+        animation: `$slideInFromLeft 8s ease-out 8s 1`,
         animationFillMode: 'forwards',
         [theme.breakpoints.down('lg')]:{
             height:'25em',
@@ -186,7 +186,7 @@ const useStyles = makeStyles({
         height:'22em',
         overflow:'hidden',
         width:'22em',
-        animation: `$slideInFromRight 5s ease-in 3s 1`,
+        animation: `$slideInFromRight 8s ease-in 8s 1`,
         animationFillMode: 'forwards',
         [theme.breakpoints.up('xl')]:{
             height:'25em',

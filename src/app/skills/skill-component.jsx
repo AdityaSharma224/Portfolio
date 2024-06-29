@@ -53,8 +53,9 @@ const SolarSystem = styled(Box)({
   [theme.breakpoints.down("xs")]: {
     width: "100%",
   },
-  [theme.breakpoints.down("xss")]: {
+  [theme.breakpoints.down("xxs")]: {
     width: "100%",
+
   },
 });
 
@@ -83,6 +84,10 @@ const OrbitWithIcon = styled(Box)(({ theme, color, size, duration, icon }) => ({
       width: "50px",
       height: "50px",
     },
+    [theme.breakpoints.down("sm")]: {
+      width: "40px",
+      height: "40px",
+    },
   },
   [theme.breakpoints.down("xl")]: {
     width: "calc(" + size + " * 0.9)",
@@ -105,8 +110,8 @@ const OrbitWithIcon = styled(Box)(({ theme, color, size, duration, icon }) => ({
     height: "calc(" + size + " * 0.4)",
   },
   [theme.breakpoints.down("xs")]: {
-    width: "calc(" + size + " * 1.5)",
-    height: "calc(" + size + " * 1.5)",
+    width: "calc(" + size + " * 1.3)",
+    height: "calc(" + size + " * 1.3)",
   },
   [theme.breakpoints.down("xxs")]: {
     width: "calc(" + size + " * 0.6)",
@@ -876,13 +881,13 @@ const SkillComponent = () => {
         <OrbitWithIcon
           color=""
           size="320px"
-          duration="rotating-anim 6.5s"
+          duration="rotating-anim 4s"
           icon={Python}
         />
         <OrbitWithIcon
           color=""
           size="420px"
-          duration="rotating-anim 8s"
+          duration="rotating-anim 6s"
           icon={JS}
         />
         <OrbitWithIcon
