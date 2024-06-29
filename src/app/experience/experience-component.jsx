@@ -156,39 +156,6 @@ const ExperienceComponent = () => {
         />
         <Stack className={classes.aboutWrapper}>
           <Stack className={classes.experienceWrapper}>
-            <div className={classes.content}>
-              <Typography
-                variant="h2"
-                sx={{
-                  typography: {
-                    xs: "h3",
-                    sm: "h3",
-                    md: "h3",
-                    lg: "h2",
-                    xl: "h1",
-                  },
-                  fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
-                }}
-              >
-                Experience
-              </Typography>
-              <Typography
-                variant="h2"
-                sx={{
-                  typography: {
-                    xs: "h3",
-                    sm: "h3",
-                    md: "h3",
-                    lg: "h2",
-                    xl: "h1",
-                  },
-                  fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
-                }}
-              >
-                Experience
-              </Typography>
-            </div>
-
             <Stack
               sx={{ height: "100%", width: "100%", alignItems: "center" }}
               flexDirection={"row"}
