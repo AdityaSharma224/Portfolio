@@ -40,6 +40,14 @@ const useStyles = makeStyles({
           clipPath: 'polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%)',
         },
       },
+      bar:{
+       backgroundColor:'#D3D3D3',
+       borderRadius:'5px',
+       cursor:'pointer',
+       '&:hover':{
+        backgroundColor:'#FFA500',
+       }
+      }
 
 });
 

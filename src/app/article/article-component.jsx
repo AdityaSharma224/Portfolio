@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Stack from "@mui/material/Stack";
 import useStyles from "./article-styles";
-import { IconButton, Typography } from "@mui/material";
+import { IconButton, Typography, useMediaQuery, useTheme } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -12,13 +12,33 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import { createTheme } from "@mui/material";
 import Button from "@mui/material/Button";
 import { cardInfo } from "../constants";
 
 const ArticleComponent = () => {
   const classes = useStyles();
-  const [category, setCategory] = React.useState("dataStructure");
-  const [sliderIndex, setSliderIndex] = React.useState(0);
+  const [category, setCategory] = useState("dataStructure");
+  const [sliderIndex, setSliderIndex] = useState(0);
+  const [cardsPerPage, setCardsPerPage] = useState(3);
+
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xxs: 380,
+        xs: 500,
+        sm: 600,
+        md: 1000,
+        lg: 1300,
+        xl: 1400,
+      },
+    },
+  });
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+  useEffect(() => {
+    setCardsPerPage(isSmallScreen ? 1 : 3);
+  }, [isSmallScreen]);
 
   const handleChange = (event) => {
     setCategory(event.target.value);
@@ -29,21 +49,22 @@ const ArticleComponent = () => {
     (card) => card.category === category
   );
   const displayedCards = filteredCardInfo.slice(
-    sliderIndex * 3,
-    (sliderIndex + 1) * 3
+    sliderIndex * cardsPerPage,
+    (sliderIndex + 1) * cardsPerPage
   );
 
   const goToPrevSlide = () => {
     setSliderIndex(
       (prevIndex) =>
-        (prevIndex - 1 + Math.ceil(filteredCardInfo.length / 3)) %
-        Math.ceil(filteredCardInfo.length / 3)
+        (prevIndex - 1 + Math.ceil(filteredCardInfo.length / cardsPerPage)) %
+        Math.ceil(filteredCardInfo.length / cardsPerPage)
     );
   };
 
   const goToNextSlide = () => {
     setSliderIndex(
-      (prevIndex) => (prevIndex + 1) % Math.ceil(filteredCardInfo.length / 3)
+      (prevIndex) =>
+        (prevIndex + 1) % Math.ceil(filteredCardInfo.length / cardsPerPage)
     );
   };
 
@@ -92,21 +113,26 @@ const ArticleComponent = () => {
             <Card
               key={index}
               sx={{
-                height: { xs: 400, sm: 400, md: 300, lg: 400, xl: 400 },
-                width: { xs: 320, sm: 400, md: 300, lg: 400, xl: 400 },
+                height: {
+                  xxs: 400,
+                  xs: 400,
+                  sm: 400,
+                  md: 300,
+                  lg: 400,
+                  xl: 400,
+                },
+                width: {
+                  xxs: 280,
+                  xs: 320,
+                  sm: 400,
+                  md: 300,
+                  lg: 400,
+                  xl: 400,
+                },
                 backgroundColor: "#fff",
                 borderRadius: "20px",
                 margin: "0 8px",
                 flexDirection: "column",
-                "&:nth-of-type(n+2)": {
-                  display: {
-                    xs: "none",
-                    sx: "none",
-                    sm: "none",
-                    md: "block",
-                    lg: "block",
-                  }, // Hide second and third card on 'sm' and below
-                },
               }}
             >
               <CardMedia
@@ -117,13 +143,34 @@ const ArticleComponent = () => {
               <CardContent sx={{ height: "40%" }}>
                 <Typography
                   gutterBottom
-                  variant="body1"
+                  sx={{
+                    typography: {
+                      xs: "body2",
+                      sm: "body2",
+                      md: "body1",
+                      lg: "body1",
+                      xl: "body1",
+                    },
+                  }}
                   fontWeight={700}
                   component="div"
                 >
                   {card.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" overflow={'hidden'}>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  overflow={"hidden"}
+                  sx={{
+                    typography: {
+                      xs: "caption",
+                      sm: "caption",
+                      md: "body2",
+                      lg: "body2",
+                      xl: "body2",
+                    },
+                  }}
+                >
                   {card.description}
                 </Typography>
               </CardContent>
@@ -131,7 +178,7 @@ const ArticleComponent = () => {
                 <Button
                   size="small"
                   variant="text"
-                  sx={{ textTransform: "none" }}
+                  sx={{ textTransform: "none", marginTop: 1 }}
                   href={card.link}
                   target="_blank"
                 >

@@ -61,7 +61,7 @@ const Preloader = () => {
         ease: 'Power3.easeOut',
       })
       .from('.preloader .text-container h1', {
-        duration: 1.5,
+        duration: 2.5,
         delay: 1,
         y: 110,
         skewY: 0,
@@ -69,14 +69,14 @@ const Preloader = () => {
         ease: 'Power3.easeOut',
       })
       .to('.preloader .text-container h1', {
-        duration: 1.2,
+        duration: 2.5,
         y: 110,
         skewY: -10,
         stagger: 0.2,
         ease: 'Power3.easeOut',
       })
       .to('.preloader', {
-        duration: 1.5,
+        duration: 2.3,
         height: '0vh',
         ease: 'Power3.easeOut',
       })

@@ -5,6 +5,7 @@ import BackgroundImg from '../../assets/background-home.png';
 const theme = createTheme({
     breakpoints:{
         values:{
+          xxs:400,
             xs:500,
             sm:600,
             md:1000,
@@ -16,7 +17,7 @@ const theme = createTheme({
 
 const useStyles = makeStyles({
     wrapper:{
-        height:'80vh',
+        height:'90vh',
         width:'100vw',
         alignItems:'center',
         justifyContent:'center',
@@ -45,6 +46,10 @@ const useStyles = makeStyles({
        },
        [theme.breakpoints.down('xs')]:{
         width:'400px',
+        marginTop:'-9em',
+       },
+       [theme.breakpoints.down('xxs')]:{
+        width:'350px',
         marginTop:'-9em',
        },
     },

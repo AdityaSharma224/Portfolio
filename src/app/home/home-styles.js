@@ -115,14 +115,12 @@ const useStyles = makeStyles({
             left:'2em',
         },
         [theme.breakpoints.down('sm')]:{
-            height:'14em',
-            width:'14em',
+          height:'0em',
+          width:'0em',
         },
         [theme.breakpoints.down('xs')]:{
-            height:'12em',
-            width:'12em',
-            top:'-3em',
-            left:'6em',
+          height:'0em',
+          width:'0em',
         },
       },
       '@keyframes slideInFromLeft': {
@@ -158,16 +156,12 @@ const useStyles = makeStyles({
             width:'25em',
         },
         [theme.breakpoints.down('sm')]:{
-            height:'15em',
-            width:'15em',
-            top:'3em',
-            left:'8em',
+            height:'0em',
+            width:'0em',
         },
         [theme.breakpoints.down('xs')]:{
-            height:'14em',
-            width:'14em',
-            top:'2em',
-            left:'9em',
+            height:'0em',
+            width:'0em',
         },
       },
       '@keyframes slideInFromLeft': {
@@ -209,14 +203,13 @@ const useStyles = makeStyles({
             width:'25em',
         },
         [theme.breakpoints.down('sm')]:{
-            height:'18em',
-            width:'18em',
+            height:'0em',
+            width:'0em',
         },
         [theme.breakpoints.down('xs')]:{
-            height:'18em',
-            width:'18em',
-            right:'7em',
-            top:'7em',
+            height:'0em',
+            width:'0em',
+            
         },
       },
       '@keyframes slideInFromRight': {
