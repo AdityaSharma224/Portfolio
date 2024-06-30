@@ -224,6 +224,26 @@ const useStyles = makeStyles({
           overflow:'hidden',
         },
       },
+      typeWriter: {
+        width: '21ch',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        borderRight: '4px solid #3E261C',
+        animation: `$cursor 1s step-start infinite, $text 5s steps(18) alternate infinite`,
+      },
+      '@keyframes cursor': {
+        '0%, 100%': {
+          borderColor: '#3E261C',
+        },
+      },
+      '@keyframes text': {
+        '0%': {
+          width: 0,
+        },
+        '100%': {
+          width: '21.5ch',
+        },
+      },
 
 });
 

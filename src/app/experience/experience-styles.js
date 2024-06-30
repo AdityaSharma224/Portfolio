@@ -92,6 +92,7 @@ const useStyles = makeStyles({
       },
   cardWrapper:{
          maxWidth: 700,
+         minHeight:600,
          minWidth: 700,
          height: 'fit-content',
          borderRadius: "20px",

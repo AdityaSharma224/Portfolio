@@ -86,7 +86,7 @@ const useStyles = makeStyles({
          },
       },
       menu:{
-        gap:19,
+        gap:12,
         width:'100%',
         alignItems:'center',
         [theme.breakpoints.up('xs')]:{
