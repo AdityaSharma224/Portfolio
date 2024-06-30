@@ -8,6 +8,7 @@ import ProjectsComponent from "../projects/projects-component";
 import NavbarComponent from "../navbar/navbar-component";
 import useStyles from "./layout-styles";
 import Preloader from "../preloader/loader";
+import AboutBar from "../about/about";
 
 const Layout = () => {
   const classes = useStyles();
@@ -48,6 +49,7 @@ const Layout = () => {
     <Stack margin={0} padding={0} overflow={"hidden"}>
       <Preloader />
       <NavbarComponent />
+      <AboutBar/>
       <HomeComponent />
       <ExperienceComponent />
       <div ref={skillsRef}>
