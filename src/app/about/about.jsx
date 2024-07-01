@@ -29,14 +29,13 @@ const AboutBar = () => {
             alignSelf: "center",
             color: "#fff",
             typography: { xs: "h6", sm: "h6", md: "h5", lg: "h5", xl: "h5" },
+            textShadow: '2px 2px 4px #000000',
           }}
         >
           {open ? (
-            <CloseIcon
-              sx={{ alignSelf: "flex-end", height: "50px", width: "50px" }}
-            />
+            'CLOSE'
           ) : (
-            "About"
+            "ABOUT"
           )}
         </Typography>
       </Stack>
