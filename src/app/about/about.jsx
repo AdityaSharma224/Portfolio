@@ -25,24 +25,20 @@ const AboutBar = () => {
       <Stack className={classes.wrapper} onClick={toggleExpansion}>
         <Typography
           variant="h5"
+          fontWeight={"700"}
           sx={{
             alignSelf: "center",
-            color: "#fff",
+            color: "#3E261C",
             typography: { xs: "h6", sm: "h6", md: "h5", lg: "h5", xl: "h5" },
-            textShadow: '2px 2px 4px #000000',
           }}
         >
-          {open ? (
-            'CLOSE'
-          ) : (
-            "ABOUT"
-          )}
+          {open ? "Close" : "About"}
         </Typography>
       </Stack>
       {open && (
         <Stack className={classes.downMenu}>
           <Typography
-            textAlign={'start'}
+            textAlign={"start"}
             sx={{
               typography: {
                 xs: "body1",
@@ -52,7 +48,7 @@ const AboutBar = () => {
                 xl: "h6",
               },
             }}
-            color={"#fff"}
+            color={"#362922"}
           >
             {"Hey everyone, Aditya here!!!"}
           </Typography>
@@ -67,7 +63,7 @@ const AboutBar = () => {
                 xl: "h6",
               },
             }}
-            color={"#fff"}
+            color={"#362922"}
           >
             {"Enthusiastic and curious to learn new skills."}
           </Typography>
@@ -82,7 +78,7 @@ const AboutBar = () => {
                 xl: "h6",
               },
             }}
-            color={"#fff"}
+            color={"#362922"}
           >
             {
               "Currently, I am working as a Software Engineer at CAST Software. Previously worked at Contlo and GeeksforGeeks got (1 Million+ Views) on Articles."
@@ -99,7 +95,7 @@ const AboutBar = () => {
                 xl: "h6",
               },
             }}
-            color={"#fff"}
+            color={"#362922"}
           >
             {
               "I am a computer science student at CUIET'24. Being from a tech background I am interested in programming using C/C++ along with Data Structures and Algorithms."
@@ -116,7 +112,7 @@ const AboutBar = () => {
                 xl: "h6",
               },
             }}
-            color={"#fff"}
+            color={"#362922"}
           >
             {
               "I have good programming skills in C++, strong problem-solving skills and computer fundamentals. I am a Full-Stack Developer and Proficient in Python, React js, Express js, Node js, MongoDB, Pinecone, Redis and PostgreSQL."

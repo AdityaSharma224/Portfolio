@@ -41,6 +41,7 @@ const useStyles = makeStyles({
     },
     typoWrapper:{
         fontFamily: '"Roboto Mono", monospace',
+        userSelect:'none',
         [theme.breakpoints.down('xs')]:{
             alignItems:'center',
             gap:10

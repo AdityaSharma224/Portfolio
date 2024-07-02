@@ -50,11 +50,21 @@ const useStyles = makeStyles({
         [theme.breakpoints.down('md')]:{
            width:'100%',
         },
+        [theme.breakpoints.down('sm')]:{
+          width:'100%',
+       },
+       [theme.breakpoints.down('xs')]:{
+        width:'100%',
+     },
+     [theme.breakpoints.down('xxs')]:{
+      width:'100%',
+   },
     },
     experienceWrapper:{
         alignItems:'center',
         width:'800px',
         height:'100%',
+        borderRadius:'20px',
         [theme.breakpoints.down('lg')]:{
             width:'600px',
         },
@@ -69,8 +79,7 @@ const useStyles = makeStyles({
             width:'400px',
         },
         [theme.breakpoints.down('xxs')]:{
-            width:'280px',
-            marginRight:10
+            width:'390px',
         },
     },
    
@@ -95,7 +104,7 @@ const useStyles = makeStyles({
          minHeight:600,
          minWidth: 700,
          height: 'fit-content',
-         borderRadius: "20px",
+         borderRadius: "30px",
          [theme.breakpoints.down('lg')]:{
             maxWidth:500,
             minWidth:500,
@@ -116,6 +125,11 @@ const useStyles = makeStyles({
             minWidth:320,
             height: 'fit-content',
         },
+        [theme.breakpoints.down('xxs')]:{
+          maxWidth:300,
+          minWidth:300,
+          height: 'fit-content',
+      },
       },
       companyIcon:{
         height:'80px',
@@ -140,6 +154,7 @@ const useStyles = makeStyles({
       },
       content: {
         position: 'relative',
+        borderRadius: "30px",
         marginTop:'8em',
         '& h2': {
           color: '#fff',

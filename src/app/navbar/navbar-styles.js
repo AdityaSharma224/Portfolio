@@ -54,6 +54,7 @@ const useStyles = makeStyles({
     },
     item:{
         color:'#fff',
+        userSelect:'none',
         fontSize:'20px',
         padding:'8px 12px',
         fontWeight:500,
@@ -122,6 +123,7 @@ const useStyles = makeStyles({
       },
       menuItem:{
         width:'100%',
+        userSelect:'none',
         fontSize:'18px',
         textAlign:'center',
         fontFamily:'"Roboto Mono",monospace',
