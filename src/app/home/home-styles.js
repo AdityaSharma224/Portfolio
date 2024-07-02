@@ -86,6 +86,7 @@ const useStyles = makeStyles({
         border:'12px solid #544238',
         height:'600px',
         width:'500px',
+        userSelect:'none',
         [theme.breakpoints.down('lg')]:{
             height:'400px',
             width:'350px',
@@ -106,6 +107,7 @@ const useStyles = makeStyles({
         overflow:'hidden',
         position:'absolute',
         width:'25em',
+        userSelect:'none',
         animation: `$slideInFromLeft 8s ease-out 8s 1`,
         animationFillMode: 'forwards',
         [theme.breakpoints.down('md')]:{
@@ -142,6 +144,7 @@ const useStyles = makeStyles({
         position:'absolute',
         height:'33em',
         width:'33em',
+        userSelect:'none',
         overflow:'hidden',
         animation: `$slideInFromLeft 8s ease-out 8s 1`,
         animationFillMode: 'forwards',
@@ -188,6 +191,7 @@ const useStyles = makeStyles({
         width:'22em',
         animation: `$slideInFromRight 8s ease-in 8s 1`,
         animationFillMode: 'forwards',
+        userSelect:'none',
         [theme.breakpoints.up('xl')]:{
             height:'25em',
             width:'25em',
@@ -226,6 +230,7 @@ const useStyles = makeStyles({
       },
       typeWriter: {
         width: '21ch',
+        userSelect:'none',
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         borderRight: '4px solid #3E261C',
