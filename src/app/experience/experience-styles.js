@@ -154,7 +154,6 @@ const useStyles = makeStyles({
       },
       content: {
         position: 'relative',
-        borderRadius: "30px",
         marginTop:'8em',
         '& h2': {
           color: '#fff',

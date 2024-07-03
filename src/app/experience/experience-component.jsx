@@ -159,7 +159,6 @@ const ExperienceComponent = () => {
             <Stack
               sx={{ height: "100%", width: "100%", alignItems: "center" }}
               flexDirection={"row"}
-              borderRadius={"30px"}
             >
               <IconButton onClick={goToPrevCard}>
                 <KeyboardDoubleArrowLeftIcon
@@ -175,13 +174,12 @@ const ExperienceComponent = () => {
                 (experience, index) =>
                   index === currentIndex && (
                     <Card key={index} className={classes.cardWrapper}>
-                      <CardActionArea sx={{ borderRadius: "30px" }}>
+                      <CardActionArea>
                         <Stack
                           padding={2}
                           flexDirection={"row"}
                           alignItems={"flex-end"}
                           justifyContent={"space-between"}
-                          sx={{ borderRadius: "30px" }}
                         >
                           <img
                             src={experience.icon}

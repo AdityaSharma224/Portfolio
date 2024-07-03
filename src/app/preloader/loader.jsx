@@ -21,7 +21,6 @@ const PreloaderContainer = styled(Box)(({ theme }) => ({
   backgroundColor: "#88513A",
   overflow: "hidden",
   zIndex: 100,
-  borderBottom: "14px solid #3E261C",
 }));
 
 const TextContainer = styled(Box)({
@@ -30,11 +29,13 @@ const TextContainer = styled(Box)({
   gap: "2em",
   overflow: "hidden",
   color: "white",
+  userSelect:'none',
   opacity: 0,
 });
 
 const TypographyStyled = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
+  userSelect:'none',
   // Default styles
   [theme.breakpoints.up("xs")]: {
     fontSize: "2.3rem",
