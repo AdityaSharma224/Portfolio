@@ -55,7 +55,6 @@ const SolarSystem = styled(Box)({
   },
   [theme.breakpoints.down("xxs")]: {
     width: "100%",
-
   },
 });
 
@@ -840,6 +839,22 @@ const SkillComponent = () => {
               </Typography>
             </Stack>
           </Stack>
+          <Typography
+            sx={{
+              marginBottom: 1,
+              fontSize: "130px",
+              display: {
+                xs: "none",
+                sm: "none",
+                md: "none",
+                lg: "block",
+                xl: "block",
+              },
+            }}
+            color={"#fff"}
+          >
+            {"𝗌𝗄𝗂ᥣᥣ𝗌"}
+          </Typography>
         </Stack>
       </Stack>
       <SolarSystem>

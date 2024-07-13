@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { styled } from "@mui/system";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import { gsap } from "gsap";
 import Sound from "react-sound";
+import { Box, Typography, keyframes, Stack } from "@mui/material";
 import IntroMp3 from "../../assets/introSound.mp3";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
@@ -18,48 +17,70 @@ const PreloaderContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "#88513A",
+  backgroundColor: "#1A1A1A",
   overflow: "hidden",
   zIndex: 100,
 }));
 
-const TextContainer = styled(Box)({
-  display: "flex",
-  flexDirection: "row",
-  gap: "2em",
-  overflow: "hidden",
-  color: "white",
-  userSelect:'none',
-  opacity: 0,
+const textAnimation = keyframes`
+  0% {
+    color: black;
+    margin-bottom: -40px;
+  }
+  30% {
+    letter-spacing: 15px;
+    margin-bottom: -40px;
+  }
+  85% {
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+  }
+  100% {
+    margin-bottom: 20px;
+  }
+`;
+
+const Container = styled(Box)({
+  textAlign: "center",
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "100%",
 });
 
-const TypographyStyled = styled(Typography)(({ theme }) => ({
+const Text1 = styled(Typography)({
+  color: "white",
+  fontSize: "60px",
   fontWeight: 700,
-  userSelect:'none',
-  // Default styles
-  [theme.breakpoints.up("xs")]: {
-    fontSize: "2.3rem",
-  },
-  [theme.breakpoints.up("sm")]: {
-    fontSize: "2.5rem",
-  },
-  [theme.breakpoints.up("md")]: {
-    fontSize: "2rem",
-  },
-  [theme.breakpoints.up("lg")]: {
-    fontSize: "3rem",
-  },
-  [theme.breakpoints.up("xl")]: {
-    fontSize: "5rem",
-  },
-}));
+  letterSpacing: "6px",
+  marginBottom: "20px",
+  position: "relative",
+  backgroundColor: "#1A1A1A",
+  animation: `${textAnimation} 3s`,
+});
+
+const Text2 = styled(Typography)({
+  fontSize: "25px",
+  color: "#FFE997",
+});
 
 const Preloader = () => {
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
   const [isPlaying, setIsPlaying] = useState(false);
   const [animationEnded, setAnimationEnded] = useState(false);
 
-  React.useEffect(() => {
+  const [showText, setShowText] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowText(false);
+    }, 3500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     const tl = gsap.timeline({
       onComplete: () => setAnimationEnded(true),
     });
@@ -73,22 +94,18 @@ const Preloader = () => {
         ease: "Power3.easeOut",
       })
       .from(".preloader .text-container h1", {
-        duration: 2.8,
-        delay: 0.3,
+        duration: 3,
+        delay: 0,
         y: 110,
         skewY: 0,
         stagger: 0.4,
         ease: "Power3.easeOut",
       })
       .to(".preloader .text-container h1", {
-        duration: 2.1,
-        y: 110,
-        skewY: -10,
-        stagger: 0.2,
-        ease: "Power3.easeOut",
+        display: "none",
       })
       .to(".preloader", {
-        duration: 2.1,
+        duration: 1,
         height: "0vh",
         ease: "Power3.easeOut",
       })
@@ -115,35 +132,41 @@ const Preloader = () => {
 
   return (
     <PreloaderContainer className="preloader">
-      <TextContainer className="text-container">
-        <TypographyStyled variant="h1" color={'#EEC09B'}>Loading...</TypographyStyled>
-        <TypographyStyled variant="h1" fontWeight={400}>
-          🤗
-        </TypographyStyled>
-      </TextContainer>
+      {showText && (
+        <Container>
+          <Text1>{"Aditya's"}</Text1>
+          <Text2>{"Portfolio"}</Text2>
+        </Container>
+      )}
       <Sound
         url={IntroMp3}
         playStatus={playStatus}
         onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
       />
-      {!animationEnded && (
-        <IconButton
-          onClick={togglePlayStatus}
-          color="inherit"
+      {!animationEnded && showText && (
+        <Stack
+          flexDirection={"row"}
+          alignItems={"center"}
           sx={{ position: "absolute", bottom: 10, left: 10 }}
+          gap={1}
         >
-          {isPlaying ? (
-            <VolumeUpIcon
-              htmlColor="#EEC09B"
-              sx={{ height: "50px", width: "50px" }}
-            />
-          ) : (
-            <VolumeOffIcon
-              htmlColor="#EEC09B"
-              sx={{ height: "50px", width: "50px" }}
-            />
-          )}
-        </IconButton>
+          <IconButton onClick={togglePlayStatus} color="inherit">
+            {isPlaying ? (
+              <VolumeUpIcon
+                htmlColor="#fff"
+                sx={{ height: "30px", width: "30px" }}
+              />
+            ) : (
+              <VolumeOffIcon
+                htmlColor="#fff"
+                sx={{ height: "30px", width: "30px" }}
+              />
+            )}
+          </IconButton>
+          <Typography variant="body1" color={"#fff"}>
+            {"Sound"}:{isPlaying ? "On" : "Off"}
+          </Typography>
+        </Stack>
       )}
     </PreloaderContainer>
   );

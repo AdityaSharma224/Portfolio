@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Stack from "@mui/material/Stack";
 import useStyles from "./experience-styles";
 import MyAboutImage from "../../assets/about-image.jpg";
@@ -13,6 +13,7 @@ import CardContent from "@mui/material/CardContent";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import { CardActionArea } from "@mui/material";
+import { motion, useAnimation } from "framer-motion";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 
@@ -144,6 +145,23 @@ const ExperienceComponent = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % experiences.length);
   };
 
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        controls.start({ x: 0 });
+      } else {
+        controls.start({ x: "-80vw" });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [controls]);
+
   return (
     <Stack className={classes.wrapper} id="experience">
       <Stack flexDirection={"row"} width="100%" height="100%">
@@ -267,6 +285,24 @@ const ExperienceComponent = () => {
                 />
               </IconButton>
             </Stack>
+            
+              <Typography
+                sx={{
+                  position: "absolute",
+                  fontSize: "330px",
+                  alignSelf:'center',
+                  display: {
+                    xs: "none",
+                    sm: "none",
+                    md: "none",
+                    lg: "block",
+                    xl: "block",
+                  },
+                }}
+                color={"#fff"}
+              >
+                {"𝐄𝗑ρ𝖾𝗋𝗂𝖾𐓣𝖼𝖾"}
+              </Typography>
           </Stack>
         </Stack>
       </Stack>
