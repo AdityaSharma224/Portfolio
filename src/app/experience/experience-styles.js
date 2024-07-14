@@ -149,7 +149,6 @@ const useStyles = makeStyles({
             width:'140px',
         },
         [theme.breakpoints.down('xxs')]:{
-           
         },
       },
       content: {

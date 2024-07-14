@@ -17,29 +17,6 @@ import { motion, useAnimation } from "framer-motion";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 
-const AnimatedTypography = styled(Typography)({
-  color: "#dbd56e",
-  background: "linear-gradient(25deg, #eee, #333)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  fontWeight: 500,
-  overflow: "hidden",
-  alignItems: "center",
-  whiteSpace: "nowrap",
-  borderRight: "2px solid",
-  marginTop: "0.4em",
-
-  animation:
-    "type 1.5s steps(90) 1.5s 1 normal both, cursor 1s step-end infinite",
-  position: "relative",
-  "@keyframes type": {
-    from: { width: 0 },
-    to: { width: "75%" },
-  },
-  "@keyframes cursor": {
-    "100%": { borderColor: "transparent" },
-  },
-});
 const ExperienceComponent = () => {
   const classes = useStyles();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -285,24 +262,6 @@ const ExperienceComponent = () => {
                 />
               </IconButton>
             </Stack>
-            
-              <Typography
-                sx={{
-                  position: "absolute",
-                  fontSize: "330px",
-                  alignSelf:'center',
-                  display: {
-                    xs: "none",
-                    sm: "none",
-                    md: "none",
-                    lg: "block",
-                    xl: "block",
-                  },
-                }}
-                color={"#fff"}
-              >
-                {"𝐄𝗑ρ𝖾𝗋𝗂𝖾𐓣𝖼𝖾"}
-              </Typography>
           </Stack>
         </Stack>
       </Stack>

@@ -51,7 +51,7 @@ const Container = styled(Box)({
 
 const Text1 = styled(Typography)({
   color: "white",
-  fontSize: "60px",
+  fontSize: "75px",
   fontWeight: 700,
   letterSpacing: "6px",
   marginBottom: "20px",
@@ -61,13 +61,12 @@ const Text1 = styled(Typography)({
 });
 
 const Text2 = styled(Typography)({
-  fontSize: "25px",
+  fontSize: "35px",
+  fontWeight: 600,
   color: "#FFE997",
 });
 
 const Preloader = () => {
-  const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [animationEnded, setAnimationEnded] = useState(false);
 
   const [showText, setShowText] = useState(true);
@@ -94,7 +93,7 @@ const Preloader = () => {
         ease: "Power3.easeOut",
       })
       .from(".preloader .text-container h1", {
-        duration: 3,
+        duration: 3.4,
         delay: 0,
         y: 110,
         skewY: 0,
@@ -121,52 +120,13 @@ const Preloader = () => {
       });
   }, []);
 
-  const togglePlayStatus = () => {
-    if (isPlaying) {
-      setPlayStatus(Sound.status.STOPPED);
-    } else {
-      setPlayStatus(Sound.status.PLAYING);
-    }
-    setIsPlaying(!isPlaying);
-  };
-
   return (
     <PreloaderContainer className="preloader">
       {showText && (
         <Container>
-          <Text1>{"Aditya's"}</Text1>
+          <Text1>{"Aditya Sharma"}</Text1>
           <Text2>{"Portfolio"}</Text2>
         </Container>
-      )}
-      <Sound
-        url={IntroMp3}
-        playStatus={playStatus}
-        onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
-      />
-      {!animationEnded && showText && (
-        <Stack
-          flexDirection={"row"}
-          alignItems={"center"}
-          sx={{ position: "absolute", bottom: 10, left: 10 }}
-          gap={1}
-        >
-          <IconButton onClick={togglePlayStatus} color="inherit">
-            {isPlaying ? (
-              <VolumeUpIcon
-                htmlColor="#fff"
-                sx={{ height: "30px", width: "30px" }}
-              />
-            ) : (
-              <VolumeOffIcon
-                htmlColor="#fff"
-                sx={{ height: "30px", width: "30px" }}
-              />
-            )}
-          </IconButton>
-          <Typography variant="body1" color={"#fff"}>
-            {"Sound"}:{isPlaying ? "On" : "Off"}
-          </Typography>
-        </Stack>
       )}
     </PreloaderContainer>
   );
