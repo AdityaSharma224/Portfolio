@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { Link, SvgIcon, useMediaQuery } from "@mui/material";
@@ -7,11 +7,13 @@ import useStyles from "./home-styles";
 import LinkedInImage from "../../assets/linkedin.svg";
 import GithubImage from "../../assets/github.svg";
 import LeetcodeImage from "../../assets/leetcode.svg";
+import EmailImg from "../../assets/mail-24.ico";
 import Tooltip from "@mui/material/Tooltip";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import { styled } from "@mui/system";
 import NavbarComponent from "../navbar/navbar";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: "30px",
@@ -52,7 +54,7 @@ const HomeComponent = () => {
   };
 
   return (
-    <Stack className={classes.wrapper} id="home" overflowY={'hidden'} >
+    <Stack className={classes.wrapper} id="home" overflowY={"hidden"}>
       <NavbarComponent />
 
       <Box
@@ -66,10 +68,13 @@ const HomeComponent = () => {
         <Typography
           className={classes.scrollingText}
           style={{ animationPlayState: hover ? "paused" : "running" }}
-          color={'#fff'}
+          color={"#fff"}
           letterSpacing={1}
+          paddingY={1}
         >
-         {'Web development • Front-End development • Full-Stack development •  Technical Content Writing  •   Blogging  •  Web development • Front-End development • Full-Stack development •  Technical Content Writing  •   Blogging'}
+          {
+            "Web development • Front-End development • Full-Stack development •  Technical Content Writing  •   Blogging  •  Web development • Front-End development • Full-Stack development •  Technical Content Writing  •   Blogging"
+          }
         </Typography>
       </Box>
       {/* contact Info */}
@@ -90,11 +95,23 @@ const HomeComponent = () => {
           },
         }}
       >
+        <Stack flexDirection={'row'} gap={1} alignItems={'center'}>
+          <Stack component={'img'} src={EmailImg} height={'24pxnpms'} width={'24px'}></Stack>
+          <Button
+            variant="text"
+            href={`mailto:sharmaaditya13064@gmail.com`}
+            sx={{
+              textDecoration: "none",
+              color: "#fff",
+              textTransform: "none",
+            }}
+          >
+            {"sharmaaditya13064@gmail.com"}
+          </Button>
+        </Stack>
+
         <Typography color={"#fff"} variant="body1" fontWeight={500}>
-          {"sharmaaditya13064@gmail.com"}
-        </Typography>
-        <Typography color={"#fff"} variant="body1" fontWeight={500}>
-          {"(+91)9034349633"}
+          {"(+91) 9034349633"}
         </Typography>
         <Stack className={classes.detailsWrapper}>
           <Stack className={classes.socialIcons} flexDirection={"row"}>

@@ -47,7 +47,7 @@ const NavbarComponent = () => {
           </Typography>
           <Typography
             sx={{
-              typography: { xs: "h5", sm: "h5", md: "h6", lg: "h5", xl: "h5" },
+              typography: { xs: "h5", sm: "h5c", md: "h6", lg: "h5", xl: "h5" },
               fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
             }}
             color={"#fff"}
@@ -78,18 +78,31 @@ const NavbarComponent = () => {
             {"𝑆𝑖𝑡𝑒𝑚𝑎𝑝:"}
           </Typography>
           <Stack flexDirection={"row"} gap={1}>
-            <Typography variant="body1" fontWeight={500} color={"#fff"}>
+            <Typography
+              variant="body1"
+              fontWeight={500}
+              color={"#fff"}
+              sx={{ cursor: "pointer" }}
+              onClick={() => navigate("/about-me")}
+            >
               {"About me,"}
             </Typography>
             <Typography
               variant="body1"
               fontWeight={500}
               color={"#fff"}
+              sx={{ cursor: "pointer" }}
               onClick={() => navigate("/skills")}
             >
               {"Skills,"}
             </Typography>
-            <Typography variant="body1" fontWeight={500} color={"#fff"}>
+            <Typography
+              variant="body1"
+              fontWeight={500}
+              color={"#fff"}
+              sx={{ cursor: "pointer" }}
+              onClick={() => navigate("/projects")}
+            >
               {"Projects"}
             </Typography>
           </Stack>
@@ -105,7 +118,7 @@ const NavbarComponent = () => {
             },
           }}
         >
-          <Example/>
+          <Example />
         </Stack>
       </Stack>
       <Stack

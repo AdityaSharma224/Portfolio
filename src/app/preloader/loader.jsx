@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { styled } from "@mui/system";
-import IconButton from "@mui/material/IconButton";
 import { gsap } from "gsap";
-import Sound from "react-sound";
 import { Box, Typography, keyframes, Stack } from "@mui/material";
-import IntroMp3 from "../../assets/introSound.mp3";
-import VolumeUpIcon from "@mui/icons-material/VolumeUp";
-import VolumeOffIcon from "@mui/icons-material/VolumeOff";
+import { createTheme } from '@mui/material';
+
+const theme = createTheme({
+  breakpoints:{
+      values:{
+          xs:500,
+          sm:600,
+          md:900,
+          lg:1000,
+          xl:1200,
+          xxl:1400,
+      }
+  }
+});
+
 
 const PreloaderContainer = styled(Box)(({ theme }) => ({
   position: "fixed",
@@ -53,17 +63,23 @@ const Text1 = styled(Typography)({
   color: "white",
   fontSize: "75px",
   fontWeight: 700,
-  letterSpacing: "6px",
-  marginBottom: "20px",
+  letterSpacing: "4px",
+  marginBottom: "10px",
   position: "relative",
   backgroundColor: "#1A1A1A",
   animation: `${textAnimation} 3s`,
+  [theme.breakpoints.down('xs')]:{
+    fontSize: "40px",
+  }
 });
 
 const Text2 = styled(Typography)({
   fontSize: "35px",
   fontWeight: 600,
   color: "#FFE997",
+  [theme.breakpoints.down('xs')]:{
+    fontSize: "30px",
+  }
 });
 
 const Preloader = () => {

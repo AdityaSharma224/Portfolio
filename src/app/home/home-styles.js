@@ -92,10 +92,11 @@ const useStyles = makeStyles({
         whiteSpace: 'nowrap',
         display: 'inline-block',
         paddingLeft: '100%',
-        animation: `$scroll 10s infinite linear`,
+        animation: `$scroll 40s infinite linear`,
         '&:hover': {
           animationPlayState: 'paused',
         },
+        background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 580%)',
       },
       '@keyframes scroll': {
         from: {
