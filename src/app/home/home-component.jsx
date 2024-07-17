@@ -15,6 +15,16 @@ import NavbarComponent from "../navbar/navbar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import phoneImg from "../../assets/phone-68-24.ico";
+const Letter = styled('span')({
+  willChange: 'transform',
+  cursor: 'default',
+  display: 'inline-block',
+  transition: 'transform 0.2s ease',
+  '&:hover': {
+    transform: 'scaleX(0.8) scaleY(1.2)',
+  },
+});
+
 
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: "30px",
@@ -58,8 +68,16 @@ const HomeComponent = () => {
     <Stack className={classes.wrapper} id="home" overflowY={"hidden"}>
       <NavbarComponent />
       <Stack flexDirection={'column'} gap={1} position={'absolute'} sx={{bottom:{xs:120,sm:120,md:50,lg:50,xl:50}, left:{xs:30,sm:30,md:50,lg:50,xl:50}}}>
-        <Typography variant="h1" sx={{fontSize:{xs:'50px',sm:'80px',md:'100px',lg:'150px',xl:'160px'}}} fontWeight={700} color={'#fff'}>{'WEB'}</Typography>
-        <Typography variant="h1" sx={{fontSize:{xs:'50px',sm:'80px',md:'100px',lg:'150px',xl:'160px'}}} fontWeight={700} color={'#fff'}>{'DEVELOPER'}</Typography>
+      <Typography variant="h1" sx={{ fontSize: { xs: '50px', sm: '80px', md: '100px', lg: '150px', xl: '150px' }, fontWeight: 700, color: '#fff' }}>
+        {'WEB'.split('').map((char, index) => (
+          <Letter key={index}>{char}</Letter>
+        ))}
+      </Typography>
+      <Typography variant="h1" sx={{ fontSize: { xs: '50px', sm: '80px', md: '100px', lg: '150px', xl: '150px' }, fontWeight: 700, color: '#fff' }}>
+        {'DEVELOPER'.split('').map((char, index) => (
+          <Letter key={index}>{char}</Letter>
+        ))}
+      </Typography>
       </Stack>
       <Box
         onMouseEnter={() => setHover(true)}
