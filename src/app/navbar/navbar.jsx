@@ -35,7 +35,7 @@ const NavbarComponent = () => {
       justifyContent={"space-between"}
     >
       <Stack className={classes.innerWrapper1} flexDirection={"row"}>
-        <Stack className={classes.itemStack}>
+        <Stack className={classes.itemStack} onClick={() => navigate('/')} sx={{cursor:'pointer'}}>
           <Typography
             sx={{
               typography: { xs: "h5", sm: "h5", md: "h6", lg: "h5", xl: "h5" },
