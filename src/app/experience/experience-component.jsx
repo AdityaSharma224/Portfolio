@@ -16,6 +16,7 @@ import { CardActionArea } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import ScrollingText from "./dynamic-scroll-text";
 
 const ExperienceComponent = () => {
   const classes = useStyles();
@@ -112,159 +113,8 @@ const ExperienceComponent = () => {
     },
   ];
 
-  const goToPrevCard = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + experiences.length) % experiences.length
-    );
-  };
-
-  const goToNextCard = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % experiences.length);
-  };
-
-  const controls = useAnimation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        controls.start({ x: 0 });
-      } else {
-        controls.start({ x: "-80vw" });
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [controls]);
-
   return (
     <Stack className={classes.wrapper} id="experience">
-      <Stack flexDirection={"row"} width="100%" height="100%">
-        <img
-          className={classes.myImage}
-          src={MyAboutImage}
-          width={"40%"}
-          height={"100%"}
-          alt="myimage"
-        />
-        <Stack className={classes.aboutWrapper}>
-          <Stack className={classes.experienceWrapper}>
-            <Stack
-              sx={{ height: "100%", width: "100%", alignItems: "center" }}
-              flexDirection={"row"}
-            >
-              <IconButton onClick={goToPrevCard}>
-                <KeyboardDoubleArrowLeftIcon
-                  htmlColor="#fff"
-                  className={classes.icon}
-                  sx={{
-                    height: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
-                    width: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
-                  }}
-                />
-              </IconButton>
-              {experiences.map(
-                (experience, index) =>
-                  index === currentIndex && (
-                    <Card key={index} className={classes.cardWrapper}>
-                      <CardActionArea>
-                        <Stack
-                          padding={2}
-                          flexDirection={"row"}
-                          alignItems={"flex-end"}
-                          justifyContent={"space-between"}
-                        >
-                          <img
-                            src={experience.icon}
-                            className={classes.companyIcon}
-                            alt={experience.title}
-                          />
-                          <Typography
-                            sx={{
-                              typography: {
-                                xs: "caption",
-                                sm: "body2",
-                                md: "h7",
-                                lg: "h7",
-                                xl: "h7",
-                              },
-                              fontWeight: {
-                                xs: 700,
-                                sm: 700,
-                                md: 700,
-                                lg: 700,
-                                xl: 700,
-                              },
-                            }}
-                          >
-                            {experience.year}
-                          </Typography>
-                        </Stack>
-                        <CardContent>
-                          <Typography
-                            gutterBottom
-                            sx={{
-                              typography: {
-                                xs: "body2",
-                                sm: "body1",
-                                md: "h6",
-                                lg: "h6",
-                                xl: "h5",
-                              },
-                              fontWeight: {
-                                xs: 700,
-                                sm: 700,
-                                md: 700,
-                                lg: 700,
-                                xl: 700,
-                              },
-                            }}
-                            component="div"
-                            className={classes.roleTitle}
-                          >
-                            {experience.title}
-                          </Typography>
-                          <Typography
-                            sx={{
-                              typography: {
-                                xs: "caption",
-                                sm: "body3",
-                                md: "body3",
-                                lg: "body1",
-                                xl: "body1",
-                              },
-                              fontWeight: {
-                                xs: 700,
-                                sm: 700,
-                                md: 700,
-                              },
-                            }}
-                            color={"#000"}
-                            className={classes.description}
-                          >
-                            {experience.description}
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  )
-              )}
-              <IconButton onClick={goToNextCard}>
-                <KeyboardDoubleArrowRightIcon
-                  htmlColor="#fff"
-                  className={classes.icon}
-                  sx={{
-                    height: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
-                    width: { xs: 30, sm: 30, md: 40, lg: 60, xl: 60 },
-                  }}
-                />
-              </IconButton>
-            </Stack>
-          </Stack>
-        </Stack>
-      </Stack>
     </Stack>
   );
 };

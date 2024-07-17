@@ -14,6 +14,7 @@ import { styled } from "@mui/system";
 import NavbarComponent from "../navbar/navbar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import phoneImg from "../../assets/phone-68-24.ico";
 
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: "30px",
@@ -56,7 +57,10 @@ const HomeComponent = () => {
   return (
     <Stack className={classes.wrapper} id="home" overflowY={"hidden"}>
       <NavbarComponent />
-
+      <Stack flexDirection={'column'} gap={1} position={'absolute'} sx={{bottom:{xs:120,sm:120,md:50,lg:50,xl:50}, left:{xs:30,sm:30,md:50,lg:50,xl:50}}}>
+        <Typography variant="h1" sx={{fontSize:{xs:'50px',sm:'80px',md:'100px',lg:'150px',xl:'160px'}}} fontWeight={700} color={'#fff'}>{'WEB'}</Typography>
+        <Typography variant="h1" sx={{fontSize:{xs:'50px',sm:'80px',md:'100px',lg:'150px',xl:'160px'}}} fontWeight={700} color={'#fff'}>{'DEVELOPER'}</Typography>
+      </Stack>
       <Box
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
@@ -88,15 +92,20 @@ const HomeComponent = () => {
         sx={{
           display: {
             xs: "none",
-            sm: "flex",
+            sm: "none",
             md: "flex",
             lg: "flex",
             xl: "flex",
           },
         }}
       >
-        <Stack flexDirection={'row'} gap={1} alignItems={'center'}>
-          <Stack component={'img'} src={EmailImg} height={'24pxnpms'} width={'24px'}></Stack>
+        <Stack flexDirection={"row"} gap={0} alignItems={"center"}>
+          <Stack
+            component={"img"}
+            src={EmailImg}
+            height={"20px"}
+            width={"20px"}
+          ></Stack>
           <Button
             variant="text"
             href={`mailto:sharmaaditya13064@gmail.com`}
@@ -106,13 +115,22 @@ const HomeComponent = () => {
               textTransform: "none",
             }}
           >
-            {"sharmaaditya13064@gmail.com"}
+            <Typography color={"#fff"} variant="body1" fontWeight={500} href={`mailto:sharmaaditya13064@gmail.com`}>
+              {"sharmaaditya13064@gmail.com"}
+            </Typography>
           </Button>
         </Stack>
-
-        <Typography color={"#fff"} variant="body1" fontWeight={500}>
-          {"(+91) 9034349633"}
-        </Typography>
+        <Stack flexDirection={"row"} gap={1} alignItems={"center"}>
+          <Stack
+            component={"img"}
+            src={phoneImg}
+            height={"20px"}
+            width={"20px"}
+          ></Stack>
+          <Typography color={"#fff"} variant="body1" fontWeight={500}>
+            {"(+91) 9034349633"}
+          </Typography>
+        </Stack>
         <Stack className={classes.detailsWrapper}>
           <Stack className={classes.socialIcons} flexDirection={"row"}>
             {renderIcon(

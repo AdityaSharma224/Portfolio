@@ -11,7 +11,7 @@ const Layout = () => {
     <Stack className={classes.wrapper}>
       <Preloader />
       <HomeComponent />
-      <ExperienceComponent />
+      <ExperienceComponent/>
     </Stack>
   );
 };
