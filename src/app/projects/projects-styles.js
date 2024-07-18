@@ -18,6 +18,12 @@ const useStyles = makeStyles({
     wrapper:{
         backgroundColor:'#fff',
     },
+    itemStack:{
+        padding:'16px 26px',
+        [theme.breakpoints.down('xl')]:{
+          padding:'10px 20px',
+        }
+      },
 });
 
 export default useStyles;

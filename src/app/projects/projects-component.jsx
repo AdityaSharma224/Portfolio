@@ -1,11 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 import useStyles from "./projects-styles";
 import { Box, Typography } from "@mui/material";
 import NavbarComponent from "../navbar/navbar";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const ProjectsComponent = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
       const text1 = document.getElementById("text1");
@@ -41,12 +45,112 @@ const ProjectsComponent = () => {
           },
         }}
       >
-        <Stack id={"text1"} position={"fixed"} width={"100%"} gap={1} height={'300px'}>
-          <NavbarComponent />
-          <Typography variant={'body1'} fontWeight={500} color={"#fff"} position={'absolute'} top={200} left={30}>
+        <Stack
+          id={"text1"}
+          position={"fixed"}
+          width={"100%"}
+          gap={1}
+          height={"300px"}
+        >
+          <Stack
+            sx={{
+              display: {
+                xs: "none",
+                sm: "flex",
+                md: "flex",
+                lg: "flex",
+                xl: "flex",
+              },
+            }}
+          >
+            <NavbarComponent />
+          </Stack>
+          <Stack
+            sx={{
+              display: {
+                xs: "flex",
+                sm: "none",
+                md: "none",
+                lg: "none",
+                xl: "none",
+              },
+            }}
+          >
+            <Stack flexDirection={"row"} width={"100%"}>
+              <Stack
+                className={classes.itemStack}
+                width={"100%"}
+                onClick={() => navigate("/")}
+                sx={{ cursor: "pointer" }}
+              >
+                <Typography
+                  sx={{
+                    typography: {
+                      xs: "h5",
+                      sm: "h5",
+                      md: "h6",
+                      lg: "h5",
+                      xl: "h5",
+                    },
+                    fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
+                  }}
+                  color={"#fff"}
+                >
+                  {"ADITYA SHARMA"}
+                </Typography>
+                <Typography
+                  sx={{
+                    typography: {
+                      xs: "h5",
+                      sm: "h5",
+                      md: "h6",
+                      lg: "h5",
+                      xl: "h5",
+                    },
+                    fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
+                  }}
+                  color={"#fff"}
+                >
+                  {"PORTFOLIO"}
+                </Typography>
+              </Stack>
+              <Stack
+                width={"60%"}
+                onClick={() => navigate("/")}
+                sx={{ cursor: "pointer", alignItems:'flex-end' }}
+              >
+                <Button variant="text" startIcon={<ArrowBackIcon htmlColor="#fff"/>} sx={{ width: "120px", color:'#fff', textTransform:'none' }}>
+                  {"Go Back"}
+                </Button>
+              </Stack>
+            </Stack>
+          </Stack>
+          <Typography
+            variant={"body1"}
+            fontWeight={500}
+            color={"#fff"}
+            position={"absolute"}
+            top={200}
+            left={30}
+          >
             {"𝑳𝒐𝒐𝒌 𝒂𝒕 𝒎𝒚..."}
           </Typography>
-          <Typography sx={{ fontSize: { xs: '60px', sm: '80px', md: '100px', lg: '150px', xl: '150px' }}} fontWeight={700} color={"#fff"} position={'absolute'} top={220} left={30}>
+          <Typography
+            sx={{
+              fontSize: {
+                xs: "60px",
+                sm: "80px",
+                md: "100px",
+                lg: "150px",
+                xl: "150px",
+              },
+            }}
+            fontWeight={700}
+            color={"#fff"}
+            position={"absolute"}
+            top={220}
+            left={30}
+          >
             {"PROJECTS"}
           </Typography>
         </Stack>

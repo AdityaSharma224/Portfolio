@@ -47,7 +47,13 @@ const useStyles = makeStyles({
        '&:hover':{
         backgroundColor:'#FFA500',
        }
-      }
+      },
+      itemStack:{
+        padding:'16px 26px',
+        [theme.breakpoints.down('xl')]:{
+          padding:'10px 20px',
+        }
+      },
 
 });
 
