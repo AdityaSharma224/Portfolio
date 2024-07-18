@@ -25,7 +25,7 @@ const sidebar = {
 const aboutMeVariants = {
   hidden: { y: "1000%", opacity: 0 },
   visible: {
-    y: "calc(250% - 100px)",
+    y: "calc(180% - 100px)",
     x: 10,
     opacity: 1,
     transition: { type: "spring", stiffness: 50, damping: 20 },
@@ -61,7 +61,7 @@ export const Example = () => {
             <Typography variant="body1" fontWeight={700} color="#000">
               {"𝑆𝑖𝑡𝑒𝑚𝑎𝑝:"}
             </Typography>
-            {["ABOUT ME", "SKILLS", "PROJECTS"].map((text, index) => (
+            {["ABOUT ME", "SKILLS",'ARTICLES' ,"PROJECTS"].map((text, index) => (
               <Typography
                 key={index}
                 variant="h3"

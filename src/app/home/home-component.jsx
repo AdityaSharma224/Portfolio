@@ -15,6 +15,7 @@ import NavbarComponent from "../navbar/navbar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import phoneImg from "../../assets/phone-68-24.ico";
+
 const Letter = styled('span')({
   willChange: 'transform',
   cursor: 'default',
@@ -145,7 +146,7 @@ const HomeComponent = () => {
             height={"20px"}
             width={"20px"}
           ></Stack>
-          <Typography color={"#fff"} variant="body1" fontWeight={500}>
+          <Typography color={"#fff"} variant="body1" fontWeight={500} sx={{userSelect:'text'}}>
             {"(+91) 9034349633"}
           </Typography>
         </Stack>

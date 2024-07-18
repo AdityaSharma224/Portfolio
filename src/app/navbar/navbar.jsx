@@ -6,6 +6,29 @@ import Lenis from "@studio-freight/lenis";
 import { Button, Typography } from "@mui/material";
 import { Link } from "react-scroll";
 import { Example } from "./shortMenu/Example";
+import { motion } from "framer-motion";
+
+const MotionTypography = ({ text, navigatePath }) => {
+  const navigate = useNavigate();
+
+  return (
+    <motion.div
+      whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+    >
+      <Typography
+        variant="body1"
+        fontWeight={500}
+        color={"#fff"}
+        sx={{ cursor: "pointer" }}
+        onClick={() => navigate(navigatePath)}
+      >
+        {text}
+      </Typography>
+    </motion.div>
+  );
+};
 
 const NavbarComponent = () => {
   const classes = useStyles();
@@ -35,7 +58,11 @@ const NavbarComponent = () => {
       justifyContent={"space-between"}
     >
       <Stack className={classes.innerWrapper1} flexDirection={"row"}>
-        <Stack className={classes.itemStack} onClick={() => navigate('/')} sx={{cursor:'pointer'}}>
+        <Stack
+          className={classes.itemStack}
+          onClick={() => navigate("/")}
+          sx={{ cursor: "pointer" }}
+        >
           <Typography
             sx={{
               typography: { xs: "h5", sm: "h5", md: "h6", lg: "h5", xl: "h5" },
@@ -47,7 +74,7 @@ const NavbarComponent = () => {
           </Typography>
           <Typography
             sx={{
-              typography: { xs: "h5", sm: "h5c", md: "h6", lg: "h5", xl: "h5" },
+              typography: { xs: "h5", sm: "h5", md: "h6", lg: "h5", xl: "h5" },
               fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
             }}
             color={"#fff"}
@@ -77,34 +104,11 @@ const NavbarComponent = () => {
           >
             {"𝑆𝑖𝑡𝑒𝑚𝑎𝑝:"}
           </Typography>
-          <Stack flexDirection={"row"} gap={1}>
-            <Typography
-              variant="body1"
-              fontWeight={500}
-              color={"#fff"}
-              sx={{ cursor: "pointer" }}
-              onClick={() => navigate("/about-me")}
-            >
-              {"About me,"}
-            </Typography>
-            <Typography
-              variant="body1"
-              fontWeight={500}
-              color={"#fff"}
-              sx={{ cursor: "pointer" }}
-              onClick={() => navigate("/skills")}
-            >
-              {"Skills,"}
-            </Typography>
-            <Typography
-              variant="body1"
-              fontWeight={500}
-              color={"#fff"}
-              sx={{ cursor: "pointer" }}
-              onClick={() => navigate("/projects")}
-            >
-              {"Projects"}
-            </Typography>
+          <Stack flexDirection={"row"} gap={1.5}>
+            <MotionTypography text={"About me,"} navigatePath={"/about-me"} />
+            <MotionTypography text={"Skills,"} navigatePath={"/skills"} />
+            <MotionTypography text={"Articles,"} navigatePath={"/articles"} />
+            <MotionTypography text={"Projects"} navigatePath={"/projects"} />
           </Stack>
         </Stack>
         <Stack
