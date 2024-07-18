@@ -45,12 +45,15 @@ const SolarSystem = styled(Box)({
   },
   [theme.breakpoints.down("sm")]: {
     width: "100%",
+    height: "100vh",
   },
   [theme.breakpoints.down("xs")]: {
     width: "100%",
+    height: "100vh",
   },
   [theme.breakpoints.down("xxs")]: {
     width: "100%",
+    height: "100vh",
   },
 });
 
@@ -174,15 +177,28 @@ const SkillSection = () => {
             lg: "50%",
             xl: "50%",
           },
+          height: {
+            xs: "100%",
+            sm: "100%",
+            md: "100%",
+            lg: "50%",
+            xl: "50%",
+          },
         }}
       >
         <Stack
           sx={{
             backgroundColor: "#fff",
             width: "100%",
-            height: "100%",
+            height: {
+              xs: "80%",
+              sm: "80%",
+              md: "100%",
+              lg: "100%",
+              xl: "100%",
+            },
             alignItems: "center",
-            padding: { xs: 10, sm: 10, md: 15, lg: 25, xl: 25 },
+            padding: { xs: 5, sm: 9, md: 15, lg: 25, xl: 25 },
             justifyContent: "space-between",
           }}
         >
@@ -714,7 +730,7 @@ const SkillSection = () => {
           </Stack>
           <Stack
             flexDirection={"row"}
-            sx={{ gap: { xs: 5, sm: 5, md: 8, lg: 15, xl: 15 } }}
+            sx={{ gap: { xs: 3, sm: 3, md: 8, lg: 15, xl: 15 } }}
           >
             <Stack
               sx={{
@@ -735,8 +751,8 @@ const SkillSection = () => {
               <Typography
                 sx={{
                   typography: {
-                    xs: "h7",
-                    sm: "h7",
+                    xs: "body2",
+                    sm: "body2",
                     md: "h6",
                     lg: "h5",
                     xl: "h6",
@@ -750,8 +766,8 @@ const SkillSection = () => {
               <Typography
                 sx={{
                   typography: {
-                    xs: "h7",
-                    sm: "h7",
+                    xs: "body2",
+                    sm: "body2",
                     md: "h6",
                     lg: "h5",
                     xl: "h6",
@@ -782,8 +798,8 @@ const SkillSection = () => {
               <Typography
                 sx={{
                   typography: {
-                    xs: "h7",
-                    sm: "h7",
+                    xs: "body2",
+                    sm: "body2",
                     md: "h6",
                     lg: "h5",
                     xl: "h6",
@@ -797,8 +813,8 @@ const SkillSection = () => {
               <Typography
                 sx={{
                   typography: {
-                    xs: "h7",
-                    sm: "h7",
+                    xs: "body2",
+                    sm: "body2",
                     md: "h6",
                     lg: "h5",
                     xl: "h6",
@@ -829,8 +845,8 @@ const SkillSection = () => {
               <Typography
                 sx={{
                   typography: {
-                    xs: "h7",
-                    sm: "h7",
+                    xs: "body2",
+                    sm: "body2",
                     md: "h6",
                     lg: "h5",
                     xl: "h6",
@@ -845,8 +861,8 @@ const SkillSection = () => {
               <Typography
                 sx={{
                   typography: {
-                    xs: "h7",
-                    sm: "h7",
+                    xs: "body2",
+                    sm: "body2",
                     md: "h6",
                     lg: "h5",
                     xl: "h6",
@@ -862,20 +878,6 @@ const SkillSection = () => {
         </Stack>
       </Stack>
       <SolarSystem>
-        <Box
-          sx={{
-            position: "absolute",
-            top: { xxs: "3em", xs: "3em", sm: "10em" },
-            left: { xxs: "1em", xs: "2em", sm: "18em" },
-          }}
-        ></Box>
-        <Box
-          sx={{
-            position: "absolute",
-            top: { xxs: "15em", xs: "4em", sm: "22em" },
-            right: { xxs: "1em", xs: "-1em", sm: "12em" },
-          }}
-        ></Box>
         <Sun />
         <img
           src={Aster}
