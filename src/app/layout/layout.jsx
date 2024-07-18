@@ -1,14 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import Stack from "@mui/material/Stack";
 import HomeComponent from "../home/home-component";
-import ExperienceComponent from "../experience/experience-component";
 import Preloader from "../preloader/loader";
 import useStyles from "./layout-styles";
 
 const Layout = () => {
   const classes = useStyles();
   const cursorRef = useRef(null);
-  const skillsRef = useRef(null);
 
   useEffect(() => {
     const editCursor = (e) => {
@@ -30,7 +28,6 @@ const Layout = () => {
     <Stack className={classes.wrapper}>
       <Preloader />
       <HomeComponent />
-      <ExperienceComponent/>
       <div
         className={`${classes.cursor}`}
         ref={cursorRef}

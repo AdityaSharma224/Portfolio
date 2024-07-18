@@ -41,7 +41,7 @@ const useStyles = makeStyles({
         },
       },
       bar:{
-       backgroundColor:'#D3D3D3',
+       backgroundColor:'#7C7C7C',
        borderRadius:'3px',
        cursor:'pointer',
        '&:hover':{

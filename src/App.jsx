@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SkillComponent from "./app/skills/skill-component";
 import ExperienceComponent from "./app/experience/experience-component";
 import ProjectsComponent from "./app/projects/projects-component";
+import ArticleComponent from "./app/article/article-component";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import {GlobalStyles} from "@mui/material";
 
@@ -38,8 +39,8 @@ function App() {
         styleOverrides: {
           tooltip: {
             fontSize: "12px",
-            color: "#000",
-            backgroundColor: "#D3D3D3",
+            color: "#fff",
+            backgroundColor: "#000",
             padding: "6px 12px",
             fontWeight: 600,
           },
@@ -55,6 +56,7 @@ function App() {
         <Route path="/" element={<Layout />} />
         <Route path="/about-me" element={<ExperienceComponent />} />
         <Route path="/skills" element={<SkillComponent />} />
+        <Route path="/articles" element={<ArticleComponent />} />
         <Route path="/projects" element={<ProjectsComponent />} />
       </Routes>
     </ThemeProvider>

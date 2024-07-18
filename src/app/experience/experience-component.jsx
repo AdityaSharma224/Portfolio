@@ -1,120 +1,70 @@
 import React, { useState, useRef, useEffect } from "react";
 import Stack from "@mui/material/Stack";
 import useStyles from "./experience-styles";
-import MyAboutImage from "../../assets/about-image.jpg";
-import { IconButton, Typography } from "@mui/material";
-import { Box } from "@mui/material";
-import { styled } from "@mui/system";
-import GFGIcon from "../../assets/gfg.png";
-import CASTIcon from "../../assets/cast.png";
-import CONTLOIcon from "../../assets/contlo.png";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import { CardActionArea } from "@mui/material";
-import { motion, useAnimation } from "framer-motion";
-import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
-import ScrollingText from "./dynamic-scroll-text";
+import { Box, Typography } from "@mui/material";
+import NavbarComponent from "../navbar/navbar";
 
 const ExperienceComponent = () => {
   const classes = useStyles();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      const text1 = document.getElementById("text1");
+      const text2 = document.getElementById("text2");
+      const sectionTwo = document.getElementById("two");
 
-  const experiences = [
-    {
-      icon: CASTIcon,
-      year: "10/2023 - Present",
-      title: "Software Development Engineer - 1",
-      description: (
-        <List
-          sx={{
-            listStyleType: "disc",
-            pl: 2,
-            "& .MuiListItem-root": { display: "list-item" },
-          }}
-        >
-          <ListItem>
-            {
-              "Frontend development of the CAST Imaging Analyzer, Utilizing the Wails framework with React.js for an intuitive user interface,catering to diverse operational environments."
-            }
-          </ListItem>
-          <ListItem>
-            {
-              "Online Mode: Implemented a lightweight CAST analyzer that performs rapid scans of applications, identifies underlying technologies, and seamlessly integrates with CAST Imaging SaaS for automatic result uploads, enhancing efficiency and security."
-            }
-          </ListItem>
-          <ListItem>
-            {
-              "Offline Mode: Established a robust local setup designed for comprehensive scans without internet dependency, optimizing for storage efficiency. Facilitated post-scan reviews, enabling precise manual uploads to CAST Imaging SaaS, ensuring data integrity and control."
-            }
-          </ListItem>
-        </List>
-      ),
-    },
-    {
-      icon: CONTLOIcon,
-      year: "07/2023 - 10/2023",
-      title: "Software Development Engineer Intern",
-      description: (
-        <List
-          sx={{
-            listStyleType: "disc",
-            pl: 2,
-            "& .MuiListItem-root": { display: "list-item" },
-          }}
-        >
-          <ListItem>
-            {
-              "Development of long-term memory capabilities for large language models, enhancing response relevance and accuracy by 65%."
-            }
-          </ListItem>
-          <ListItem>
-            {"Databases Integration (Redis, Pinecone) for vector storage."}
-          </ListItem>
-          <ListItem>
-            {
-              "Implemented innovative AI algorithms that improved overall system efficiency, resulting in a 30% reduction in response."
-            }
-          </ListItem>
-        </List>
-      ),
-    },
-    {
-      icon: GFGIcon,
-      year: "10/2022 - 06/2023",
-      title: "Member of Technical Staff Intern",
-      description: (
-        <List
-          sx={{
-            listStyleType: "disc",
-            pl: 2,
-            "& .MuiListItem-root": { display: "list-item" },
-          }}
-        >
-          <ListItem>
-            {
-              "Worked closely with the Core Data Structure and Algorithm team at GeeksforGeeks."
-            }
-          </ListItem>
-          <ListItem>
-            {
-              "Designed and developed the most viewed data structure and algorithm official tutorials e.g., Dijkstra's Algorithm, Set, Map, MaHeap, and Min-Heap."
-            }
-          </ListItem>
-          <ListItem>
-            {
-              "Improved Customer/Viewer Experience by delivering top quality content and Visuals."
-            }
-          </ListItem>
-        </List>
-      ),
-    },
-  ];
+      if (window.pageYOffset > sectionTwo.offsetTop) {
+        text2.style.position = "fixed";
+      } else {
+        text2.style.position = "absolute";
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <Stack className={classes.wrapper} id="experience">
+      <Box
+        id="one"
+        sx={{
+          position: "relative",
+          width: "100vw",
+          display: "flex",
+          alignItems: "flex-start",
+          backgroundColor: "#0C0C0F",
+          height: {
+            xs: "35vh",
+            sm: "38vh",
+            md: "43vh",
+            lg: "43vh",
+            xl: "43vh",
+          },
+        }}
+      >
+        <Stack id={"text1"} position={"fixed"} width={"100%"} gap={1} height={'300px'}>
+          <NavbarComponent />
+          <Typography variant={'body1'} fontWeight={500} color={"#fff"} position={'absolute'} top={200} left={30}>
+            {"𝑳𝒆𝒕 𝒎𝒆 𝒔𝒉𝒂𝒓𝒆 𝒇𝒆𝒘 𝒅𝒆𝒕𝒂𝒊𝒍𝒔..."}
+          </Typography>
+          <Typography sx={{ fontSize: { xs: '60px', sm: '80px', md: '100px', lg: '150px', xl: '150px' }}} fontWeight={700} color={"#fff"} position={'absolute'} top={220} left={30}>
+            {"ABOUT ME"}
+          </Typography>
+        </Stack>
+      </Box>
+      <Box
+        component="section"
+        id="two"
+        sx={{
+          position: "relative",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#fff",
+        }}
+      >
+        <Stack id={"text2"} position={"absolute"}></Stack>
+      </Box>
     </Stack>
   );
 };
