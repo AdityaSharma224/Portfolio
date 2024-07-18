@@ -221,6 +221,13 @@ const SkillSection = () => {
                       lg: "h5",
                       xl: "h5",
                     },
+                    fontWeight: {
+                      xs: 600,
+                      sm: 600,
+                      md: 700,
+                      lg: 700,
+                      xl: 700,
+                    },
                   }}
                 >
                   {"Top"}
@@ -229,11 +236,18 @@ const SkillSection = () => {
                   color={"#000"}
                   sx={{
                     typography: {
-                      xs: "h6",
-                      sm: "h6",
-                      md: "h5",
+                      xs: "h4",
+                      sm: "h4",
+                      md: "h4",
                       lg: "h3",
                       xl: "h3",
+                    },
+                    fontWeight: {
+                      xs: 600,
+                      sm: 600,
+                      md: 700,
+                      lg: 700,
+                      xl: 700,
                     },
                   }}
                 >
@@ -251,6 +265,13 @@ const SkillSection = () => {
                       lg: "h5",
                       xl: "h5",
                     },
+                    fontWeight: {
+                      xs: 600,
+                      sm: 600,
+                      md: 700,
+                      lg: 700,
+                      xl: 700,
+                    },
                   }}
                 >
                   {" Leetcode Contest Rating"}
@@ -259,11 +280,18 @@ const SkillSection = () => {
                   color={"#000"}
                   sx={{
                     typography: {
-                      xs: "h6",
-                      sm: "h6",
-                      md: "h5",
+                      xs: "h4",
+                      sm: "h4",
+                      md: "h4",
                       lg: "h3",
                       xl: "h3",
+                    },
+                    fontWeight: {
+                      xs: 600,
+                      sm: 600,
+                      md: 700,
+                      lg: 700,
+                      xl: 700,
                     },
                   }}
                   textAlign={"right"}
