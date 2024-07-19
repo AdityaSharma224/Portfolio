@@ -6,6 +6,7 @@ import { Box, Typography } from "@mui/material";
 import NavbarComponent from "../navbar/navbar";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import {Button} from "@mui/material";
+import Preloader from "../preloader/loader";
 
 const ArticleComponent = () => {
   const classes = useStyles();
@@ -28,6 +29,7 @@ const ArticleComponent = () => {
   }, []);
   return (
     <Stack className={classes.wrapper} id="experience">
+      <Preloader/>
       <Box
         id="one"
         sx={{

@@ -18,6 +18,12 @@ const useStyles = makeStyles({
     wrapper:{
         backgroundColor:'#fff',
     },
+    wrapper2:{
+        backgroundColor:'#fff',
+        height:'100vh',
+        width:'100vw',
+        alignItems:'center',
+    },
     itemStack:{
         padding:'16px 26px',
         [theme.breakpoints.down('xl')]:{

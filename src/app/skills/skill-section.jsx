@@ -136,8 +136,63 @@ const Sun = styled(Box)({
   },
 });
 
+const heights = [
+  "10%",
+  "10%",
+  "10%",
+  "10%",
+  "20%",
+  "40%",
+  "80%",
+  "70%",
+  "50%",
+  "40%",
+  "30%",
+  "20%",
+  "10%",
+  "10%",
+  "10%",
+  "10%",
+  "10%",
+  "10%",
+  "10%",
+  "10%",
+  "10%",
+  "10%",
+];
+
+const widths = {
+  xs: "10px",
+  sm: "10px",
+  md: "10px",
+  lg: "20px",
+  xl: "20px",
+};
+
+
 const SkillSection = () => {
   const classes = useStyles();
+  const StackBars = () => (
+    <>
+      {heights.map((height, index) => (
+        <Stack
+          key={index}
+          sx={{
+            height: {
+              xs: height,
+              sm: height,
+              md: height,
+              lg: height,
+              xl: height,
+            },
+            width: widths,
+            ...(index === heights.length - 6 && { backgroundColor: "#FFA500" }),
+          }}
+          className={classes.bar}
+        ></Stack>
+      ))}
+    </>
+  );
   return (
     <Stack
       sx={{
@@ -190,6 +245,7 @@ const SkillSection = () => {
           sx={{
             backgroundColor: "#fff",
             width: "100%",
+            gap: { xs: 3, sm: 3, md: 8, lg: 10, xl: 10 },
             height: {
               xs: "80%",
               sm: "80%",
@@ -200,6 +256,7 @@ const SkillSection = () => {
             alignItems: "center",
             padding: { xs: 5, sm: 9, md: 15, lg: 25, xl: 25 },
             justifyContent: "space-between",
+            
           }}
         >
           <Stack sx={{ borderRadius: "15px" }} flexDirection={"column"}>
@@ -316,596 +373,43 @@ const SkillSection = () => {
                 },
               }}
             >
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "20%",
-                    sm: "20%",
-                    md: "20%",
-                    lg: "20%",
-                    xl: "20%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "40%",
-                    sm: "40%",
-                    md: "40%",
-                    lg: "40%",
-                    xl: "40%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "80%",
-                    sm: "80%",
-                    md: "80%",
-                    lg: "80%",
-                    xl: "80%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "70%",
-                    sm: "70%",
-                    md: "70%",
-                    lg: "70%",
-                    xl: "70%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "50%",
-                    sm: "50%",
-                    md: "50%",
-                    lg: "50%",
-                    xl: "50%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "40%",
-                    sm: "40%",
-                    md: "40%",
-                    lg: "40%",
-                    xl: "40%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "30%",
-                    sm: "30%",
-                    md: "30%",
-                    lg: "30%",
-                    xl: "30%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "20%",
-                    sm: "20%",
-                    md: "20%",
-                    lg: "20%",
-                    xl: "20%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                  backgroundColor: "#FFA500",
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
-              <Stack
-                sx={{
-                  height: {
-                    xs: "10%",
-                    sm: "10%",
-                    md: "10%",
-                    lg: "10%",
-                    xl: "10%",
-                  },
-                  width: {
-                    xs: "10px",
-                    sm: "10px",
-                    md: "10px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-                className={classes.bar}
-              ></Stack>
+              <StackBars/>
             </Stack>
           </Stack>
           <Stack
             flexDirection={"row"}
             sx={{ gap: { xs: 3, sm: 3, md: 8, lg: 15, xl: 15 } }}
           >
-            <Stack
-              sx={{
-                backgroundColor: "#282828",
-                paddingX: 2,
-                paddingY: 1,
-                borderRadius: "5px",
-                width: {
-                  xs: "110px",
-                  sm: "110px",
-                  md: "130px",
-                  lg: "160px",
-                  xl: "160px",
-                },
-              }}
-              alignItems={"center"}
-            >
-              <Typography
+            {["Easy", "Medium", "Hard"].map((level, idx) => (
+              <Stack
+                key={level}
                 sx={{
-                  typography: {
-                    xs: "body2",
-                    sm: "body2",
-                    md: "h6",
-                    lg: "h5",
-                    xl: "h6",
-                  },
+                  backgroundColor: "#282828",
+                  paddingX: 2,
+                  paddingY: 1,
+                  borderRadius: "5px",
+                  width: { xs: "110px", md: "130px", lg: "160px" },
                 }}
-                fontWeight={700}
-                color={"green"}
+                alignItems="center"
               >
-                {"Easy"}
-              </Typography>
-              <Typography
-                sx={{
-                  typography: {
-                    xs: "body2",
-                    sm: "body2",
-                    md: "h6",
-                    lg: "h5",
-                    xl: "h6",
-                  },
-                }}
-                fontWeight={700}
-                color={"#D3D3D3"}
-              >
-                {"366 / 807"}
-              </Typography>
-            </Stack>
-            <Stack
-              sx={{
-                backgroundColor: "#282828",
-                paddingX: 2,
-                paddingY: 1,
-                borderRadius: "5px",
-                width: {
-                  xs: "110px",
-                  sm: "110px",
-                  md: "130px",
-                  lg: "160px",
-                  xl: "160px",
-                },
-              }}
-              alignItems={"center"}
-            >
-              <Typography
-                sx={{
-                  typography: {
-                    xs: "body2",
-                    sm: "body2",
-                    md: "h6",
-                    lg: "h5",
-                    xl: "h6",
-                  },
-                }}
-                fontWeight={700}
-                color={"orange"}
-              >
-                {"Medium"}
-              </Typography>
-              <Typography
-                sx={{
-                  typography: {
-                    xs: "body2",
-                    sm: "body2",
-                    md: "h6",
-                    lg: "h5",
-                    xl: "h6",
-                  },
-                }}
-                fontWeight={700}
-                color={"#D3D3D3"}
-              >
-                {"575 / 1679"}
-              </Typography>
-            </Stack>
-            <Stack
-              sx={{
-                backgroundColor: "#282828",
-                paddingX: 2,
-                paddingY: 1,
-                borderRadius: "5px",
-                width: {
-                  xs: "110px",
-                  sm: "110px",
-                  md: "130px",
-                  lg: "160px",
-                  xl: "160px",
-                },
-              }}
-              alignItems={"center"}
-            >
-              <Typography
-                sx={{
-                  typography: {
-                    xs: "body2",
-                    sm: "body2",
-                    md: "h6",
-                    lg: "h5",
-                    xl: "h6",
-                  },
-                }}
-                fontWeight={700}
-                color={"red"}
-              >
-                {" "}
-                {"Hard"}
-              </Typography>
-              <Typography
-                sx={{
-                  typography: {
-                    xs: "body2",
-                    sm: "body2",
-                    md: "h6",
-                    lg: "h5",
-                    xl: "h6",
-                  },
-                }}
-                fontWeight={700}
-                color={"#D3D3D3"}
-              >
-                {"120 / 713"}
-              </Typography>
-            </Stack>
+                <Typography
+                  sx={{ typography: { xs: "body2", md: "h6" }, fontWeight: 700 }}
+                  color={level === "Easy" ? "green" : level === "Medium" ? "orange" : "red"}
+                >
+                  {level}
+                </Typography>
+                <Typography
+                  sx={{ typography: { xs: "body2", md: "h6" }, fontWeight: 700 }}
+                  color="#D3D3D3"
+                >
+                  {`${level === "Easy" ? "366 / 807" : level === "Medium" ? "575 / 1679" : "120 / 713"}`}
+                </Typography>
+              </Stack>
+            ))}
           </Stack>
         </Stack>
       </Stack>
-      <SolarSystem>
+     <SolarSystem>
         <Sun />
         <img
           src={Aster}
@@ -921,42 +425,16 @@ const SkillSection = () => {
             },
           }}
         />
-        <OrbitWithIcon
-          color="blue"
-          size="200px"
-          duration="rotating-anim 3s"
-          icon={ReactImg}
-        />
-        <OrbitWithIcon
-          color=""
-          size="320px"
-          duration="rotating-anim 4s"
-          icon={Python}
-        />
-        <OrbitWithIcon
-          color=""
-          size="420px"
-          duration="rotating-anim 6s"
-          icon={JS}
-        />
-        <OrbitWithIcon
-          color="white"
-          size="520px"
-          duration="rotating-anim 8s"
-          icon={NodeJs}
-        />
-        <OrbitWithIcon
-          color=""
-          size="620px"
-          duration="rotating-anim 10s"
-          icon={html5}
-        />
-        <OrbitWithIcon
-          color=""
-          size="720px"
-          duration="rotating-anim 12s"
-          icon={CSS}
-        />
+        {[
+          { color: "blue", size: "200px", duration: "rotating-anim 3s", icon: ReactImg },
+          { size: "320px", duration: "rotating-anim 4s", icon: Python },
+          { size: "420px", duration: "rotating-anim 6s", icon: JS },
+          { color: "white", size: "520px", duration: "rotating-anim 8s", icon: NodeJs },
+          { size: "620px", duration: "rotating-anim 10s", icon: html5 },
+          { size: "720px", duration: "rotating-anim 12s", icon: CSS }
+        ].map((orbitProps, index) => (
+          <OrbitWithIcon key={index} {...orbitProps} />
+        ))}
       </SolarSystem>
     </Stack>
   );

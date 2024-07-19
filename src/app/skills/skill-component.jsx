@@ -7,6 +7,7 @@ import SkillSection from "./skill-section";
 import { useNavigate } from "react-router-dom";
 import {Button} from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import Preloader from "../preloader/loader";
 
 const SkillComponent = () => {
   const classes = useStyles();
@@ -29,6 +30,7 @@ const SkillComponent = () => {
   }, []);
   return (
     <Stack className={classes.wrapper} id="experience">
+      <Preloader/>
       <Box
         id="one"
         sx={{

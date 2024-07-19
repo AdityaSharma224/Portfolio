@@ -3,6 +3,7 @@ import Stack from "@mui/material/Stack";
 import HomeComponent from "../home/home-component";
 import Preloader from "../preloader/loader";
 import useStyles from "./layout-styles";
+import AboutComponent from "../experience/aboutMe";
 
 const Layout = () => {
   const classes = useStyles();
@@ -28,6 +29,7 @@ const Layout = () => {
     <Stack className={classes.wrapper}>
       <Preloader />
       <HomeComponent />
+      <AboutComponent/>
       <div
         className={`${classes.cursor}`}
         ref={cursorRef}
