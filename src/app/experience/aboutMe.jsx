@@ -1,8 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import useStyles from "./experience-styles";
 import { Box, Typography, keyframes } from "@mui/material";
 import { styled } from "@mui/system";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import {Divider} from "@mui/material";
 
 const flicker = keyframes`
   0%, 100% { opacity: 0; }
@@ -72,6 +75,7 @@ const Flip = styled(Box)(({ theme }) => ({
 
 const AboutComponent = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
 
   return (
     <Stack
@@ -132,7 +136,129 @@ const AboutComponent = () => {
             "As a full-stack developer, I bring a blend of creativity and technical expertise. You can expect clean, efficient code, innovative solutions, and a collaborative approach. I am committed to continuous learning and delivering high-quality, scalable applications that meet your needs. Let’s build something great together!"
           }
         </Typography>
+        <Stack
+          gap={2}
+          flexDirection={"row"}
+          justifyContent={"flex-start"}
+          width={"100%"}
+          marginTop={2}
+          alignItems={"center"}
+        >
+          <Typography fontSize={"20px"} color={"#000"}>
+            {"More about me"}
+          </Typography>
+          <Stack
+            padding={1}
+            border={"1px solid #000"}
+            borderRadius={"50%"}
+            sx={{ cursor: "pointer" }}
+            onClick={() => navigate("/about-me")}
+          >
+            <ArrowOutwardIcon fontSize="medium" />
+          </Stack>
+        </Stack>
       </Stack>
+      <Stack
+        flexDirection={"column"}
+        gap={1}
+        alignItems={"center"}
+        justifyContent={"center"}
+        sx={{
+          width: {
+            xs: "90%",
+            sm: "80%",
+            md: "70%",
+            lg: "65%",
+            xl: "65%",
+          },
+        }}
+      >
+        <Stack
+          sx={{
+            justifyContent: {
+              xs: "center",
+              sm: "center",
+              md: "space-between",
+              lg: "space-between",
+              xl: "space-between",
+            },
+            flexDirection:{
+              xs: "column",
+              sm: "column",
+              md: "row",
+              lg: "row",
+              xl: "row",
+            }
+          }}
+          gap={2}
+          width={"100%"}
+          alignItems={"center"}
+          marginTop={5}
+        >
+          <Typography
+            sx={{
+              width: {
+                xs: "100%",
+                sm: "100%",
+                md: "50%",
+                lg: "50%",
+                xl: "50%",
+              },
+              typography:{
+                xs: "h4",
+                sm: "h4",
+                md: "h4",
+                lg: "h3",
+                xl: "h3",
+              },
+              fontWeight:{
+                xs: 700,
+                sm: 700,
+                md: 700,
+                lg: 700,
+                xl: 700,
+              }
+            }}
+          >
+            {
+              "SOME OF THE MOST VIEWED TUTORIALS AND ARTICLES ON DATA STRUCTURES AND ALGORITHMS"
+            }
+          </Typography>
+          <Stack gap={1} alignItems={"flex-start"}>
+            <Typography variant="subtitle3" fontWeight={500} color={"#7C7C7C"}>
+              {
+                "These technical articles are publiched at GeeksforGeeks website, I wrote these articles during my internship tenure at GeeksforGeeks"
+              }
+            </Typography>
+            <Stack
+              gap={2}
+              flexDirection={"row"}
+              justifyContent={"flex-start"}
+              width={"100%"}
+              marginTop={2}
+              alignItems={"center"}
+            >
+              <Typography fontSize={"20px"} color={"#000"}>
+                {"Check out content"}
+              </Typography>
+              <Stack
+                padding={1}
+                border={"1px solid #000"}
+                borderRadius={"50%"}
+                sx={{ cursor: "pointer" }}
+                onClick={() => navigate("/about-me")}
+              >
+                <ArrowOutwardIcon fontSize="medium" />
+              </Stack>
+            </Stack>
+          </Stack>
+        </Stack>
+      </Stack>
+      <Stack borderBottom={'1px solid #D3d3d3'} alignSelf={'center'} width={'95%'}/>
+      <Stack>
+       
+      </Stack>
+
     </Stack>
   );
 };

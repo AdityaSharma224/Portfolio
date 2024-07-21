@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     },
     wrapper2:{
         backgroundColor:'#fff',
-        height:'100vh',
+        height:'200vh',
         width:'100vw',
         alignItems:'center',
     },
