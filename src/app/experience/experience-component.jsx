@@ -29,7 +29,7 @@ const ExperienceComponent = () => {
   }, []);
   return (
     <Stack className={classes.wrapper} id="experience">
-      <Preloader/>
+      <Preloader />
       <Box
         id="one"
         sx={{
@@ -39,7 +39,7 @@ const ExperienceComponent = () => {
           alignItems: "flex-start",
           backgroundColor: "#0C0C0F",
           height: {
-            xs: "35vh",
+            xs: "30vh",
             sm: "38vh",
             md: "43vh",
             lg: "43vh",
@@ -131,34 +131,38 @@ const ExperienceComponent = () => {
               </Stack>
             </Stack>
           </Stack>{" "}
-          <Typography
-            variant={"body1"}
-            fontWeight={500}
-            color={"#fff"}
-            position={"absolute"}
-            top={200}
-            left={30}
-          >
-            {"𝑳𝒆𝒕 𝒎𝒆 𝒔𝒉𝒂𝒓𝒆 𝒇𝒆𝒘 𝒅𝒆𝒕𝒂𝒊𝒍𝒔..."}
-          </Typography>
-          <Typography
+          <Stack
+            width={'100%'}
+            position={"relative"}
             sx={{
-              fontSize: {
-                xs: "60px",
-                sm: "80px",
-                md: "100px",
-                lg: "150px",
-                xl: "150px",
-              },
+              top: { xs: 50, sm: 150, md: 200, lg: 200, xl: 200 },
+              left: {xs: 20, sm: 20, md: 20, lg: 20, xl: 20},
             }}
-            fontWeight={700}
-            color={"#fff"}
-            position={"absolute"}
-            top={220}
-            left={30}
           >
-            {"ABOUT ME"}
-          </Typography>
+            <Typography
+              variant={"body1"}
+              fontWeight={500}
+              color={"#fff"}
+            >
+              {"𝑳𝒆𝒕 𝒎𝒆 𝒔𝒉𝒂𝒓𝒆 𝒇𝒆𝒘 𝒅𝒆𝒕𝒂𝒊𝒍𝒔..."}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: {
+                  xxs: "40px",
+                  xs: "50px",
+                  sm: "80px",
+                  md: "100px",
+                  lg: "150px",
+                  xl: "150px",
+                },
+              }}
+              fontWeight={700}
+              color={"#fff"}
+            >
+              {"ABOUT ME"}
+            </Typography>
+          </Stack>
         </Stack>
       </Box>
       <Box

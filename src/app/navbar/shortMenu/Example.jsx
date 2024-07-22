@@ -22,16 +22,6 @@ const sidebar = {
   },
 };
 
-const aboutMeVariants = {
-  hidden: { y: "1000%", opacity: 0 },
-  visible: {
-    y: "calc(180% - 100px)",
-    x: 10,
-    opacity: 1,
-    transition: { type: "spring", stiffness: 50, damping: 20 },
-  },
-};
-
 export const Example = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const navigate = useNavigate();
@@ -50,37 +40,32 @@ export const Example = () => {
       custom={height}
       ref={containerRef}
     >
-      <motion.div className="background" variants={sidebar}>
-        <motion.div
-          className="about-me"
-          initial="hidden"
-          animate={isOpen ? "visible" : "hidden"}
-          variants={aboutMeVariants}
-        >
+      <motion.div className="background" variants={sidebar} style={{alignSelf:'end'}}>
+        <Stack height={'100%'} gap={6} padding={2} justifyContent={'flex-end'} alignItems={'flex-start'}>
           <Stack gap={1}>
             <Typography variant="body1" fontWeight={700} color="#000">
               {"𝑆𝑖𝑡𝑒𝑚𝑎𝑝:"}
             </Typography>
-            {["ABOUT ME", "SKILLS",'ARTICLES' ,"PROJECTS"].map((text, index) => (
-              <Typography
-                key={index}
-                variant="h3"
-                fontWeight={600}
-                color="#000"
-                onClick={() =>
-                  handleNavigation(`/${text.toLowerCase().replace(" ", "-")}`)
-                }
-              >
-                {text}
-              </Typography>
-            ))}
+            {["ABOUT ME", "SKILLS", "ARTICLES", "PROJECTS"].map(
+              (text, index) => (
+                <Typography
+                  key={index}
+                  variant="h4"
+                  fontWeight={600}
+                  color="#000"
+                  onClick={() =>
+                    handleNavigation(`/${text.toLowerCase().replace(" ", "-")}`)
+                  }
+                >
+                  {text}
+                </Typography>
+              )
+            )}
           </Stack>
           <Stack
-            position="absolute"
-            bottom={-80}
             flexDirection="row"
             alignSelf="center"
-            gap={6}
+            gap={8}
             width="100%"
             left={24}
           >
@@ -111,7 +96,7 @@ export const Example = () => {
               </Link>
             ))}
           </Stack>
-        </motion.div>
+        </Stack>
       </motion.div>
       <Navigation />
       <MenuToggle toggle={() => toggleOpen()} />

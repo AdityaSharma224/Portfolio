@@ -5,7 +5,7 @@ import useStyles from "./article-styles";
 import { Box, Typography } from "@mui/material";
 import NavbarComponent from "../navbar/navbar";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 import Preloader from "../preloader/loader";
 
 const ArticleComponent = () => {
@@ -29,7 +29,7 @@ const ArticleComponent = () => {
   }, []);
   return (
     <Stack className={classes.wrapper} id="experience">
-      <Preloader/>
+      <Preloader />
       <Box
         id="one"
         sx={{
@@ -39,7 +39,7 @@ const ArticleComponent = () => {
           alignItems: "flex-start",
           backgroundColor: "#0C0C0F",
           height: {
-            xs: "35vh",
+            xs: "30vh",
             sm: "38vh",
             md: "43vh",
             lg: "43vh",
@@ -131,34 +131,33 @@ const ArticleComponent = () => {
               </Stack>
             </Stack>
           </Stack>{" "}
-          <Typography
-            variant={"body1"}
-            fontWeight={500}
-            color={"#fff"}
-            position={"absolute"}
-            top={200}
-            left={30}
-          >
-            {"𝑳𝒐𝒐𝒌 𝒂𝒕 𝒎𝒚 𝒑𝒖𝒃𝒍𝒊𝒔𝒉𝒆𝒅..."}
-          </Typography>
-          <Typography
+          <Stack
+            width={"100%"}
+            position={"relative"}
             sx={{
-              fontSize: {
-                xs: "60px",
-                sm: "80px",
-                md: "100px",
-                lg: "150px",
-                xl: "150px",
-              },
+              top: { xs: 50, sm: 150, md: 200, lg: 200, xl: 200 },
+              left: { xs: 20, sm: 20, md: 20, lg: 20, xl: 20 },
             }}
-            fontWeight={700}
-            color={"#fff"}
-            position={"absolute"}
-            top={220}
-            left={30}
           >
-            {"ARTICLES"}
-          </Typography>
+            <Typography variant={"body1"} fontWeight={500} color={"#fff"}>
+              {"𝑳𝒐𝒐𝒌 𝒂𝒕 𝒎𝒚 𝒑𝒖𝒃𝒍𝒊𝒔𝒉𝒆𝒅..."}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: {
+                  xs: "60px",
+                  sm: "80px",
+                  md: "100px",
+                  lg: "150px",
+                  xl: "150px",
+                },
+              }}
+              fontWeight={700}
+              color={"#fff"}
+            >
+              {"ARTICLES"}
+            </Typography>
+          </Stack>
         </Stack>
       </Box>
       <Box

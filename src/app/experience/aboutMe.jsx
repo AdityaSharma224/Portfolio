@@ -5,7 +5,10 @@ import useStyles from "./experience-styles";
 import { Box, Typography, keyframes } from "@mui/material";
 import { styled } from "@mui/system";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import {Divider} from "@mui/material";
+import { Divider } from "@mui/material";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import SplitType from "split-type";
 
 const flicker = keyframes`
   0%, 100% { opacity: 0; }
@@ -76,6 +79,41 @@ const Flip = styled(Box)(({ theme }) => ({
 const AboutComponent = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const splitTypes = document.querySelectorAll(".animatedText");
+    splitTypes.forEach((char) => {
+      const text = new SplitType(char, { types: "chars" });
+      gsap.from(text.chars, {
+        scrollTrigger: {
+          trigger: char,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+          markers: false,
+        },
+        opacity: 0.2,
+        stagger: 0.1,
+      });
+    });
+    const splitTypes2 = document.querySelectorAll(".animatedText2");
+    splitTypes2.forEach((char) => {
+      const text2 = new SplitType(char, { types: "chars" });
+      gsap.from(text2.chars, {
+        scrollTrigger: {
+          trigger: char,
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+          markers: false,
+        },
+        x:100,
+        opacity: 0,
+        stagger: 0.1,
+      });
+    });
+  }, []);
 
   return (
     <Stack
@@ -121,6 +159,7 @@ const AboutComponent = () => {
         <Typography
           alignSelf={"flex-start"}
           width={"100%"}
+          className="animatedText"
           sx={{
             fontSize: {
               xs: "18px",
@@ -130,7 +169,6 @@ const AboutComponent = () => {
               xl: "40px",
             },
           }}
-          fontWeight={540}
         >
           {
             "As a full-stack developer, I bring a blend of creativity and technical expertise. You can expect clean, efficient code, innovative solutions, and a collaborative approach. I am committed to continuous learning and delivering high-quality, scalable applications that meet your needs. Let’s build something great together!"
@@ -182,13 +220,13 @@ const AboutComponent = () => {
               lg: "space-between",
               xl: "space-between",
             },
-            flexDirection:{
+            flexDirection: {
               xs: "column",
               sm: "column",
               md: "row",
               lg: "row",
               xl: "row",
-            }
+            },
           }}
           gap={2}
           width={"100%"}
@@ -196,6 +234,7 @@ const AboutComponent = () => {
           marginTop={5}
         >
           <Typography
+            className="animatedText2"
             sx={{
               width: {
                 xs: "100%",
@@ -204,20 +243,20 @@ const AboutComponent = () => {
                 lg: "50%",
                 xl: "50%",
               },
-              typography:{
+              typography: {
                 xs: "h4",
                 sm: "h4",
                 md: "h4",
                 lg: "h3",
                 xl: "h3",
               },
-              fontWeight:{
+              fontWeight: {
                 xs: 700,
                 sm: 700,
                 md: 700,
                 lg: 700,
                 xl: 700,
-              }
+              },
             }}
           >
             {
@@ -246,7 +285,7 @@ const AboutComponent = () => {
                 border={"1px solid #000"}
                 borderRadius={"50%"}
                 sx={{ cursor: "pointer" }}
-                onClick={() => navigate("/about-me")}
+                onClick={() => navigate("/articles")}
               >
                 <ArrowOutwardIcon fontSize="medium" />
               </Stack>
@@ -254,11 +293,12 @@ const AboutComponent = () => {
           </Stack>
         </Stack>
       </Stack>
-      <Stack borderBottom={'1px solid #D3d3d3'} alignSelf={'center'} width={'95%'}/>
-      <Stack>
-       
-      </Stack>
-
+      <Stack
+        borderBottom={"1px solid #D3d3d3"}
+        alignSelf={"center"}
+        width={"95%"}
+      />
+      <Stack></Stack>
     </Stack>
   );
 };

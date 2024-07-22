@@ -21,6 +21,9 @@ const useStyles = makeStyles({
         alignItems:'center',
         justifyContent:'center',
         backgroundColor:'#0C0C0F',
+        [theme.breakpoints.down('sm')]:{
+          height:'94vh',
+        }
     },
     innerWrapper:{
        width:'100%',

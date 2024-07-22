@@ -169,7 +169,6 @@ const widths = {
   xl: "20px",
 };
 
-
 const SkillSection = () => {
   const classes = useStyles();
   const StackBars = () => (
@@ -195,22 +194,10 @@ const SkillSection = () => {
   );
   return (
     <Stack
+      height={"100%"}
+      width={"100%"}
       sx={{
         backgroundColor: "#fff",
-        height: {
-          xs: "100vh",
-          sm: "100vh",
-          md: "100vh",
-          lg: "100vh",
-          xl: "100vh",
-        },
-        width: {
-          xs: "100vw",
-          sm: "100vw",
-          md: "100vw",
-          lg: "100vw",
-          xl: "100vw",
-        },
         flexDirection: {
           xs: "column",
           sm: "column",
@@ -236,8 +223,8 @@ const SkillSection = () => {
             xs: "100%",
             sm: "100%",
             md: "100%",
-            lg: "50%",
-            xl: "50%",
+            lg: "100%",
+            xl: "100%",
           },
         }}
       >
@@ -247,16 +234,15 @@ const SkillSection = () => {
             width: "100%",
             gap: { xs: 3, sm: 3, md: 8, lg: 10, xl: 10 },
             height: {
-              xs: "80%",
-              sm: "80%",
+              xs: "50%",
+              sm: "50%",
               md: "100%",
               lg: "100%",
               xl: "100%",
             },
             alignItems: "center",
-            padding: { xs: 5, sm: 9, md: 15, lg: 25, xl: 25 },
+            padding: { xs: 3, sm: 5, md: 15, lg: 25, xl: 25 },
             justifyContent: "space-between",
-            
           }}
         >
           <Stack sx={{ borderRadius: "15px" }} flexDirection={"column"}>
@@ -373,7 +359,7 @@ const SkillSection = () => {
                 },
               }}
             >
-              <StackBars/>
+              <StackBars />
             </Stack>
           </Stack>
           <Stack
@@ -393,23 +379,41 @@ const SkillSection = () => {
                 alignItems="center"
               >
                 <Typography
-                  sx={{ typography: { xs: "body2", md: "h6" }, fontWeight: 700 }}
-                  color={level === "Easy" ? "green" : level === "Medium" ? "orange" : "red"}
+                  sx={{
+                    typography: { xs: "body2", md: "h6" },
+                    fontWeight: 700,
+                  }}
+                  color={
+                    level === "Easy"
+                      ? "green"
+                      : level === "Medium"
+                      ? "orange"
+                      : "red"
+                  }
                 >
                   {level}
                 </Typography>
                 <Typography
-                  sx={{ typography: { xs: "body2", md: "h6" }, fontWeight: 700 }}
+                  sx={{
+                    typography: { xs: "body2", md: "h6" },
+                    fontWeight: 700,
+                  }}
                   color="#D3D3D3"
                 >
-                  {`${level === "Easy" ? "366 / 807" : level === "Medium" ? "575 / 1679" : "120 / 713"}`}
+                  {`${
+                    level === "Easy"
+                      ? "366 / 807"
+                      : level === "Medium"
+                      ? "575 / 1679"
+                      : "120 / 713"
+                  }`}
                 </Typography>
               </Stack>
             ))}
           </Stack>
         </Stack>
       </Stack>
-     <SolarSystem>
+      <SolarSystem>
         <Sun />
         <img
           src={Aster}
@@ -426,12 +430,22 @@ const SkillSection = () => {
           }}
         />
         {[
-          { color: "blue", size: "200px", duration: "rotating-anim 3s", icon: ReactImg },
+          {
+            color: "blue",
+            size: "200px",
+            duration: "rotating-anim 3s",
+            icon: ReactImg,
+          },
           { size: "320px", duration: "rotating-anim 4s", icon: Python },
           { size: "420px", duration: "rotating-anim 6s", icon: JS },
-          { color: "white", size: "520px", duration: "rotating-anim 8s", icon: NodeJs },
+          {
+            color: "white",
+            size: "520px",
+            duration: "rotating-anim 8s",
+            icon: NodeJs,
+          },
           { size: "620px", duration: "rotating-anim 10s", icon: html5 },
-          { size: "720px", duration: "rotating-anim 12s", icon: CSS }
+          { size: "720px", duration: "rotating-anim 12s", icon: CSS },
         ].map((orbitProps, index) => (
           <OrbitWithIcon key={index} {...orbitProps} />
         ))}

@@ -39,7 +39,7 @@ const ProjectsComponent = () => {
           alignItems: "flex-start",
           backgroundColor: "#0C0C0F",
           height: {
-            xs: "35vh",
+            xs: "30vh",
             sm: "38vh",
             md: "43vh",
             lg: "43vh",

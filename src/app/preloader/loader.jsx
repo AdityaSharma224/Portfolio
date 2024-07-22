@@ -38,11 +38,11 @@ const textAnimation = keyframes`
     margin-bottom: -40px;
   }
   30% {
-    letter-spacing: 15px;
+    letter-spacing: 10px;
     margin-bottom: -40px;
   }
   85% {
-    letter-spacing: 8px;
+    letter-spacing: 6px;
     margin-bottom: -40px;
   }
   100% {
@@ -63,13 +63,13 @@ const Text1 = styled(Typography)({
   color: "white",
   fontSize: "75px",
   fontWeight: 700,
-  letterSpacing: "4px",
-  marginBottom: "10px",
+  letterSpacing: "2px",
+  marginBottom: "8px",
   position: "relative",
   backgroundColor: "#1A1A1A",
   animation: `${textAnimation} 3s`,
   [theme.breakpoints.down('xs')]:{
-    fontSize: "40px",
+    fontSize: "32px",
   }
 });
 
