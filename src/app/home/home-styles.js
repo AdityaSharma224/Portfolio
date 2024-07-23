@@ -76,7 +76,7 @@ const useStyles = makeStyles({
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         borderRight: '4px solid #3E261C',
-        animation: `$cursor 1s step-start infinite, $text 5s steps(18) alternate infinite`,
+        animation: `$cursor 1s step-start infinite, $text 5s steps(18) infinite`,
       },
       '@keyframes cursor': {
         '0%, 100%': {
@@ -95,7 +95,8 @@ const useStyles = makeStyles({
         whiteSpace: 'nowrap',
         display: 'inline-block',
         paddingLeft: '100%',
-        animation: `$scroll 40s infinite linear`,
+        animation: `$scroll 40s linear infinite`,
+        animationDelay:'calc(40s * -1)',
         '&:hover': {
           animationPlayState: 'paused',
         },
@@ -103,7 +104,7 @@ const useStyles = makeStyles({
       },
       '@keyframes scroll': {
         from: {
-          transform: 'translateX(0)',
+          transform: 'translateX(0%)',
         },
         to: {
           transform: 'translateX(-100%)',

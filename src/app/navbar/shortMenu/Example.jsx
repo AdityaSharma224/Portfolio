@@ -67,6 +67,8 @@ export const Example = () => {
             alignSelf="center"
             gap={8}
             width="100%"
+            paddingX={2}
+            paddingY={1}
             left={24}
           >
             {[

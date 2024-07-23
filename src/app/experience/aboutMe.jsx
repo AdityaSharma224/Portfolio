@@ -9,6 +9,7 @@ import { Divider } from "@mui/material";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitType from "split-type";
+import PeopleCards from "../components/people-card";
 
 const flicker = keyframes`
   0%, 100% { opacity: 0; }
@@ -30,18 +31,7 @@ const Wrap = styled(Box)(({ theme }) => ({
   width: "100%",
   color: "#000",
   gap: "70px",
-  fontFamily: "monospace",
   fontSize: "80px",
-  "&:before": {
-    content: '"["',
-    color: "#000",
-    animation: `${flicker} 1s infinite`,
-  },
-  "&:after": {
-    content: '"]"',
-    color: "#000",
-    animation: `${flicker} 1s infinite`,
-  },
   [theme.breakpoints.down("md")]: {
     gap: "50px",
     fontSize: "50px",
@@ -81,6 +71,41 @@ const AboutComponent = () => {
   const navigate = useNavigate();
   gsap.registerPlugin(ScrollTrigger);
 
+  const peopleInfo = [
+    {
+      name: "Rishabh Prabhu Srivastava",
+      role: "Technical Manager, GeeksforGeeks",
+      imageUrl:
+        "https://media.licdn.com/dms/image/D5603AQEFVlIIVSCq3g/profile-displayphoto-shrink_800_800/0/1721276718922?e=1727308800&v=beta&t=BjuKjccdsa9FZFA3oVvfT7dYU8qFqhy9KtYTwnGXvvw",
+      testimonial:
+        "I had the pleasure of managing Aditya during his internship at GeeksforGeeks. Throughout his time with us, Aditya demonstrated a remarkable aptitude for DSA and a strong work ethic. He collaborated effectively with team members, always ready to share knowledge and assist others. I highly recommend Aditya.",
+    },
+    {
+      name: "Mayur Rokade",
+      role: "Product Manager, Contlo",
+      imageUrl:
+        "https://media.licdn.com/dms/image/D5603AQGA2Er2TIRa2g/profile-displayphoto-shrink_800_800/0/1680192282901?e=1727308800&v=beta&t=AyZkina02MFfEHA0M1M8TJ-hkoICOcezRRnkPTLobes",
+      testimonial:
+        "I'm thrilled to recommend Aditya, a talented and results-oriented engineer while working at SuperAGI. During his time on the team, Aditya consistently impressed me with his ability to develop innovative solutions. Aditya's technical skills are top-notch, and he's also a highly motivated team player. As his Product Manager, I have no doubt he'll continue to excel in his career.",
+    },
+    {
+      name: "Manuj Grover",
+      role: "Software Engineer, Zomato",
+      imageUrl:
+        "https://media.licdn.com/dms/image/D5603AQGFAGEj_ZYeZA/profile-displayphoto-shrink_200_200/0/1703826542916?e=1727308800&v=beta&t=xqK8UEmNPBbsWw4sEVtZFdF4-YYk8hSHaD23D9dNQa8",
+      testimonial:
+        "Aditya's motivation and enthusiasm is truly exceptional. His positive attitude and strong work ethic consistently elevated the team's performance. His knack for bringing fresh ideas to the table and adept problem-solving make him an exceptional candidate for software development roles.",
+    },
+    {
+      name: "Animesh Dey",
+      role: "Ex- Senior MTS, GeeksforGeeks",
+      imageUrl:
+        "https://media.licdn.com/dms/image/D4D03AQHW-m2mS4-Eew/profile-displayphoto-shrink_200_200/0/1694715948546?e=1727308800&v=beta&t=7lnJtlwjFpU-X7cef6PyVaYTyYOkL-65ERwz7x8OcKA",
+      testimonial:
+        "Aditya is a very passionate and hard working individual. His enthusiasm and perseverance towards learning new concepts amazed me. I am sure his dedicated nature will help him grow and inspire others at the same time.",
+    },
+  ];
+
   useEffect(() => {
     const splitTypes = document.querySelectorAll(".animatedText");
     splitTypes.forEach((char) => {
@@ -108,7 +133,7 @@ const AboutComponent = () => {
           scrub: true,
           markers: false,
         },
-        x:100,
+        x: 100,
         opacity: 0,
         stagger: 0.1,
       });
@@ -120,23 +145,12 @@ const AboutComponent = () => {
       className={classes.wrapper2}
       sx={{
         gap: { xs: 6, sm: 6, md: 10, lg: 12, xl: 12 },
+        paddingX:{xs: 2, sm: 2, md: 0, lg: 0, xl: 0},
       }}
       id="experience"
+      paddingY={6}
+      marginTop={2}
     >
-      <Wrap>
-        <Typography
-          sx={{
-            typography: { xs: "h5", sm: "h5", md: "h5", lg: "h4", xl: "h4" },
-          }}
-        >
-          Keep
-        </Typography>
-        <Flip>
-          <span>Aiming</span>
-          <span>Trying</span>
-          <span>Hustling</span>
-        </Flip>
-      </Wrap>
       <Stack
         flexDirection={"column"}
         gap={1}
@@ -228,7 +242,7 @@ const AboutComponent = () => {
               xl: "row",
             },
           }}
-          gap={2}
+          gap={4}
           width={"100%"}
           alignItems={"center"}
           marginTop={5}
@@ -239,13 +253,13 @@ const AboutComponent = () => {
               width: {
                 xs: "100%",
                 sm: "100%",
-                md: "50%",
-                lg: "50%",
-                xl: "50%",
+                md: "52%",
+                lg: "52%",
+                xl: "52%",
               },
               typography: {
-                xs: "h4",
-                sm: "h4",
+                xs: "h5",
+                sm: "h6",
                 md: "h4",
                 lg: "h3",
                 xl: "h3",
@@ -259,9 +273,8 @@ const AboutComponent = () => {
               },
             }}
           >
-            {
-              "SOME OF THE MOST VIEWED TUTORIALS AND ARTICLES ON DATA STRUCTURES AND ALGORITHMS"
-            }
+            {"SOME OF THE MOST VIEWED"} {"TUTORIALS AND ARTICLES"}{" "}
+            {"ON DATA STRUCTURES AND ALGORITHMS"}
           </Typography>
           <Stack gap={1} alignItems={"flex-start"}>
             <Typography variant="subtitle3" fontWeight={500} color={"#7C7C7C"}>
@@ -298,7 +311,17 @@ const AboutComponent = () => {
         alignSelf={"center"}
         width={"95%"}
       />
-      <Stack></Stack>
+      <Box className={classes.recommendationWrapper} gap={4}>
+        {peopleInfo.map((person, index) => (
+          <PeopleCards
+            key={index}
+            name={person.name}
+            role={person.role}
+            imageUrl={person.imageUrl}
+            testimonial={person.testimonial}
+          />
+        ))}
+      </Box>
     </Stack>
   );
 };

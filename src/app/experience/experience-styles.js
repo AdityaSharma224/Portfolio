@@ -20,9 +20,10 @@ const useStyles = makeStyles({
     },
     wrapper2:{
         backgroundColor:'#fff',
-        height:'200vh',
+        height:'280vh',
         width:'100vw',
         alignItems:'center',
+       
     },
     itemStack:{
         padding:'16px 26px',
@@ -30,6 +31,15 @@ const useStyles = makeStyles({
           padding:'10px 20px',
         }
       },
+      recommendationWrapper:{
+        display:'grid',
+        alignItems:'center',
+        justifyContent:'center',
+        gridTemplateColumns:'repeat(2, 1fr)',
+        [theme.breakpoints.down('md')]:{
+            gridTemplateColumns:'1fr',
+        }
+      }
 });
 
 export default useStyles;
