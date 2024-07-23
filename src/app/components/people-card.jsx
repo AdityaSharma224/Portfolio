@@ -1,10 +1,11 @@
 import React from "react";
 import { Stack, Typography } from "@mui/material";
 
-const PeopleCards = ({ imageUrl, name, role, testimonial }) => {
+const PeopleCards = ({ imageUrl, name, role, testimonial, className }) => {
   return (
     <Stack
       width={"100%"}
+      className={className}
       sx={{
         maxWidth: {
           xs: "350px",
@@ -14,7 +15,7 @@ const PeopleCards = ({ imageUrl, name, role, testimonial }) => {
           xl: "600px",
         },
       }}
-      height={"auto"}
+      height={'280px'}
       borderRadius={"10px"}
       padding={2}
       boxShadow={

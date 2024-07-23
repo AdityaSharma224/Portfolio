@@ -10,6 +10,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitType from "split-type";
 import PeopleCards from "../components/people-card";
+import { useTheme, useMediaQuery } from "@mui/material";
+import FooterComponent from "../components/footer";
 
 const flicker = keyframes`
   0%, 100% { opacity: 0; }
@@ -107,6 +109,40 @@ const AboutComponent = () => {
   ];
 
   useEffect(() => {
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".side-card",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: true,
+      },
+    });
+
+    t1.fromTo(
+      ".side-card",
+      { x: -800, y: 0, opacity: 0.1 },
+      { x: 0, y: 0, opacity: 1 }
+    );
+  }, []);
+
+  useEffect(() => {
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".animatedText3",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: true,
+      },
+    });
+
+    t1.fromTo(
+      ".animatedText3",
+      { x: -60, y: 0, opacity: 0.2 },
+      { x: 0, y: 0, opacity: 1 }
+    );
+  }, []);
+
+  useEffect(() => {
     const splitTypes = document.querySelectorAll(".animatedText");
     splitTypes.forEach((char) => {
       const text = new SplitType(char, { types: "chars" });
@@ -133,7 +169,7 @@ const AboutComponent = () => {
           scrub: true,
           markers: false,
         },
-        x: 100,
+        y: 80,
         opacity: 0,
         stagger: 0.1,
       });
@@ -144,8 +180,8 @@ const AboutComponent = () => {
     <Stack
       className={classes.wrapper2}
       sx={{
-        gap: { xs: 6, sm: 6, md: 10, lg: 12, xl: 12 },
-        paddingX:{xs: 2, sm: 2, md: 0, lg: 0, xl: 0},
+        gap: { xs: 6, sm: 6, md: 10, lg: 14, xl: 14 },
+        paddingX: { xs: 2, sm: 2, md: 0, lg: 0, xl: 0 },
       }}
       id="experience"
       paddingY={6}
@@ -276,7 +312,7 @@ const AboutComponent = () => {
             {"SOME OF THE MOST VIEWED"} {"TUTORIALS AND ARTICLES"}{" "}
             {"ON DATA STRUCTURES AND ALGORITHMS"}
           </Typography>
-          <Stack gap={1} alignItems={"flex-start"}>
+          <Stack gap={1} alignItems={"flex-start"} className={"animatedText3"}>
             <Typography variant="subtitle3" fontWeight={500} color={"#7C7C7C"}>
               {
                 "These technical articles are publiched at GeeksforGeeks website, I wrote these articles during my internship tenure at GeeksforGeeks"
@@ -319,6 +355,7 @@ const AboutComponent = () => {
             role={person.role}
             imageUrl={person.imageUrl}
             testimonial={person.testimonial}
+            className={"side-card"}
           />
         ))}
       </Box>
