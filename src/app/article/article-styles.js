@@ -17,12 +17,7 @@ const theme = createTheme({
 
 const useStyles = makeStyles({
     wrapper:{
-        height:'90vh',
-        width:'100vw',
-        alignItems:'center',
-        justifyContent:'center',
         backgroundColor:'#000',
-        backgroundSize:'cover',
     },
     innerWrapper:{
        width:'1400px',
@@ -105,6 +100,12 @@ const useStyles = makeStyles({
         transform: 'scale(0.8)',
         opacity: 0.7,
       },
+    },
+    itemStack:{
+      padding:'16px 26px',
+      [theme.breakpoints.down('xl')]:{
+        padding:'10px 20px',
+      }
     },
     
 

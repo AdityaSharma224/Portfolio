@@ -15,6 +15,11 @@ import { makeStyles } from '@mui/styles';
  
 
 const useStyles = makeStyles({
+    wrapper: {
+        margin: 0,
+        padding: 0,
+        overflow: 'hidden',
+      },
     cursor: {
         position: 'fixed',
         padding:'6.8em',

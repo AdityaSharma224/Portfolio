@@ -41,13 +41,19 @@ const useStyles = makeStyles({
         },
       },
       bar:{
-       backgroundColor:'#D3D3D3',
+       backgroundColor:'#7C7C7C',
        borderRadius:'3px',
        cursor:'pointer',
        '&:hover':{
         backgroundColor:'#FFA500',
        }
-      }
+      },
+      itemStack:{
+        padding:'16px 26px',
+        [theme.breakpoints.down('xl')]:{
+          padding:'10px 20px',
+        }
+      },
 
 });
 

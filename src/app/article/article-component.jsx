@@ -1,204 +1,179 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import useStyles from "./article-styles";
-import { IconButton, Typography, useMediaQuery, useTheme } from "@mui/material";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import { createTheme } from "@mui/material";
-import Button from "@mui/material/Button";
-import { cardInfo } from "../constants";
+import { Box, Typography } from "@mui/material";
+import NavbarComponent from "../navbar/navbar";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Button } from "@mui/material";
+import Preloader from "../preloader/loader";
 
 const ArticleComponent = () => {
   const classes = useStyles();
-  const [category, setCategory] = useState("dataStructure");
-  const [sliderIndex, setSliderIndex] = useState(0);
-  const [cardsPerPage, setCardsPerPage] = useState(3);
-
-  const theme = createTheme({
-    breakpoints: {
-      values: {
-        xxs: 380,
-        xs: 500,
-        sm: 600,
-        md: 1000,
-        lg: 1300,
-        xl: 1400,
-      },
-    },
-  });
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+  const navigate = useNavigate();
   useEffect(() => {
-    setCardsPerPage(isSmallScreen ? 1 : 3);
-  }, [isSmallScreen]);
+    const handleScroll = () => {
+      const text1 = document.getElementById("text1");
+      const text2 = document.getElementById("text2");
+      const sectionTwo = document.getElementById("two");
 
-  const handleChange = (event) => {
-    setCategory(event.target.value);
-    setSliderIndex(0); // Reset the slider index when category changes
-  };
+      if (window.pageYOffset > sectionTwo.offsetTop) {
+        text2.style.position = "fixed";
+      } else {
+        text2.style.position = "absolute";
+      }
+    };
 
-  const filteredCardInfo = cardInfo.filter(
-    (card) => card.category === category
-  );
-  const displayedCards = filteredCardInfo.slice(
-    sliderIndex * cardsPerPage,
-    (sliderIndex + 1) * cardsPerPage
-  );
-
-  const goToPrevSlide = () => {
-    setSliderIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + Math.ceil(filteredCardInfo.length / cardsPerPage)) %
-        Math.ceil(filteredCardInfo.length / cardsPerPage)
-    );
-  };
-
-  const goToNextSlide = () => {
-    setSliderIndex(
-      (prevIndex) =>
-        (prevIndex + 1) % Math.ceil(filteredCardInfo.length / cardsPerPage)
-    );
-  };
-
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <Stack id="articles" className={classes.wrapper}>
-      <Stack className={classes.innerWrapper}>
-        <Stack className={classes.titleWrapper} flexDirection={"row"}>
-          <Stack className={classes.selector}>
-            <FormControl
-              sx={{ m: 1, minWidth: 120, color: "#fff" }}
-              size="small"
-            >
-              <Select
-                labelId="demo-select-small-label"
-                id="demo-select-small"
-                value={category}
-                autoWidth
-                onChange={handleChange}
-                className={classes.select}
-                sx={{
-                  ".MuiOutlinedInput-notchedOutline": { borderStyle: "none" },
-                }}
+    <Stack className={classes.wrapper} id="experience">
+      <Preloader />
+      <Box
+        id="one"
+        sx={{
+          position: "relative",
+          width: "100vw",
+          display: "flex",
+          alignItems: "flex-start",
+          backgroundColor: "#0C0C0F",
+          height: {
+            xs: "30vh",
+            sm: "38vh",
+            md: "43vh",
+            lg: "43vh",
+            xl: "43vh",
+          },
+        }}
+      >
+        <Stack
+          id={"text1"}
+          position={"fixed"}
+          width={"100%"}
+          gap={1}
+          height={"300px"}
+        >
+          <Stack
+            sx={{
+              display: {
+                xs: "none",
+                sm: "flex",
+                md: "flex",
+                lg: "flex",
+                xl: "flex",
+              },
+            }}
+          >
+            <NavbarComponent />
+          </Stack>
+          <Stack
+            sx={{
+              display: {
+                xs: "flex",
+                sm: "none",
+                md: "none",
+                lg: "none",
+                xl: "none",
+              },
+            }}
+          >
+            <Stack flexDirection={"row"} width={"100%"}>
+              <Stack
+                className={classes.itemStack}
+                width={"100%"}
+                onClick={() => navigate("/")}
+                sx={{ cursor: "pointer" }}
               >
-                <MenuItem value={"dataStructure"}>Data structures</MenuItem>
-                <MenuItem value={"handbook"}>Handbook</MenuItem>
-                <MenuItem value={"computerNetworks"}>
-                  Computer Networks
-                </MenuItem>
-                <MenuItem value={"chatGpt"}>Chat GPT</MenuItem>
-              </Select>
-            </FormControl>
+                <Typography
+                  sx={{
+                    typography: {
+                      xs: "h5",
+                      sm: "h5",
+                      md: "h6",
+                      lg: "h5",
+                      xl: "h5",
+                    },
+                    fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
+                  }}
+                  color={"#fff"}
+                >
+                  {"ADITYA SHARMA"}
+                </Typography>
+                <Typography
+                  sx={{
+                    typography: {
+                      xs: "h5",
+                      sm: "h5",
+                      md: "h6",
+                      lg: "h5",
+                      xl: "h5",
+                    },
+                    fontWeight: { xs: 700, sm: 700, md: 700, lg: 700, xl: 700 },
+                  }}
+                  color={"#fff"}
+                >
+                  {"PORTFOLIO"}
+                </Typography>
+              </Stack>
+              <Stack
+                width={"60%"}
+                onClick={() => navigate("/")}
+                sx={{ cursor: "pointer", alignItems: "flex-end" }}
+              >
+                <Button
+                  variant="text"
+                  startIcon={<ArrowBackIcon htmlColor="#fff" />}
+                  sx={{ width: "120px", color: "#fff", textTransform: "none" }}
+                >
+                  {"Go Back"}
+                </Button>
+              </Stack>
+            </Stack>
+          </Stack>{" "}
+          <Stack
+            width={"100%"}
+            position={"relative"}
+            sx={{
+              top: { xs: 50, sm: 150, md: 180, lg: 180, xl: 180 },
+              left: { xs: 20, sm: 20, md: 20, lg: 20, xl: 20 },
+            }}
+          >
+            <Typography variant={"body1"} fontWeight={500} color={"#fff"}>
+              {"𝑳𝒐𝒐𝒌 𝒂𝒕 𝒎𝒚 𝒑𝒖𝒃𝒍𝒊𝒔𝒉𝒆𝒅..."}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: {
+                  xs: "60px",
+                  sm: "80px",
+                  md: "100px",
+                  lg: "150px",
+                  xl: "150px",
+                },
+              }}
+              fontWeight={700}
+              color={"#fff"}
+            >
+              {"ARTICLES"}
+            </Typography>
           </Stack>
         </Stack>
-        <Stack className={classes.tableWrapper} flexDirection={"row"}>
-          <IconButton onClick={goToPrevSlide}>
-            <KeyboardDoubleArrowLeftIcon
-              htmlColor="#fff"
-              className={classes.icon}
-              sx={{
-                height: { xs: 40, sm: 40, md: 40, lg: 60, xl: 60 },
-                width: { xs: 40, sm: 40, md: 40, lg: 60, xl: 60 },
-              }}
-            />
-          </IconButton>{" "}
-          {displayedCards.map((card, index) => (
-            <Card
-              key={index}
-              sx={{
-                height: {
-                  xxs: 400,
-                  xs: 400,
-                  sm: 400,
-                  md: 300,
-                  lg: 400,
-                  xl: 400,
-                },
-                width: {
-                  xxs: 280,
-                  xs: 320,
-                  sm: 400,
-                  md: 300,
-                  lg: 400,
-                  xl: 400,
-                },
-                backgroundColor: "#fff",
-                borderRadius: "20px",
-                margin: "0 8px",
-                flexDirection: "column",
-              }}
-            >
-              <CardMedia
-                sx={{ height: "45%", objectFit: "cover" }}
-                image={card.image}
-                title={card.title}
-              />
-              <CardContent sx={{ height: "40%" }}>
-                <Typography
-                  gutterBottom
-                  sx={{
-                    typography: {
-                      xs: "body2",
-                      sm: "body2",
-                      md: "body1",
-                      lg: "body1",
-                      xl: "body1",
-                    },
-                  }}
-                  fontWeight={700}
-                  component="div"
-                >
-                  {card.title}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  overflow={"hidden"}
-                  sx={{
-                    typography: {
-                      xs: "caption",
-                      sm: "caption",
-                      md: "body2",
-                      lg: "body2",
-                      xl: "body2",
-                    },
-                  }}
-                >
-                  {card.description}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button
-                  size="small"
-                  variant="text"
-                  sx={{ textTransform: "none", marginTop: 1 }}
-                  href={card.link}
-                  target="_blank"
-                >
-                  Go to article
-                </Button>
-              </CardActions>
-            </Card>
-          ))}
-          <IconButton onClick={goToNextSlide}>
-            <KeyboardDoubleArrowRightIcon
-              htmlColor="#fff"
-              className={classes.icon}
-              sx={{
-                height: { xs: 40, sm: 40, md: 40, lg: 60, xl: 60 },
-                width: { xs: 40, sm: 40, md: 40, lg: 60, xl: 60 },
-              }}
-            />
-          </IconButton>{" "}
-        </Stack>
-      </Stack>
+      </Box>
+      <Box
+        component="section"
+        id="two"
+        sx={{
+          position: "relative",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#fff",
+        }}
+      >
+        <Stack id={"text2"} position={"absolute"}></Stack>
+      </Box>
     </Stack>
   );
 };
