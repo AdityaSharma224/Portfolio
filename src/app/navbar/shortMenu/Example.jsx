@@ -64,11 +64,11 @@ export const Example = () => {
           </Stack>
           <Stack
             flexDirection="row"
-            alignSelf="center"
-            gap={8}
+            alignSelf="flex-end"
             width="100%"
-            paddingX={2}
-            paddingY={1}
+            padding={2}
+            alignItems={'end'}
+            gap={6}
             left={24}
           >
             {[
@@ -83,7 +83,7 @@ export const Example = () => {
               },
             ].map((link, index) => (
               <Link key={index} href={link.href} target="_blank">
-                <Stack flexDirection={"row"} gap={9}>
+                <Stack flexDirection={"row"} gap={8}>
                   <Stack
                     component="img"
                     src={link.src}

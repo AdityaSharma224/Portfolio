@@ -28,9 +28,9 @@ const FooterComponent = () => {
       bgcolor={"#000"}
       sx={{
         height: {
-          xs: "200px",
-          sm: "200px",
-          md: "400px",
+          xs: "180px",
+          sm: "180px",
+          md: "350px",
           lg: "450px",
           xl: "500px",
         },

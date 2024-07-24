@@ -136,7 +136,7 @@ const SkillComponent = () => {
             width={"100%"}
             position={"relative"}
             sx={{
-              top: { xs: 50, sm: 150, md: 200, lg: 200, xl: 200 },
+              top: { xs: 50, sm: 150, md: 180, lg: 180, xl: 180 },
               left: { xs: 20, sm: 20, md: 20, lg: 20, xl: 20 },
             }}
           >

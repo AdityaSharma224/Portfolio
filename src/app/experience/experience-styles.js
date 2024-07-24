@@ -24,13 +24,13 @@ const useStyles = makeStyles({
         width:'100vw',
         alignItems:'center',
         [theme.breakpoints.down('md')]:{
-            height:'260vh',
+            height:'290vh',
         },
         [theme.breakpoints.down('sm')]:{
-            height:'260vh',
+            height:'310vh',
         },
         [theme.breakpoints.down('xs')]:{
-            height:'260vh',
+            height:'330vh',
         }
        
     },
