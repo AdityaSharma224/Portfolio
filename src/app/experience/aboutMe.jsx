@@ -181,7 +181,7 @@ const AboutComponent = () => {
       className={classes.wrapper2}
       sx={{
         gap: { xs: 6, sm: 6, md: 10, lg: 14, xl: 14 },
-        paddingX: { xs: 2, sm: 2, md: 0, lg: 0, xl: 0 },
+        paddingX: { xs: 1.3, sm: 2, md: 0, lg: 0, xl: 0 },
       }}
       id="experience"
       paddingY={6}
@@ -277,11 +277,14 @@ const AboutComponent = () => {
               lg: "row",
               xl: "row",
             },
+            wordBreak:'break-all',
+
           }}
           gap={4}
           width={"100%"}
           alignItems={"center"}
           marginTop={5}
+          
         >
           <Typography
             className="animatedText2"
@@ -295,7 +298,7 @@ const AboutComponent = () => {
               },
               typography: {
                 xs: "h5",
-                sm: "h6",
+                sm: "h5",
                 md: "h4",
                 lg: "h3",
                 xl: "h3",
@@ -307,10 +310,12 @@ const AboutComponent = () => {
                 lg: 700,
                 xl: 700,
               },
+              wordBreak:'break-all',
+              hyphens:'auto',
             }}
+          
           >
-            {"SOME OF THE MOST VIEWED"} {"TUTORIALS AND ARTICLES"}{" "}
-            {"ON DATA STRUCTURES AND ALGORITHMS"}
+            {"SOME OF THE MOST VIEWED TUTORIALS AND ARTICLES ON DATA STRUCTURES AND ALGORITHMS"}
           </Typography>
           <Stack gap={1} alignItems={"flex-start"} className={"animatedText3"}>
             <Typography variant="subtitle3" fontWeight={500} color={"#7C7C7C"}>
