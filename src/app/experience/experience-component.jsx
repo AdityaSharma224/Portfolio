@@ -6,7 +6,6 @@ import NavbarComponent from "../navbar/navbar";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
-import Preloader from "../preloader/loader";
 import My_IMAGE from "../../assets/myimg.jpg";
 import { useMediaQuery, useTheme } from "@mui/material";
 
@@ -80,7 +79,6 @@ const ExperienceComponent = () => {
   return (
     <>
       <Stack className={classes.wrapper} id="experience">
-        <Preloader />
         <Box
           id="one"
           sx={{

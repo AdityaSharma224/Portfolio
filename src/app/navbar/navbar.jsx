@@ -12,11 +12,7 @@ const MotionTypography = ({ text, navigatePath }) => {
   const navigate = useNavigate();
 
   return (
-    <motion.div
-      whileHover={{ scale: 1.2 }}
-      whileTap={{ scale: 0.8 }}
-      transition={{ type: 'spring', stiffness: 900, damping: 3 }}
-    >
+    
       <Typography
         variant="body1"
         fontWeight={500}
@@ -25,8 +21,7 @@ const MotionTypography = ({ text, navigatePath }) => {
         onClick={() => navigate(navigatePath)}
       >
         {text}
-      </Typography>
-    </motion.div>
+      </Typography>    
   );
 };
 

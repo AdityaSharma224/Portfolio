@@ -6,22 +6,19 @@ import { Box, Typography } from "@mui/material";
 import NavbarComponent from "../navbar/navbar";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Button } from "@mui/material";
-import Preloader from "../preloader/loader";
+import { useMediaQuery, useTheme } from "@mui/material";
+import ArticleCard from "../components/article-card";
 
 const ArticleComponent = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
+
   useEffect(() => {
     const handleScroll = () => {
       const text1 = document.getElementById("text1");
-      const text2 = document.getElementById("text2");
       const sectionTwo = document.getElementById("two");
-
-      if (window.pageYOffset > sectionTwo.offsetTop) {
-        text2.style.position = "fixed";
-      } else {
-        text2.style.position = "absolute";
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -29,7 +26,6 @@ const ArticleComponent = () => {
   }, []);
   return (
     <Stack className={classes.wrapper} id="experience">
-      <Preloader />
       <Box
         id="one"
         sx={{
@@ -160,20 +156,78 @@ const ArticleComponent = () => {
           </Stack>
         </Stack>
       </Box>
-      <Box
+      <Stack
         component="section"
         id="two"
         sx={{
           position: "relative",
-          height: "100vh",
+          height: "150vh",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
           backgroundColor: "#fff",
         }}
+        paddingY={5}
+        paddingX={2}
+        gap={2}
       >
-        <Stack id={"text2"} position={"absolute"}></Stack>
-      </Box>
+        <Stack
+          padding={2}
+          bgcolor={"#fff"}
+          flexDirection={"column"}
+          gap={4}
+          alignSelf={"flex-start"}
+          width={"100%"}
+          height={"auto"}
+        >
+          <Typography variant={isMdDown ? "h4" : "h2"} fontWeight={700}>
+            {"DATA STRUCTURES AND ALGORITHMS"}
+          </Typography>
+          <Stack
+            display={"grid"}
+            width={"100%"}
+            gap={2}
+            position={"relative"}
+            height={"auto"}
+            sx={{ gridTemplateColumns: "repeat(5,1fr)" }}
+          >
+            <ArticleCard
+              imageUrl={
+                "https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg"
+              }
+              articleName={"Introduction to Dijkstras Algorithm"}
+              testimonial={"this is my card"}
+            />
+            <ArticleCard
+              imageUrl={
+                "https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg"
+              }
+              articleName={"Introduction to Dijkstras Algorithm"}
+              testimonial={"this is my card"}
+            />
+            <ArticleCard
+              imageUrl={
+                "https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg"
+              }
+              articleName={"Introduction to Dijkstras Algorithm"}
+              testimonial={"this is my card"}
+            />
+            <ArticleCard
+              imageUrl={
+                "https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg"
+              }
+              articleName={"Introduction to Dijkstras Algorithm"}
+              testimonial={"this is my card"}
+            />
+            <ArticleCard
+              imageUrl={
+                "https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg"
+              }
+              articleName={"Introduction to Dijkstras Algorithm"}
+              testimonial={"this is my card"}
+            />
+          </Stack>
+        </Stack>
+      </Stack>
     </Stack>
   );
 };

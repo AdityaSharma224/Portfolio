@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { Link, SvgIcon, useMediaQuery } from "@mui/material";
@@ -26,16 +26,10 @@ const Letter = styled('span')({
   },
 });
 
-
-const Title = styled(Typography)(({ theme }) => ({
-  fontSize: "30px",
-  letterSpacing: "5px",
-  color: "#fffafa",
-  borderRadius: "10px",
-}));
-
 const HomeComponent = () => {
   const classes = useStyles();
+  const cursorRef = useRef(null);
+  const homeRef = useRef(null);
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
   const [hover, setHover] = useState(false);
@@ -65,8 +59,34 @@ const HomeComponent = () => {
     );
   };
 
+  useEffect(() => {
+    const editCursor = (e) => {
+      const { clientX: x, clientY: y } = e;
+      const cursorWidth = cursorRef.current.offsetWidth / 2;
+      const cursorHeight = cursorRef.current.offsetHeight / 2;
+
+      if (homeRef.current) {
+        const { left, top, right, bottom } = homeRef.current.getBoundingClientRect();
+        if (x >= left && x <= right && y >= top && y <= bottom) {
+          cursorRef.current.style.left = `${x - cursorWidth}px`;
+          cursorRef.current.style.top = `${y - cursorHeight}px`;
+          cursorRef.current.style.display = "block";
+        } else {
+          cursorRef.current.style.display = "none";
+        }
+      }
+    };
+
+    window.addEventListener("mousemove", editCursor);
+
+    return () => {
+      window.removeEventListener("mousemove", editCursor);
+    };
+  }, []);
+
+
   return (
-    <Stack className={classes.wrapper} id="home" overflowY={"hidden"}>
+    <Stack className={classes.wrapper} id="home" overflowY={"hidden"} ref={homeRef}>
       <NavbarComponent />
       <Stack flexDirection={'column'} gap={1} position={'absolute'} sx={{bottom:{xs:120,sm:120,md:50,lg:50,xl:50}, left:{xs:30,sm:30,md:50,lg:50,xl:50}}}>
       <Typography variant="h1" sx={{ fontSize: { xs: '50px', sm: '80px', md: '100px', lg: '150px', xl: '150px' }, fontWeight: 700, color: '#fff' }}>
@@ -176,6 +196,10 @@ const HomeComponent = () => {
           </Stack>
         </Stack>
       </Stack>
+      <div
+        className={classes.cursor}
+        ref={cursorRef}
+      />
     </Stack>
   );
 };

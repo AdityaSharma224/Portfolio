@@ -10,8 +10,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SplitType from "split-type";
 import PeopleCards from "../components/people-card";
-import { useTheme, useMediaQuery } from "@mui/material";
-import FooterComponent from "../components/footer";
+import RishabhSir from "../../assets/rishabhSir.jpeg";
+import MayurSir from "../../assets/mayursir.jpeg";
+import ManujB from "../../assets/manujB.jpeg";
+import AnimeshB from "../../assets/animeshB.jpeg";
 
 const flicker = keyframes`
   0%, 100% { opacity: 0; }
@@ -77,32 +79,28 @@ const AboutComponent = () => {
     {
       name: "Rishabh Prabhu Srivastava",
       role: "Technical Manager, GeeksforGeeks",
-      imageUrl:
-        "https://media.licdn.com/dms/image/D5603AQEFVlIIVSCq3g/profile-displayphoto-shrink_800_800/0/1721276718922?e=1727308800&v=beta&t=BjuKjccdsa9FZFA3oVvfT7dYU8qFqhy9KtYTwnGXvvw",
+      imageUrl: RishabhSir,
       testimonial:
         "I had the pleasure of managing Aditya during his internship at GeeksforGeeks. Throughout his time with us, Aditya demonstrated a remarkable aptitude for DSA and a strong work ethic. He collaborated effectively with team members, always ready to share knowledge and assist others. I highly recommend Aditya.",
     },
     {
       name: "Mayur Rokade",
       role: "Product Manager, Contlo",
-      imageUrl:
-        "https://media.licdn.com/dms/image/D5603AQGA2Er2TIRa2g/profile-displayphoto-shrink_800_800/0/1680192282901?e=1727308800&v=beta&t=AyZkina02MFfEHA0M1M8TJ-hkoICOcezRRnkPTLobes",
+      imageUrl: MayurSir,
       testimonial:
         "I'm thrilled to recommend Aditya, a talented and results-oriented engineer while working at SuperAGI. During his time on the team, Aditya consistently impressed me with his ability to develop innovative solutions. Aditya's technical skills are top-notch, and he's also a highly motivated team player. As his Product Manager, I have no doubt he'll continue to excel in his career.",
     },
     {
       name: "Manuj Grover",
       role: "Software Engineer, Zomato",
-      imageUrl:
-        "https://media.licdn.com/dms/image/D5603AQGFAGEj_ZYeZA/profile-displayphoto-shrink_200_200/0/1703826542916?e=1727308800&v=beta&t=xqK8UEmNPBbsWw4sEVtZFdF4-YYk8hSHaD23D9dNQa8",
+      imageUrl: ManujB,
       testimonial:
         "Aditya's motivation and enthusiasm is truly exceptional. His positive attitude and strong work ethic consistently elevated the team's performance. His knack for bringing fresh ideas to the table and adept problem-solving make him an exceptional candidate for software development roles.",
     },
     {
       name: "Animesh Dey",
       role: "Ex- Senior MTS, GeeksforGeeks",
-      imageUrl:
-        "https://media.licdn.com/dms/image/D4D03AQHW-m2mS4-Eew/profile-displayphoto-shrink_200_200/0/1694715948546?e=1727308800&v=beta&t=7lnJtlwjFpU-X7cef6PyVaYTyYOkL-65ERwz7x8OcKA",
+      imageUrl: AnimeshB,
       testimonial:
         "Aditya is a very passionate and hard working individual. His enthusiasm and perseverance towards learning new concepts amazed me. I am sure his dedicated nature will help him grow and inspire others at the same time.",
     },
@@ -120,7 +118,7 @@ const AboutComponent = () => {
 
     t1.fromTo(
       ".side-card",
-      { x: -800, y: 0, opacity: 0.1 },
+      { x: 0, y: 200, opacity: 0.1 },
       { x: 0, y: 0, opacity: 1 }
     );
   }, []);
@@ -192,7 +190,6 @@ const AboutComponent = () => {
         gap={1}
         alignItems={"center"}
         justifyContent={"center"}
-        width={"65%"}
         sx={{
           width: {
             xs: "90%",
@@ -218,6 +215,7 @@ const AboutComponent = () => {
               lg: "40px",
               xl: "40px",
             },
+            wordSpacing:1.5,
           }}
         >
           {
@@ -277,14 +275,12 @@ const AboutComponent = () => {
               lg: "row",
               xl: "row",
             },
-            wordBreak:'break-all',
-
+            wordBreak: "break-all",
           }}
           gap={4}
           width={"100%"}
           alignItems={"center"}
           marginTop={5}
-          
         >
           <Typography
             className="animatedText2"
@@ -310,12 +306,13 @@ const AboutComponent = () => {
                 lg: 700,
                 xl: 700,
               },
-              wordBreak:'break-all',
-              hyphens:'auto',
+              wordBreak: "break-all",
+              hyphens: "auto",
             }}
-          
           >
-            {"SOME OF THE MOST VIEWED TUTORIALS AND ARTICLES ON DATA STRUCTURES AND ALGORITHMS"}
+            {
+              "SOME OF THE MOST VIEWED TUTORIALS AND ARTICLES ON DATA STRUCTURES AND ALGORITHMS"
+            }
           </Typography>
           <Stack gap={1} alignItems={"flex-start"} className={"animatedText3"}>
             <Typography variant="subtitle3" fontWeight={500} color={"#7C7C7C"}>
