@@ -2,12 +2,19 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import useStyles from "./article-styles";
-import { Box, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import NavbarComponent from "../navbar/navbar";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Button } from "@mui/material";
 import { useMediaQuery, useTheme } from "@mui/material";
 import ArticleCard from "../components/article-card";
+import Accordion from "@mui/material/Accordion";
+import AccordionActions from "@mui/material/AccordionActions";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { DSA_INFO, GPT_INFO, HANDBOOK_INFO } from "../constants";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const ArticleComponent = () => {
   const classes = useStyles();
@@ -161,7 +168,7 @@ const ArticleComponent = () => {
         id="two"
         sx={{
           position: "relative",
-          height: "150vh",
+          height: "auto",
           display: "flex",
           alignItems: "center",
           backgroundColor: "#fff",
@@ -179,53 +186,117 @@ const ArticleComponent = () => {
           width={"100%"}
           height={"auto"}
         >
-          <Typography variant={isMdDown ? "h4" : "h2"} fontWeight={700}>
-            {"DATA STRUCTURES AND ALGORITHMS"}
-          </Typography>
-          <Stack
-            display={"grid"}
-            width={"100%"}
-            gap={2}
-            position={"relative"}
-            height={"auto"}
-            sx={{ gridTemplateColumns: "repeat(5,1fr)" }}
+          <Accordion
+            defaultExpanded
+            disableGutters
+            className={classes.accordion}
           >
-            <ArticleCard
-              imageUrl={
-                "https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg"
-              }
-              articleName={"Introduction to Dijkstras Algorithm"}
-              testimonial={"this is my card"}
-            />
-            <ArticleCard
-              imageUrl={
-                "https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg"
-              }
-              articleName={"Introduction to Dijkstras Algorithm"}
-              testimonial={"this is my card"}
-            />
-            <ArticleCard
-              imageUrl={
-                "https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg"
-              }
-              articleName={"Introduction to Dijkstras Algorithm"}
-              testimonial={"this is my card"}
-            />
-            <ArticleCard
-              imageUrl={
-                "https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg"
-              }
-              articleName={"Introduction to Dijkstras Algorithm"}
-              testimonial={"this is my card"}
-            />
-            <ArticleCard
-              imageUrl={
-                "https://media.geeksforgeeks.org/wp-content/uploads/20231108130004/dijkstra-algorithm-(1).jpg"
-              }
-              articleName={"Introduction to Dijkstras Algorithm"}
-              testimonial={"this is my card"}
-            />
-          </Stack>
+            <AccordionSummary
+              id="panel1-header"
+              aria-controls="panel1-content"
+              expandIcon={<ExpandMoreIcon fontSize="large" />}
+              sx={{
+                color: "#000",
+                fontWeight: 700,
+                fontSize: isMdDown ? "20px" : "40px",
+              }}
+            >
+              {"Data Structures and Algorithms"}
+            </AccordionSummary>
+            <AccordionDetails>
+              {DSA_INFO.map((article, index) => (
+                <Stack
+                  key={index}
+                  width="100%"
+                  flexDirection="row"
+                  justifyContent="space-between"
+                  alignItems={"center"}
+                  sx={{ border: "1px solid #D3D3D3", padding: 1 }}
+                >
+                  <Typography variant={isMdDown ? 'body1' : 'h6'} fontWeight={500}>
+                    {article.title}
+                  </Typography>
+                  <IconButton href={article.link} target="_blank">
+                    <OpenInNewIcon fontSize="medium" htmlColor="#1976d2" />
+                  </IconButton>
+                </Stack>
+              ))}
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            defaultExpanded
+            disableGutters
+            className={classes.accordion}
+          >
+            <AccordionSummary
+              aria-controls="panel2-content"
+              id="panel2-header"
+              expandIcon={<ExpandMoreIcon fontSize="large" />}
+              sx={{
+                color: "#000",
+                fontSize: isMdDown ? "20px" : "40px",
+                fontWeight: 700,
+              }}
+            >
+              {"Handbook"}
+            </AccordionSummary>
+            <AccordionDetails>
+              {HANDBOOK_INFO.map((article, index) => (
+                <Stack
+                  key={index}
+                  width="100%"
+                  flexDirection="row"
+                  justifyContent="space-between"
+                  alignItems={"center"}
+                  sx={{ border: "1px solid #D3D3D3", padding: 1 }}
+                >
+                  <Typography variant={isMdDown ? 'body1' : 'h6'} fontWeight={500}>
+                    {article.title}
+                  </Typography>
+                  <IconButton href={article.link} target="_blank">
+                    <OpenInNewIcon fontSize="medium" htmlColor="#1976d2" />
+                  </IconButton>
+                </Stack>
+              ))}
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            defaultExpanded
+            disableGutters
+            className={classes.accordion}
+          >
+            <AccordionSummary
+              aria-controls="panel3-content"
+              id="panel3-header"
+              expandIcon={<ExpandMoreIcon fontSize="large" />}
+              sx={{
+                color: "#000",
+                fontSize: isMdDown ? "20px" : "40px",
+                fontWeight: 700,
+              }}
+            >
+              {"ChatGpt Handbook"}
+            </AccordionSummary>
+            <AccordionDetails>
+              {GPT_INFO.map((article, index) => (
+                <Stack
+                  key={index}
+                  width="100%"
+                  flexDirection="row"
+                  justifyContent="space-between"
+                  alignItems={"center"}
+                  sx={{ border: "1px solid #D3D3D3", padding: 1 }}
+                >
+                  <Typography variant={isMdDown ? 'body1' : 'h6'} fontWeight={500}>
+                    {article.title}
+                  </Typography>
+                  <IconButton href={article.link} target="_blank">
+                    <OpenInNewIcon fontSize="medium" htmlColor="#1976d2" />
+                  </IconButton>
+                </Stack>
+              ))}
+            </AccordionDetails>
+          </Accordion>
         </Stack>
       </Stack>
     </Stack>
