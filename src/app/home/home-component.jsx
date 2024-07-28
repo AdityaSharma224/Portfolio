@@ -119,15 +119,15 @@ const HomeComponent = () => {
           ></Stack>
           <Button
             variant="text"
-            href={`mailto:sharmaaditya13064@gmail.com`}
+            href={`mailto:adityasharmawork13064@gmail.com`}
             sx={{
               textDecoration: "none",
               color: "#fff",
               textTransform: "none",
             }}
           >
-            <Typography color={"#fff"} variant="body1" fontWeight={500} href={`mailto:sharmaaditya13064@gmail.com`}>
-              {"sharmaaditya13064@gmail.com"}
+            <Typography color={"#fff"} variant="body1" fontWeight={500} href={`mailto:adityasharmawork13064@gmail.com`}>
+              {"adityasharmawork13064@gmail.com"}
             </Typography>
           </Button>
         </Stack>
@@ -161,7 +161,7 @@ const HomeComponent = () => {
             )}
             {renderIcon(
               "Resume",
-              "https://media.licdn.com/dms/document/media/D562DAQGOSDcDWEMqiA/profile-treasury-document-pdf-analyzed/0/1719126559318?e=1720656000&v=beta&t=Cz8QweGPgAWvy1PGFnI7KwIaFUr3iefqGVxnN4-7SiM",
+              "https://drive.google.com/file/d/1VhR4fU9IiZMJIFrpxgtjLdJMxe1ogMfX/view?usp=sharing",
               null,
               AccountBoxIcon
             )}
