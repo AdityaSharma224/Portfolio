@@ -32,7 +32,7 @@ const NavbarComponent = () => {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 4.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -15 * t)),
       smooth: true,
     });
 

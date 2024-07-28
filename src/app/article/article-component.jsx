@@ -87,6 +87,7 @@ const ArticleComponent = () => {
                 width={"100%"}
                 onClick={() => navigate("/")}
                 sx={{ cursor: "pointer" }}
+                padding={1}
               >
                 <Typography
                   sx={{
@@ -138,7 +139,7 @@ const ArticleComponent = () => {
             width={"100%"}
             position={"relative"}
             sx={{
-              top: { xs: 50, sm: 150, md: 180, lg: 180, xl: 180 },
+              top: { xs: 40, sm: 150, md: 180, lg: 180, xl: 180 },
               left: { xs: 20, sm: 20, md: 20, lg: 20, xl: 20 },
             }}
           >
@@ -201,7 +202,7 @@ const ArticleComponent = () => {
                 fontSize: isMdDown ? "20px" : "40px",
               }}
             >
-              {"Data Structures and Algorithms"}
+              {"DATA STRUCTURES AND ALGORITHMS"}
             </AccordionSummary>
             <AccordionDetails>
               {DSA_INFO.map((article, index) => (
@@ -211,7 +212,7 @@ const ArticleComponent = () => {
                   flexDirection="row"
                   justifyContent="space-between"
                   alignItems={"center"}
-                  sx={{ border: "1px solid #D3D3D3", padding: 1 }}
+                  sx={{ borderBottom: "1px solid #D3D3D3", padding: 1 }}
                 >
                   <Typography variant={isMdDown ? 'body1' : 'h6'} fontWeight={500}>
                     {article.title}
@@ -238,7 +239,7 @@ const ArticleComponent = () => {
                 fontWeight: 700,
               }}
             >
-              {"Handbook"}
+              {"GENERAL HANDBOOK"}
             </AccordionSummary>
             <AccordionDetails>
               {HANDBOOK_INFO.map((article, index) => (
@@ -248,7 +249,7 @@ const ArticleComponent = () => {
                   flexDirection="row"
                   justifyContent="space-between"
                   alignItems={"center"}
-                  sx={{ border: "1px solid #D3D3D3", padding: 1 }}
+                  sx={{ borderBottom: "1px solid #D3D3D3", padding: 1 }}
                 >
                   <Typography variant={isMdDown ? 'body1' : 'h6'} fontWeight={500}>
                     {article.title}
@@ -275,7 +276,7 @@ const ArticleComponent = () => {
                 fontWeight: 700,
               }}
             >
-              {"ChatGpt Handbook"}
+              {"CHAT-GPT"}
             </AccordionSummary>
             <AccordionDetails>
               {GPT_INFO.map((article, index) => (
@@ -285,7 +286,7 @@ const ArticleComponent = () => {
                   flexDirection="row"
                   justifyContent="space-between"
                   alignItems={"center"}
-                  sx={{ border: "1px solid #D3D3D3", padding: 1 }}
+                  sx={{ borderBottom: "1px solid #D3D3D3", padding: 1 }}
                 >
                   <Typography variant={isMdDown ? 'body1' : 'h6'} fontWeight={500}>
                     {article.title}

@@ -110,20 +110,7 @@ const useStyles = makeStyles({
           transform: 'translateX(-100%)',
         },
       },
-      cursor: {
-        position: 'fixed',
-        padding:'6.8em',
-        backgroundColor: '#fff',
-        borderRadius: '50%',
-        mixBlendMode:'difference',
-        transition: 'transform 0.3s ease',
-        pointerEvents:'none',
-        zIndex:10,
-        display:'none',
-        [theme.breakpoints.down('md')]:{
-          display:'none',
-       },
-      },
+    
 });
 
 export default useStyles;
