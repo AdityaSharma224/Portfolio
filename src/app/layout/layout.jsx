@@ -12,7 +12,7 @@ const Layout = () => {
   return (
     <Stack className={classes.wrapper}>
       <Preloader />
-        <HomeComponent />
+      <HomeComponent />
       <AboutComponent />
       <FooterComponent />
     </Stack>

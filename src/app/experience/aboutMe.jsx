@@ -14,6 +14,8 @@ import RishabhSir from "../../assets/rishabhSir.jpeg";
 import MayurSir from "../../assets/mayursir.jpeg";
 import ManujB from "../../assets/manujB.jpeg";
 import AnimeshB from "../../assets/animeshB.jpeg";
+import Link from "@mui/material/Link";
+import LinkedinSS from "../../assets/linkedinSS.png";
 
 const flicker = keyframes`
   0%, 100% { opacity: 0; }
@@ -215,7 +217,7 @@ const AboutComponent = () => {
               lg: "40px",
               xl: "40px",
             },
-            wordSpacing:1.5,
+            wordSpacing: 1.5,
           }}
         >
           {
@@ -361,6 +363,75 @@ const AboutComponent = () => {
           />
         ))}
       </Box>
+      <Stack
+        height={"auto"}
+        sx={{
+          width: {
+            xs: "90%",
+            sm: "80%",
+            md: "70%",
+            lg: "65%",
+            xl: "65%",
+          },
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+            lg: "row",
+            xl: "row",
+          },
+        }}
+        alignItems={"center"}
+        justifyContent={"center"}
+        padding={2}
+        gap={2}
+      >
+        <Stack
+          component={"img"}
+          src={LinkedinSS}
+          sx={{
+            width: {
+              xs: "100%",
+              sm: "100%",
+              md: "80%",
+              lg: "60%",
+              xl: "60%",
+            },
+            height: {
+              xs: "200px",
+              sm: "200px",
+              md: "300px",
+              lg: "350px",
+              xl: "350px",
+            },
+          }}
+        />
+        <Stack
+          gap={2}
+          flexDirection={"row"}
+          justifyContent={"center"}
+          width={"100%"}
+          marginTop={2}
+          alignItems={"center"}
+        >
+          <Typography fontSize={"20px"} color={"#000"}>
+            {"Connect with me on Linkedin"}
+          </Typography>
+          <Link
+            href={"https://www.linkedin.com/in/adityasharma13064/"}
+            target={"_blank"}
+          >
+            <Stack
+              padding={1}
+              border={"1px solid #000"}
+              borderRadius={"50%"}
+              sx={{ cursor: "pointer" }}
+            >
+              <ArrowOutwardIcon fontSize="medium" />
+            </Stack>
+          </Link>
+        </Stack>
+      </Stack>
     </Stack>
   );
 };

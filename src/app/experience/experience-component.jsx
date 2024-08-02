@@ -251,7 +251,7 @@ const ExperienceComponent = () => {
             alignSelf={"flex-start"}
             width={"100%"}
             height={"auto"}
-          >
+                      >
             {/* about me section */}
             <Stack
               width={"100%"}

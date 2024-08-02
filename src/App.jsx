@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Layout from "./app/layout/layout";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import SkillComponent from "./app/skills/skill-component";
 import ExperienceComponent from "./app/experience/experience-component";
 import ProjectsComponent from "./app/projects/projects-component";
 import ArticleComponent from "./app/article/article-component";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import {GlobalStyles} from "@mui/material";
+import { GlobalStyles } from "@mui/material";
+import ScrollToTop from "./app/components/scrollToTop";
 
 const styles = `
 @keyframes rotating-anim {
@@ -33,6 +34,8 @@ const styles = `
 `;
 
 function App() {
+  const location = useLocation();
+
   const theme = createTheme({
     components: {
       MuiTooltip: {
@@ -44,14 +47,15 @@ function App() {
             padding: "6px 12px",
             fontWeight: 600,
           },
-          
         },
       },
     },
   });
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles styles={styles} />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />} />
         <Route path="/about-me" element={<ExperienceComponent />} />

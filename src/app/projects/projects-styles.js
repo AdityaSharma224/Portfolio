@@ -16,7 +16,9 @@ const theme = createTheme({
 
 const useStyles = makeStyles({
     wrapper:{
-        backgroundColor:'#fff',
+        backgroundColor:'#000',
+        height:'300vh',
+        width:'100vw',
     },
     itemStack:{
         padding:'16px 26px',
