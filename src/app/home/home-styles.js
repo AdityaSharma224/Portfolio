@@ -110,7 +110,7 @@ const useStyles = makeStyles({
           transform: 'translateX(-100%)',
         },
       },
-
+    
 });
 
 export default useStyles;

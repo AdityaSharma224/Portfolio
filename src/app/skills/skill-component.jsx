@@ -7,7 +7,6 @@ import SkillSection from "./skill-section";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import Preloader from "../preloader/loader";
 
 const SkillComponent = () => {
   const classes = useStyles();
@@ -30,12 +29,11 @@ const SkillComponent = () => {
   }, []);
   return (
     <Stack className={classes.wrapper} id="experience">
-      <Preloader />
       <Box
         id="one"
         sx={{
           position: "relative",
-          width: "100vw",
+          width: "100%",
           display: "flex",
           alignItems: "flex-start",
           backgroundColor: "#0C0C0F",
@@ -85,6 +83,7 @@ const SkillComponent = () => {
                 width={"100%"}
                 onClick={() => navigate("/")}
                 sx={{ cursor: "pointer" }}
+                padding={1}
               >
                 <Typography
                   sx={{
@@ -136,7 +135,7 @@ const SkillComponent = () => {
             width={"100%"}
             position={"relative"}
             sx={{
-              top: { xs: 50, sm: 150, md: 180, lg: 180, xl: 180 },
+              top: { xs: 35, sm: 150, md: 180, lg: 180, xl: 180 },
               left: { xs: 20, sm: 20, md: 20, lg: 20, xl: 20 },
             }}
           >

@@ -12,11 +12,7 @@ const MotionTypography = ({ text, navigatePath }) => {
   const navigate = useNavigate();
 
   return (
-    <motion.div
-      whileHover={{ scale: 1.2 }}
-      whileTap={{ scale: 0.8 }}
-      transition={{ type: 'spring', stiffness: 900, damping: 3 }}
-    >
+    
       <Typography
         variant="body1"
         fontWeight={500}
@@ -25,8 +21,7 @@ const MotionTypography = ({ text, navigatePath }) => {
         onClick={() => navigate(navigatePath)}
       >
         {text}
-      </Typography>
-    </motion.div>
+      </Typography>    
   );
 };
 
@@ -37,7 +32,7 @@ const NavbarComponent = () => {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 4.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -15 * t)),
       smooth: true,
     });
 
@@ -56,8 +51,9 @@ const NavbarComponent = () => {
       className={classes.wrapper}
       flexDirection={"row"}
       justifyContent={"space-between"}
+      flexWrap={'wrap'}
     >
-      <Stack className={classes.innerWrapper1} flexDirection={"row"}>
+      <Stack className={classes.innerWrapper1} flexDirection={"row"}  maxWidth={'100%'}>
         <Stack
           className={classes.itemStack}
           onClick={() => navigate("/")}
@@ -128,6 +124,7 @@ const NavbarComponent = () => {
       <Stack
         flexDirection={"row"}
         className={classes.innerWrapper2}
+        maxWidth={'100%'}
         sx={{
           display: {
             xs: "none",
@@ -138,7 +135,7 @@ const NavbarComponent = () => {
           },
         }}
       >
-        <Stack className={classes.itemStack}>
+        <Stack className={classes.itemStack} maxWidth={'100%'}>
           <Typography
             sx={{
               typography: { xs: "h7", sm: "h7", md: "h6", lg: "h6", xl: "h6" },

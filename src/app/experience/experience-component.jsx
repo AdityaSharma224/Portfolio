@@ -6,25 +6,31 @@ import NavbarComponent from "../navbar/navbar";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
-import Preloader from "../preloader/loader";
 import My_IMAGE from "../../assets/myimg.jpg";
 import { useMediaQuery, useTheme } from "@mui/material";
 
 const experienceInfo = [
   {
-    date: "𝑶𝒄𝒕𝒐𝒃𝒆𝒓, 2023  -  𝑷𝒓𝒆𝒔𝒆𝒏𝒕",
+    date: "𝑴𝒂𝒚, 2024  -  𝑷𝒓𝒆𝒔𝒆𝒏𝒕",
     company: "𝑪𝑨𝑺𝑻 𝑺𝒐𝒇𝒕𝒘𝒂𝒓𝒆",
-    role: "Software Development Engineer",
+    role: "𝑺𝒐𝒇𝒕𝒘𝒂𝒓𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒎𝒆𝒏𝒕 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓",
     details: [
       "Frontend development of the CAST Imaging Analyzer using React.js, delivering a robust platform for code analysis.",
       "Engineered an intuitive interface for efficient navigation, and initiation of the scanning process, ensuring a user-friendly experience.",
+    ],
+  },
+  {
+    date: "𝑶𝒄𝒕𝒐𝒃𝒆𝒓, 2023 - 𝑴𝒂𝒚, 2024",
+    company: "𝑪𝑨𝑺𝑻 𝑺𝒐𝒇𝒕𝒘𝒂𝒓𝒆",
+    role: "𝑺𝒐𝒇𝒕𝒘𝒂𝒓𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒎𝒆𝒏𝒕 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓 - 𝑰𝒏𝒕𝒆𝒓𝒏",
+    details: [
       "Developed a delicate desktop application to facilitate comprehensive source code analysis, understanding and architectural insights.",
     ],
   },
   {
     date: "𝑱𝒖𝒍𝒚, 2023 - 𝑶𝒄𝒕𝒐𝒃𝒆𝒓, 2023",
     company: "𝑪𝒐𝒏𝒕𝒍𝒐",
-    role: "Software Development Engineer - Intern",
+    role: "𝑺𝒐𝒇𝒕𝒘𝒂𝒓𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒎𝒆𝒏𝒕 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓 - 𝑰𝒏𝒕𝒆𝒓𝒏",
     details: [
       "Development of long-term memory capabilities for large language models, enhancing response relevance and accuracy by 65%.",
       "Implemented innovative AI algorithms that improved overall system efficiency, resulting in a 30% reduction in response.",
@@ -34,7 +40,7 @@ const experienceInfo = [
   {
     date: "𝑵𝒐𝒗𝒆𝒎𝒃𝒆𝒓, 2022 - 𝑱𝒖𝒏𝒆, 2023",
     company: "𝑮𝒆𝒆𝒌𝒔𝒇𝒐𝒓𝑮𝒆𝒆𝒌𝒔",
-    role: "Member of Technical Staff - Intern",
+    role: "𝑴𝒆𝒎𝒃𝒆𝒓 𝒐𝒇 𝑻𝒆𝒄𝒉𝒏𝒊𝒄𝒂𝒍 𝑺𝒕𝒂𝒇𝒇 - 𝑰𝒏𝒕𝒆𝒓𝒏",
     details: [
       "Worked closely with the Core Data Structure and Algorithm team at GeeksforGeeks Office, Noida.",
       "Designed and Developed the Most Important Data Structure and Algorithm Official Tutorials eg., Dijkstra's Algorithm, Set, Map, Max-Heap, and Min-Heap.",
@@ -42,7 +48,6 @@ const experienceInfo = [
     ],
   },
 ];
-
 
 const hackathonInfo = [
   {
@@ -57,9 +62,7 @@ const hackathonInfo = [
     date: "𝑪𝒉𝒊𝒕𝒌𝒂𝒓𝒂 𝑼𝒏𝒊𝒗𝒆𝒓𝒔𝒊𝒕𝒚",
     company: "𝑪𝒐𝒅𝒆𝑨𝒕𝒉𝒐𝒏",
     role: "2nd Position",
-    details: [
-      "Secured 2nd position in univeristy DSA CodeAthon",
-    ],
+    details: ["Secured 2nd position in univeristy DSA CodeAthon"],
   },
 ];
 
@@ -77,15 +80,18 @@ const ExperienceComponent = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
       <Stack className={classes.wrapper} id="experience">
-        <Preloader />
         <Box
           id="one"
           sx={{
             position: "relative",
-            width: "100vw",
+            width: "100%",
             display: "flex",
             alignItems: "flex-start",
             backgroundColor: "#0C0C0F",
@@ -135,6 +141,7 @@ const ExperienceComponent = () => {
                   width={"100%"}
                   onClick={() => navigate("/")}
                   sx={{ cursor: "pointer" }}
+                  padding={1}
                 >
                   <Typography
                     sx={{
@@ -202,7 +209,7 @@ const ExperienceComponent = () => {
               width={"100%"}
               position={"relative"}
               sx={{
-                top: { xs: 50, sm: 150, md: 180, lg: 180, xl: 180 },
+                top: { xs: 40, sm: 150, md: 180, lg: 180, xl: 180 },
                 left: { xs: 20, sm: 20, md: 20, lg: 20, xl: 20 },
               }}
             >
@@ -248,7 +255,7 @@ const ExperienceComponent = () => {
             alignSelf={"flex-start"}
             width={"100%"}
             height={"auto"}
-          >
+                      >
             {/* about me section */}
             <Stack
               width={"100%"}
@@ -298,18 +305,18 @@ const ExperienceComponent = () => {
               width={"100%"}
               height={"100%"}
               bgcolor={"#fff"}
-              gap={4}
+              gap={isMdDown ? 2 : 4}
               order={isMdDown ? 2 : 1}
             >
               <Stack alignItems="flex-start" width="100%" height="100%" gap={2}>
                 <Typography variant={isMdDown ? "h4" : "h2"} fontWeight={700}>
-                  {'MY JOURNEY'}
+                  {"MY JOURNEY"}
                 </Typography>
                 <Stack borderBottom="1px solid #D3d3d3" width="100%" />
                 {experienceInfo.map((job, index) => (
                   <React.Fragment key={index}>
                     <Stack
-                      gap={isMdDown ? 4 : 6}
+                      gap={isMdDown ? 2 : 6}
                       width="100%"
                       flexDirection={isMdDown ? "column" : "row"}
                     >
@@ -323,8 +330,7 @@ const ExperienceComponent = () => {
                         gap={1}
                       >
                         <Typography
-                          variant={isMdDown ? "body1" : "body1"}
-                          color="#666666"
+                          variant={'body1'}
                           lineHeight={1.5}
                           letterSpacing={1}
                         >
@@ -350,67 +356,69 @@ const ExperienceComponent = () => {
           <Stack
             padding={2}
             flexDirection={isMdDown ? "column" : "row"}
-            gap={4}
+            gap={isMdDown ? 2 : 4}
             alignSelf={"flex-start"}
-            width={'100%'}
+            width={"100%"}
             height={"auto"}
           >
             <Stack width={"100%"} height={"100%"} bgcolor={"#fff"} gap={4}>
               <Stack alignItems="flex-start" width="100%" height="100%" gap={2}>
                 <Typography variant={isMdDown ? "h4" : "h2"} fontWeight={700}>
-                  {'EDUCATION'}
+                  {"EDUCATION"}
                 </Typography>
                 <Stack borderBottom="1px solid #D3d3d3" width="100%" />
-                    <Stack
-                      gap={isMdDown ? 4 : 6}
-                      width="100%"
-                      flexDirection={isMdDown ? "column" : "row"}
+                <Stack
+                  gap={isMdDown ? 2 : 6}
+                  width="100%"
+                  flexDirection={isMdDown ? "column" : "row"}
+                >
+                  <Stack width={isMdDown ? "100%" : "40%"}>
+                    <Typography variant="h6">
+                      {"𝑪𝒉𝒊𝒕𝒌𝒂𝒓𝒂 𝑼𝒏𝒊𝒗𝒆𝒓𝒔𝒊𝒕𝒚, 𝑷𝒖𝒏𝒋𝒂𝒃"}
+                    </Typography>
+                    <Typography variant="body1">{"2020-2024"}</Typography>
+                  </Stack>
+                  <Stack
+                    alignItems="flex-start"
+                    width={isMdDown ? "100%" : "60%"}
+                    gap={1}
+                  >
+                    <Typography
+                      variant={isMdDown ? "body1" : "body1"}
+                      color="#666666"
+                      lineHeight={1.5}
+                      letterSpacing={1}
                     >
-                      <Stack width={isMdDown ? "100%" : "40%"}>
-                        <Typography variant="h6">{'𝑪𝒉𝒊𝒕𝒌𝒂𝒓𝒂 𝑼𝒏𝒊𝒗𝒆𝒓𝒔𝒊𝒕𝒚, 𝑷𝒖𝒏𝒋𝒂𝒃'}</Typography>
-                        <Typography variant="body1">{'2020-2024'}</Typography>
-                      </Stack>
-                      <Stack
-                        alignItems="flex-start"
-                        width={isMdDown ? "100%" : "60%"}
-                        gap={1}
-                      >
-                        <Typography
-                          variant={isMdDown ? "body1" : "body1"}
-                          color="#666666"
-                          lineHeight={1.5}
-                          letterSpacing={1}
-                        >
-                          {'Bachelor of Technology (B.E)'}{' '}
-                          {'(Computer Science)'}
-                        </Typography>
-                        
-                          <Typography
-                            variant={isMdDown ? "subtitle2" : "body2"}
-                            color="#767676"
-                            lineHeight={1.5}
-                            letterSpacing={1}
-                          >{'9.65 CGPA'}</Typography>
-                      </Stack>
-                    </Stack>
-                    <Stack borderBottom="1px solid #D3d3d3" width="100%" />
+                      {"Bachelor of Technology (B.E)"} {"(Computer Science)"}
+                    </Typography>
+                    <Typography
+                      variant={isMdDown ? "subtitle2" : "body2"}
+                      color="#767676"
+                      lineHeight={1.5}
+                      letterSpacing={1}
+                    >
+                      {"9.65 CGPA"}
+                    </Typography>
+                  </Stack>
+                </Stack>
+                <Stack borderBottom="1px solid #D3d3d3" width="100%" />
               </Stack>
             </Stack>
-            <Stack height={'auto'} width={'100%'} gap={4}>
-            <Stack alignItems="flex-start" width="100%" height="100%" gap={2}>
+            <Stack height={"auto"} width={"100%"} gap={isMdDown ? 2 : 4}>
+              <Stack alignItems="flex-start" width="100%" height="100%" gap={2}>
                 <Typography variant={isMdDown ? "h4" : "h2"} fontWeight={700}>
-                  {'HACKATHONS'}
+                  {"HACKATHONS"}
                 </Typography>
                 <Stack borderBottom="1px solid #D3d3d3" width="100%" />
                 {hackathonInfo.map((job, index) => (
                   <React.Fragment key={index}>
                     <Stack
-                      gap={isMdDown ? 4 : 6}
+                      gap={isMdDown ? 2 : 6}
                       width="100%"
                       flexDirection={isMdDown ? "column" : "row"}
                     >
                       <Stack width={isMdDown ? "100%" : "30%"}>
-                      <Typography variant="h6">{job.company}</Typography>
+                        <Typography variant="h6">{job.company}</Typography>
                         <Typography variant="body1">{job.date}</Typography>
                       </Stack>
                       <Stack

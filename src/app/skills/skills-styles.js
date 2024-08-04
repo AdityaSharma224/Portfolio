@@ -54,6 +54,15 @@ const useStyles = makeStyles({
           padding:'10px 20px',
         }
       },
+      techChip:{
+        display: "grid",
+              alignItems: "center",
+              justifyContent: "center",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              [theme.breakpoints.down('md')]:{
+                gridTemplateColumns:'2fr',
+            }
+      }
 
 });
 

@@ -45,15 +45,15 @@ const SolarSystem = styled(Box)({
   },
   [theme.breakpoints.down("sm")]: {
     width: "100%",
-    height: "100vh",
+    height: "100%",
   },
   [theme.breakpoints.down("xs")]: {
     width: "100%",
-    height: "100vh",
+    height: "100%",
   },
   [theme.breakpoints.down("xxs")]: {
     width: "100%",
-    height: "100vh",
+    height: "100%",
   },
 });
 
@@ -169,6 +169,19 @@ const widths = {
   xl: "20px",
 };
 
+const technologies = [
+  "React",
+  "Wails",
+  "Javascript",
+  "HTML5",
+  "CSS",
+  "C++",
+  "Java",
+  "Python",
+  "MUI",
+  "GSAP",
+];
+
 const SkillSection = () => {
   const classes = useStyles();
   const StackBars = () => (
@@ -209,7 +222,7 @@ const SkillSection = () => {
       id="skills"
     >
       <Stack
-        height={"100%"}
+        height={"auto"}
         sx={{
           backgroundColor: "#fff",
           width: {
@@ -219,13 +232,7 @@ const SkillSection = () => {
             lg: "50%",
             xl: "50%",
           },
-          height: {
-            xs: "100%",
-            sm: "100%",
-            md: "100%",
-            lg: "100%",
-            xl: "100%",
-          },
+         
         }}
       >
         <Stack
@@ -241,8 +248,8 @@ const SkillSection = () => {
               xl: "100%",
             },
             alignItems: "center",
-            padding: { xs: 3, sm: 5, md: 15, lg: 25, xl: 25 },
-            justifyContent: "space-between",
+            padding: { xs: 3, sm: 5, md: 15, lg: 15, xl: 15 },
+            justifyContent: "flex-start",
           }}
         >
           <Stack sx={{ borderRadius: "15px" }} flexDirection={"column"}>

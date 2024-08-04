@@ -20,19 +20,9 @@ const useStyles = makeStyles({
     },
     wrapper2:{
         backgroundColor:'#fff',
-        height:'220vh',
-        width:'100vw',
+        height:'auto',
+        width:'100%',
         alignItems:'center',
-        [theme.breakpoints.down('md')]:{
-            height:'290vh',
-        },
-        [theme.breakpoints.down('sm')]:{
-            height:'310vh',
-        },
-        [theme.breakpoints.down('xs')]:{
-            height:'330vh',
-        }
-       
     },
     itemStack:{
         padding:'16px 26px',

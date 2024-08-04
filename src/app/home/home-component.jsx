@@ -26,14 +26,6 @@ const Letter = styled('span')({
   },
 });
 
-
-const Title = styled(Typography)(({ theme }) => ({
-  fontSize: "30px",
-  letterSpacing: "5px",
-  color: "#fffafa",
-  borderRadius: "10px",
-}));
-
 const HomeComponent = () => {
   const classes = useStyles();
   const theme = useTheme();
@@ -66,7 +58,7 @@ const HomeComponent = () => {
   };
 
   return (
-    <Stack className={classes.wrapper} id="home" overflowY={"hidden"}>
+    <Stack className={classes.wrapper} id="home" overflowY={"hidden"} width={'100%'}>
       <NavbarComponent />
       <Stack flexDirection={'column'} gap={1} position={'absolute'} sx={{bottom:{xs:120,sm:120,md:50,lg:50,xl:50}, left:{xs:30,sm:30,md:50,lg:50,xl:50}}}>
       <Typography variant="h1" sx={{ fontSize: { xs: '50px', sm: '80px', md: '100px', lg: '150px', xl: '150px' }, fontWeight: 700, color: '#fff' }}>
@@ -127,15 +119,15 @@ const HomeComponent = () => {
           ></Stack>
           <Button
             variant="text"
-            href={`mailto:sharmaaditya13064@gmail.com`}
+            href={`mailto:adityasharmawork13064@gmail.com`}
             sx={{
               textDecoration: "none",
               color: "#fff",
               textTransform: "none",
             }}
           >
-            <Typography color={"#fff"} variant="body1" fontWeight={500} href={`mailto:sharmaaditya13064@gmail.com`}>
-              {"sharmaaditya13064@gmail.com"}
+            <Typography color={"#fff"} variant="body1" fontWeight={500} href={`mailto:adityasharmawork13064@gmail.com`}>
+              {"adityasharmawork13064@gmail.com"}
             </Typography>
           </Button>
         </Stack>
@@ -169,7 +161,7 @@ const HomeComponent = () => {
             )}
             {renderIcon(
               "Resume",
-              "https://media.licdn.com/dms/document/media/D562DAQGOSDcDWEMqiA/profile-treasury-document-pdf-analyzed/0/1719126559318?e=1720656000&v=beta&t=Cz8QweGPgAWvy1PGFnI7KwIaFUr3iefqGVxnN4-7SiM",
+              "https://drive.google.com/file/d/1VhR4fU9IiZMJIFrpxgtjLdJMxe1ogMfX/view?usp=sharing",
               null,
               AccountBoxIcon
             )}

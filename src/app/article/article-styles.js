@@ -61,54 +61,9 @@ const useStyles = makeStyles({
       width:'100%',
       gap:9,
     },
-    select:{
-      alignSelf:'flex-end',
-      '& .MuiInputBase-input':{
-        border:'2px solid #fff',
-        backgroundColor:'#fff',
-      },
-      '&:focus': {
-        borderRadius: 4,
-        borderColor: '#fff',
-      },
-      '&:MuiInputLabel-root.Mui-focused':{
-        color:'#fff',
-      },
-      '& .MuiSelect-icon':{
-        color:'#000'
-      },
-      [theme.breakpoints.down('xs')]:{
-        alignSelf:'center'
-       },
-    },
-    tableWrapper:{
-      alignItems:'center',
-      justifyContent:'center',
-      padding:'12px 0'
-    },
-    icon: {
-      cursor: 'pointer',
-      animation: '$pulsate 2s infinite ease-in-out',
-    },
-    // ... other styles
-    '@keyframes pulsate': {
-      '0%, 100%': {
-        transform: 'scale(0.7)',
-        opacity: 1, // Opacity should be between 0 (transparent) and 1 (opaque)
-      },
-      '50%': {
-        transform: 'scale(0.8)',
-        opacity: 0.7,
-      },
-    },
-    itemStack:{
-      padding:'16px 26px',
-      [theme.breakpoints.down('xl')]:{
-        padding:'10px 20px',
-      }
-    },
-    
-
+    accordian:{
+      boxShadow: '0 2px rgba(0, 0, 0, 0.2)',
+    }
 });
 
 export default useStyles;

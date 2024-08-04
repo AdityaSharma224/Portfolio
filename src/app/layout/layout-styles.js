@@ -20,22 +20,6 @@ const useStyles = makeStyles({
         padding: 0,
         overflow: 'hidden',
       },
-    cursor: {
-        position: 'fixed',
-        padding:'6.8em',
-        backgroundColor: '#fff',
-        borderRadius: '50%',
-        mixBlendMode:'difference',
-        transition: 'transform 0.3s ease',
-        pointerEvents:'none',
-        zIndex:10,
-        [theme.breakpoints.down('xs')]:{
-          display:'none',
-       },
-      },
-      hideCursor:{
-        display:'none',
-      }
 });
 
 export default useStyles;
