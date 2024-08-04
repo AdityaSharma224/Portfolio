@@ -51,8 +51,9 @@ const NavbarComponent = () => {
       className={classes.wrapper}
       flexDirection={"row"}
       justifyContent={"space-between"}
+      flexWrap={'wrap'}
     >
-      <Stack className={classes.innerWrapper1} flexDirection={"row"}>
+      <Stack className={classes.innerWrapper1} flexDirection={"row"}  maxWidth={'100%'}>
         <Stack
           className={classes.itemStack}
           onClick={() => navigate("/")}
@@ -123,6 +124,7 @@ const NavbarComponent = () => {
       <Stack
         flexDirection={"row"}
         className={classes.innerWrapper2}
+        maxWidth={'100%'}
         sx={{
           display: {
             xs: "none",
@@ -133,7 +135,7 @@ const NavbarComponent = () => {
           },
         }}
       >
-        <Stack className={classes.itemStack}>
+        <Stack className={classes.itemStack} maxWidth={'100%'}>
           <Typography
             sx={{
               typography: { xs: "h7", sm: "h7", md: "h6", lg: "h6", xl: "h6" },

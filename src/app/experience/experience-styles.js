@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     wrapper2:{
         backgroundColor:'#fff',
         height:'auto',
-        width:'100vw',
+        width:'100%',
         alignItems:'center',
     },
     itemStack:{

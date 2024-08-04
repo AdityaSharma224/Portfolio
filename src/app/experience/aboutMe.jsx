@@ -16,6 +16,12 @@ import ManujB from "../../assets/manujB.jpeg";
 import AnimeshB from "../../assets/animeshB.jpeg";
 import Link from "@mui/material/Link";
 import LinkedinSS from "../../assets/linkedinSS.png";
+import { useMediaQuery, useTheme } from "@mui/material";
+import ScholarBadge from "../../assets/scholarbadge.png";
+import WebDevBadge from "../../assets/devbadge.png";
+import Badge1 from "../../assets/badge1.gif";
+import Badge2 from "../../assets/badge2.gif";
+import Badge3 from "../../assets/badge3.gif";
 
 const flicker = keyframes`
   0%, 100% { opacity: 0; }
@@ -75,6 +81,8 @@ const Flip = styled(Box)(({ theme }) => ({
 const AboutComponent = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isMdDown = useMediaQuery(theme.breakpoints.down("md"));
   gsap.registerPlugin(ScrollTrigger);
 
   const peopleInfo = [
@@ -120,7 +128,7 @@ const AboutComponent = () => {
 
     t1.fromTo(
       ".side-card",
-      { x: 0, y: 200, opacity: 0.1 },
+      { x: 0, y: 150, opacity: 0.1 },
       { x: 0, y: 0, opacity: 1 }
     );
   }, []);
@@ -129,8 +137,8 @@ const AboutComponent = () => {
     let t1 = gsap.timeline({
       scrollTrigger: {
         trigger: ".animatedText3",
-        start: "top 80%",
-        end: "top 20%",
+        start: "top 60%",
+        end: "top 40%",
         scrub: true,
       },
     });
@@ -143,14 +151,31 @@ const AboutComponent = () => {
   }, []);
 
   useEffect(() => {
+    let t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".animatedText4",
+        start: "top 60%",
+        end: "top 40%",
+        scrub: true,
+      },
+    });
+
+    t1.fromTo(
+      ".animatedText4",
+      { x: -90, y: 0, opacity: 0.2 },
+      { x: 0, y: 0, opacity: 1 }
+    );
+  }, []);
+
+  useEffect(() => {
     const splitTypes = document.querySelectorAll(".animatedText");
     splitTypes.forEach((char) => {
-      const text = new SplitType(char, { types: "chars" });
-      gsap.from(text.chars, {
+      const text = new SplitType(char, { types: "words" });
+      gsap.from(text.words, {
         scrollTrigger: {
           trigger: char,
-          start: "top 80%",
-          end: "top 20%",
+          start: "top 60%",
+          end: "top 40%",
           scrub: true,
           markers: false,
         },
@@ -160,16 +185,16 @@ const AboutComponent = () => {
     });
     const splitTypes2 = document.querySelectorAll(".animatedText2");
     splitTypes2.forEach((char) => {
-      const text2 = new SplitType(char, { types: "chars" });
-      gsap.from(text2.chars, {
+      const text2 = new SplitType(char, { types: "words" });
+      gsap.from(text2.words, {
         scrollTrigger: {
           trigger: char,
-          start: "top 80%",
-          end: "top 20%",
+          start: "top 60%",
+          end: "top 40%",
           scrub: true,
           markers: false,
         },
-        y: 80,
+        y: 20,
         opacity: 0,
         stagger: 0.1,
       });
@@ -186,6 +211,7 @@ const AboutComponent = () => {
       id="experience"
       paddingY={6}
       marginTop={2}
+      alignItems={"center"}
     >
       <Stack
         flexDirection={"column"}
@@ -201,6 +227,7 @@ const AboutComponent = () => {
             xl: "65%",
           },
         }}
+        margin={"0 auto"}
       >
         <Typography alignSelf={"flex-start"} variant="h7">
           {"𝑾𝒉𝒂𝒕 𝒚𝒐𝒖 𝒄𝒂𝒏 𝒆𝒙𝒑𝒆𝒄𝒕 𝒇𝒓𝒐𝒎 𝒎𝒆:"}
@@ -218,6 +245,9 @@ const AboutComponent = () => {
               xl: "40px",
             },
             wordSpacing: 1.5,
+            wordBreak: "normal",
+            whiteSpace: "normal",
+            hyphens: "auto",
           }}
         >
           {
@@ -279,20 +309,20 @@ const AboutComponent = () => {
             },
             wordBreak: "break-all",
           }}
-          gap={4}
+          gap={2}
           width={"100%"}
           alignItems={"center"}
           marginTop={5}
         >
           <Typography
-            className="animatedText2"
+            className={isMdDown ? "" : "animatedText2"}
             sx={{
               width: {
                 xs: "100%",
                 sm: "100%",
-                md: "52%",
-                lg: "52%",
-                xl: "52%",
+                md: "75%",
+                lg: "75%",
+                xl: "75%",
               },
               typography: {
                 xs: "h5",
@@ -308,16 +338,32 @@ const AboutComponent = () => {
                 lg: 700,
                 xl: 700,
               },
-              wordBreak: "break-all",
+              wordBreak: "normal",
+              whiteSpace: "normal",
               hyphens: "auto",
             }}
           >
-            {
-              "SOME OF THE MOST VIEWED TUTORIALS AND ARTICLES ON DATA STRUCTURES AND ALGORITHMS"
-            }
+            <strong>
+              {
+                "SOME OF THE MOST VIEWED TUTORIALS AND ARTICLES ON DATA STRUCTURES AND ALGORITHMS"
+              }
+            </strong>
           </Typography>
-          <Stack gap={1} alignItems={"flex-start"} className={"animatedText3"}>
-            <Typography variant="subtitle3" fontWeight={500} color={"#7C7C7C"}>
+          <Stack
+            gap={1}
+            alignItems={"flex-start"}
+            className={isMdDown ? "" : "animatedText3"}
+          >
+            <Typography
+              variant="subtitle3"
+              fontWeight={500}
+              color={"#000"}
+              sx={{
+                wordBreak: "normal",
+                whiteSpace: "normal",
+                hyphens: "auto",
+              }}
+            >
               {
                 "These technical articles are publiched at GeeksforGeeks website, I wrote these articles during my internship tenure at GeeksforGeeks"
               }
@@ -351,7 +397,139 @@ const AboutComponent = () => {
         alignSelf={"center"}
         width={"95%"}
       />
-      <Box className={classes.recommendationWrapper} gap={4}>
+      <Stack
+        flexDirection={"column"}
+        gap={1}
+        alignItems={"center"}
+        justifyContent={"center"}
+        sx={{
+          width: {
+            xs: "90%",
+            sm: "80%",
+            md: "70%",
+            lg: "65%",
+            xl: "65%",
+          },
+        }}
+      >
+        <Stack
+          sx={{
+            justifyContent: {
+              xs: "center",
+              sm: "center",
+              md: "space-between",
+              lg: "space-between",
+              xl: "space-between",
+            },
+            flexDirection: {
+              xs: "column",
+              sm: "column",
+              md: "row",
+              lg: "row",
+              xl: "row",
+            },
+            wordBreak: "break-all",
+          }}
+          gap={1}
+          width={"80%"}
+          alignItems={"center"}
+          marginTop={5}
+        >
+          <Typography
+            className={isMdDown ? "" : "animatedText2"}
+            alignSelf={"center"}
+            textAlign={isMdDown ? "center" : "left"}
+            sx={{
+              width: {
+                xs: "100%",
+                sm: "100%",
+                md: "55%",
+                lg: "55%",
+                xl: "55%",
+              },
+              typography: {
+                xs: "h5",
+                sm: "h5",
+                md: "h4",
+                lg: "h3",
+                xl: "h3",
+              },
+              fontWeight: {
+                xs: 700,
+                sm: 700,
+                md: 700,
+                lg: 700,
+                xl: 700,
+              },
+              wordBreak: "normal",
+              whiteSpace: "normal",
+              hyphens: "auto",
+            }}
+          >
+            {"BADGES 🎖️"}
+          </Typography>
+          <Stack
+            gap={4}
+            alignItems={"center"}
+            className={isMdDown ? "" : "animatedText4"}
+            flexDirection={"row"}
+          >
+            <Stack gap={2} alignItems={"center"}>
+              <Stack
+                component={"img"}
+                src={WebDevBadge}
+                height={isMdDown ? "30px" : "50px"}
+                width={isMdDown ? "180px" : "280px"}
+              />
+              <Stack
+                component={"img"}
+                src={ScholarBadge}
+                height={isMdDown ? "150px" : "250px"}
+                width={isMdDown ? "150px" : "220px"}
+              />
+            </Stack>
+            <Stack gap={2} alignItems={"center"} justifyContent={"center"}>
+              <Stack
+                component={"img"}
+                src={Badge1}
+                height={isMdDown ? "60px" : "100px"}
+                width={isMdDown ? "60px" : "100px"}
+              />
+              <Stack
+                component={"img"}
+                src={Badge2}
+                height={isMdDown ? "60px" : "100px"}
+                width={isMdDown ? "60px" : "100px"}
+              />
+              <Stack
+                component={"img"}
+                src={Badge3}
+                height={isMdDown ? "60px" : "100px"}
+                width={isMdDown ? "60px" : "100px"}
+              />
+            </Stack>
+          </Stack>
+        </Stack>
+      </Stack>
+
+      {/* <Stack
+        borderBottom={"1px solid #D3d3d3"}
+        alignSelf={"center"}
+        width={"95%"}
+      /> */}
+      <Box
+        className={classes.recommendationWrapper}
+        gap={4}
+        sx={{
+          width: {
+            xs: "90%",
+            sm: "80%",
+            md: "70%",
+            lg: "65%",
+            xl: "65%",
+          },
+        }}
+      >
         {peopleInfo.map((person, index) => (
           <PeopleCards
             key={index}
@@ -363,6 +541,11 @@ const AboutComponent = () => {
           />
         ))}
       </Box>
+      <Stack
+        borderBottom={"1px solid #D3d3d3"}
+        alignSelf={"center"}
+        width={"95%"}
+      />
       <Stack
         height={"auto"}
         sx={{
@@ -391,14 +574,14 @@ const AboutComponent = () => {
           src={LinkedinSS}
           sx={{
             width: {
-              xs: "100%",
-              sm: "100%",
-              md: "80%",
-              lg: "60%",
-              xl: "60%",
+              xs: "90%",
+              sm: "80%",
+              md: "70%",
+              lg: "65%",
+              xl: "65%",
             },
             height: {
-              xs: "200px",
+              xs: "180px",
               sm: "200px",
               md: "300px",
               lg: "350px",

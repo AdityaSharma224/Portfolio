@@ -58,7 +58,7 @@ const HomeComponent = () => {
   };
 
   return (
-    <Stack className={classes.wrapper} id="home" overflowY={"hidden"}>
+    <Stack className={classes.wrapper} id="home" overflowY={"hidden"} width={'100%'}>
       <NavbarComponent />
       <Stack flexDirection={'column'} gap={1} position={'absolute'} sx={{bottom:{xs:120,sm:120,md:50,lg:50,xl:50}, left:{xs:30,sm:30,md:50,lg:50,xl:50}}}>
       <Typography variant="h1" sx={{ fontSize: { xs: '50px', sm: '80px', md: '100px', lg: '150px', xl: '150px' }, fontWeight: 700, color: '#fff' }}>

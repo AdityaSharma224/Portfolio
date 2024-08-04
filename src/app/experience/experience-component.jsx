@@ -80,6 +80,10 @@ const ExperienceComponent = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
       <Stack className={classes.wrapper} id="experience">
@@ -87,7 +91,7 @@ const ExperienceComponent = () => {
           id="one"
           sx={{
             position: "relative",
-            width: "100vw",
+            width: "100%",
             display: "flex",
             alignItems: "flex-start",
             backgroundColor: "#0C0C0F",

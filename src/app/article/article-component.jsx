@@ -37,7 +37,7 @@ const ArticleComponent = () => {
         id="one"
         sx={{
           position: "relative",
-          width: "100vw",
+          width: "100%",
           display: "flex",
           alignItems: "flex-start",
           backgroundColor: "#0C0C0F",
