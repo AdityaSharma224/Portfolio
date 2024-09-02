@@ -15,7 +15,7 @@ const PeopleCards = ({ imageUrl, name, role, testimonial, className }) => {
           xl: "600px",
         },
       }}
-      height={'280px'}
+      height={'auto'}
       borderRadius={"10px"}
       padding={2}
       boxShadow={
